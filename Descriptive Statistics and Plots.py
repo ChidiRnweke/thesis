@@ -24,15 +24,14 @@ display(sales)
 
 # COMMAND ----------
 
-# convert sales to datetime
-func =  udf(lambda x: datetime.strptime(x, '%Y-%m-%d'), DateType())
-sales_date = sales.withColumn('LoadDate', func(col('LoadDate')))
+sales_date = sales\
+             .withColumn('LoadDate', to_date("LoadDate"))\
+             .withColumn('month', month('LoadDate'))\
+             .withColumn('year', year('LoadDate'))
 
 # COMMAND ----------
 
-sales_date = sales_date\
-             .withColumn('month', month('LoadDate'))\
-             .withColumn('year', year('LoadDate'))
+display(sales_date.select("Date"))
 
 # COMMAND ----------
 

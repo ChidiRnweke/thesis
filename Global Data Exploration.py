@@ -108,3 +108,7 @@ weather_df.groupBy('Location').count().show()
 
 # number of null values 
 weather_df.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in weather_df.columns]).show()
+
+# COMMAND ----------
+
+
