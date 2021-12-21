@@ -8,47 +8,58 @@ class TimeSeriesGenerator():
 
         self.seed = np.random.default_rng(seed)
         self.size = size
+        self.randomInterval = np.array([0.99, 1.05])
         if initialValues is None:
+            self.nVariables = amountOfVariables
             self.initialValues = self.seed.integers(
-                100, size=amountOfVariables)
+                100, size=self.nVariables)
             self.coefficients = self.generateCoefficients()
         else:
 
             self.initialValues = initialValues
             self.coefficients = coefficients
+            self.nVariables = initialValues.shape[0]
         self.errors = amountOfVariables * self.seed.random(size=size)
         self.data = self.generateData()
+        self.pattern = np.array((1.1, 1.05, 1.07, 1.03, 1.12, 1.07, 1.04))
         self.seasonalComponent = None
-        self.trendMagnitude = None
+        self.trendComponent = None
         self.results = None
 
     def generateCoefficients(self):
-        coef = self.seed.random(size=self.initialValues.shape[0])
-        return np.broadcast_to(coef, (self.size, self.initialValues.shape[0]))
+        coef = self.seed.random(size=self.nVariables)
+        return np.broadcast_to(coef, (self.size, self.nVariables)).copy()
+
+    def weeklyPattern(self):
+        WeeklyCycle = np.tile(self.pattern, int(self.size / 7) + 1)
+        WeeklyCycle = WeeklyCycle[:self.size]
+        self.coefficients = (self.coefficients.T * WeeklyCycle).T
 
     def generateSuddenDrift(self, variables: np.array, time: int, magnitude: np.array):
-        self.results[time:, variables] *= magnitude
+        self.coefficients[time:, variables] *= magnitude
 
     def generateTemporalShock(self, variables: np.array, window: np.array, magnitude: np.array):
-        self.results[window:, variables] *= magnitude
+        self.coefficients[window:, variables] *= magnitude
 
     def generateLinearIncrementalDrift(self, variable: int, time: int, magnitude: int):
-        self.results[time:, variable] *= np.linspace(
+        self.coefficients[time:, variable] *= np.linspace(
             start=1, stop=magnitude, num=self.size - time, endpoint=True)
 
     def generateLogIncrementalDrift(self, variable: int, time: np.array, magnitude: np.array):
-        self.results[time:, variable] *= np.logspace(
+        self.coefficients[time:, variable] *= np.logspace(
             start=1, stop=magnitude, num=self.size - time, endpoint=True)
 
     def generateData(self) -> np.ndarray:
-        randoms = 0.05 * \
-            self.seed.random((self.size, self.initialValues.shape[0])) + 0.99
+        randoms = (self.randomInterval[1] - self.randomInterval[0]) * \
+            self.seed.random((self.size, self.nVariables)) + \
+            self.randomInterval[0]
         return self.initialValues * randoms
 
     def generateTrend(self, variables: int, magnitude: int) -> np.ndarray:
-        self.trendMagnitude = np.linspace(
+        self.trendComponent = np.linspace(
             start=1, stop=magnitude, num=self.size)
-        self.data[:, variables] *= self.trendMagnitude
+        self.trendComponent *= self.initialValues[variables]
+        self.data[:, variables] += self.trendComponent
 
     def generateSeasonality(self, periods: int, indices: int) -> np.ndarray:
         self.seasonalComponent = self.initialValues[indices] * \
@@ -60,9 +71,12 @@ class TimeSeriesGenerator():
             start=startDate, periods=self.size, freq=frequency)
         results = np.hstack((self.data, self.results[:, None]))
         names = ["Variable_" + str(i)
-                 for i in range(self.initialValues.shape[0])]
+                 for i in range(self.nVariables)]
         names.append("Response")
-        return pd.DataFrame(results, index=dates, columns=names)
+        calendar = dates.isocalendar()
+        df = pd.DataFrame(results, index=dates, columns=names)
+        df = pd.concat([df, calendar], axis=1)
+        return df
 
     def calculate(self):
         self.results = np.sum(self.data * self.coefficients,
