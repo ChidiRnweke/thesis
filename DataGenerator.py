@@ -38,16 +38,22 @@ class TimeSeriesGenerator():
     def generateSuddenDrift(self, variables: np.array, time: int, magnitude: np.array):
         self.coefficients[time:, variables] *= magnitude
 
-    def generateTemporalShock(self, variables: np.array, window: np.array, magnitude: np.array):
-        self.coefficients[window:, variables] *= magnitude
+    def generateSuddenShock(self, variables: np.array, window: np.array, magnitude: np.array):
+        self.coefficients[window, variables] *= magnitude
 
-    def generateLinearIncrementalDrift(self, variable: int, time: int, magnitude: int):
-        self.coefficients[time:, variable] *= np.linspace(
-            start=1, stop=magnitude, num=self.size - time, endpoint=True)
+    def generateIncrementalShock(self, variable: int, start: int, stop: int, magnitude: int):
+        self.coefficients[start:stop, variable] *= np.linspace(
+            start=1, stop=magnitude, num=stop - start)
 
-    def generateLogIncrementalDrift(self, variable: int, time: np.array, magnitude: np.array):
-        self.coefficients[time:, variable] *= np.logspace(
-            start=1, stop=magnitude, num=self.size - time, endpoint=True)
+    def generateLinearIncrementalDrift(self, variable: int, start: int, stop: int, magnitude: int):
+        self.coefficients[start:stop, variable] *= np.linspace(
+            start=1, stop=magnitude, num=stop - start)
+        self.coefficients[stop:, -2] *= magnitude
+
+    def generateLogIncrementalDrift(self, variable: int, start: int, stop: int, magnitude: np.array):
+        self.coefficients[start:stop, variable] *= np.logspace(
+            start=1, stop=magnitude, num=stop - start, endpoint=True)
+        self.coefficients[stop:, -2] *= magnitude
 
     def generateData(self) -> np.ndarray:
         randoms = (self.randomInterval[1] - self.randomInterval[0]) * \
