@@ -20,7 +20,6 @@ class TimeSeriesGenerator:
             self.initialValues = self.seed.integers(100, size=self.nVariables)
             self.coefficients = self.generateCoefficients()
         else:
-
             self.initialValues = initialValues
             self.coefficients = coefficients
             self.nVariables = initialValues.shape[0]
@@ -30,6 +29,19 @@ class TimeSeriesGenerator:
         self.seasonalComponent = None
         self.trendComponent = None
         self.results = None
+
+    def generateData(self) -> np.ndarray:
+        """[Multiplies the initial values by values ~ U[0.99,1.04] for each data point]
+
+        Returns:
+            np.ndarray: [A m x n matrix
+            with m being the amount of data and n the amount of variables]
+        """
+
+        randoms = (self.randomInterval[1] - self.randomInterval[0]) * self.seed.random(
+            (self.size, self.nVariables)
+        ) + self.randomInterval[0]
+        return self.initialValues * randoms
 
     def generateCoefficients(self, sorted: bool = False) -> np.ndarray:
         """[Generates random coefficients for the variables. Sampled from ~U(0,1)]
@@ -53,128 +65,6 @@ class TimeSeriesGenerator:
         WeeklyCycle = np.tile(self.pattern, int(self.size / 7) + 1)
         WeeklyCycle = WeeklyCycle[: self.size]
         self.coefficients = (self.coefficients.T * WeeklyCycle).T
-
-    def suddenDrift(self, variables: np.array, time: int, magnitude: np.array) -> None:
-        """Generates drift by increasing the values of one or more variables
-            by a given magnitude.
-
-        Args:
-            variables (int or np.array): [Variable(s) to introduce drift to]
-            time (int): [The time point to introduce drift at]
-            magnitude (double or np.array): [The values are multiplied
-                                            by this amount]
-        """
-        self.data[time:, variables] *= magnitude
-
-    def incrementalDrift(self, indices: int, magnitude: int) -> None:
-        """[Adds incremental drift to one or more variables' initial values]
-
-        Args:
-            variables (int or np.array): [variables to add drift to]
-            magnitude (int or np.array): [The variables will linearly
-                                         increase by this magnitude.]
-        """
-
-        self.data[:, indices] *= np.linspace(start=1, stop=magnitude, num=self.size)
-
-    def suddenShock(
-        self, variables: np.array, window: np.array, magnitude: np.array
-    ) -> None:
-
-        """[Increases the values of one or more variables
-            for a set amount of time. Revers afterwards.]
-
-        Args:
-            variables (int or np.array): [The variable(s) to
-                                         introduce drift to]
-            window (np.array): [The window the drift is introduced for
-                               (same for all variables)]
-            magnitude (double or np.array): [The initialValues are multiplied
-                                            by this factor]
-        """
-        self.data[window, variables] *= magnitude
-
-    def _coeffGenerateSuddenShock(
-        self, variables: np.array, window: np.array, magnitude: np.array
-    ) -> None:
-        """[Increases the coeffients of one or more variables
-            for a set amount of time. Revers afterwards.]
-
-        Args:
-            variables (int or np.array): [The variable(s) to
-                                         introduce drift to]
-            window (np.array): [The window the drift is introduced for
-                               (same for all variables)]
-            magnitude (double or np.array): [The coefficients are multiplied
-                                            by this factor]
-        """
-        self.coefficients[window, variables] *= magnitude
-
-    def _coeffGenerateSuddenDrift(
-        self, variables: np.array, time: int, magnitude: np.array
-    ) -> None:
-        """Generates drift by increasing the cofficients of one or more variables
-            by a given magnitude.
-
-        Args:
-            variables (int or np.array): [Variable(s) to introduce drift to]
-            time (int): [The time point to introduce drift at]
-            magnitude (double or np.array): [The coefficients are multiplied
-                                            by this amount]
-        """
-        self.coefficients[time:, variables] *= magnitude
-
-    def _coeffGenerateSuddenShock(
-        self, variables: np.array, window: np.array, magnitude: np.array
-    ) -> None:
-        """[Increases the coeffients of one or more variables
-            for a set amount of time. Revers afterwards.]
-
-        Args:
-            variables (int or np.array): [The variable(s) to
-                                         introduce drift to]
-            window (np.array): [The window the drift is introduced for
-                               (same for all variables)]
-            magnitude (double or np.array): [The coefficients are multiplied
-                                            by this factor]
-        """
-        self.coefficients[window, variables] *= magnitude
-
-    def generateData(self) -> np.ndarray:
-        """[Multiplies the initial values by values ~ U[0.99,1.04] for each data point]
-
-        Returns:
-            np.ndarray: [A m x n matrix
-            with m being the amount of data and n the amount of variables]
-        """
-        randoms = (self.randomInterval[1] - self.randomInterval[0]) * self.seed.random(
-            (self.size, self.nVariables)
-        ) + self.randomInterval[0]
-        return self.initialValues * randoms
-
-    def generateTrend(self, indices: int, magnitude: int) -> None:
-        """[Adds trend to one or more variables' initial values]
-
-        Args:
-            variables (int or np.array): [variables to add trend]
-            magnitude (int or np.array): [The variables will linearly
-                                         increase by this magnitude.]
-        """
-        self.trendComponent = np.linspace(start=1, stop=magnitude, num=self.size)
-        self.trendComponent *= self.initialValues[indices]
-        self.data[:, indices] += self.trendComponent
-
-    def generateSeasonality(self, periods: int, indices: int) -> None:
-        """[Adds seasonality to one or more variables' initial values]
-
-        Args:
-            periods (int): [How many seasons per year?]
-            variables (int or np.array): [Variable(s)]
-        """
-        self.seasonalComponent = self.initialValues[indices] * np.sin(
-            (2 * np.pi) / 365 * periods * np.arange(self.size)
-        )
-        self.data[:, indices] += self.seasonalComponent
 
     def toDataFrame(self, startDate="2017-01-01", frequency="D") -> pd.DataFrame:
         """[Exports the results to a Dataframe. Call the calculate() method first.]
@@ -223,10 +113,11 @@ class TimeSeriesGenerator:
     def _changeErrors(self, error: float):
         self.errors = error * self.seed.random(size=self.size)
 
-    def _coeffGenerateIncrementalShock(
-        self, indices: int, start: int, stop: int, magnitude: int
-    ) -> None:
-        """[Linearly the coeffients of one or more variables for a set amount of time.
+
+def coeffGenerateIncrementalShock(
+    series: TimeSeriesGenerator, indices: int, start: int, stop: int, magnitude: int
+) -> None:
+    """[Linearly the coeffients of one or more variables for a set amount of time.
             Reverts afterwards]
 
         Args:
@@ -237,14 +128,19 @@ class TimeSeriesGenerator:
             magnitude (double or np.array): [The coefficients
                                             are multiplied by this factor]
         """
-        self.coefficients[start:stop, indices] *= np.linspace(
-            start=1, stop=magnitude, num=stop - start
-        )
+    series.coefficients[start:stop, indices] *= np.linspace(
+        start=1, stop=magnitude, num=stop - start
+    )
 
-    def _coeffGenerateLinearIncrementalDrift(
-        self, indices: np.array, start: int, stop: int, magnitude: float
-    ) -> None:
-        """[Linearly the coeffients of one or more variables during the window.]
+
+def coeffGenerateLinearIncrementalDrift(
+    series: TimeSeriesGenerator,
+    indices: np.array,
+    start: int,
+    stop: int,
+    magnitude: float,
+) -> None:
+    """[Linearly the coeffients of one or more variables during the window.]
 
         Args:
             variables (int or np.array): [The variable(s) to
@@ -253,15 +149,20 @@ class TimeSeriesGenerator:
                                (same for all variables)]
             magnitude (float): [The coefficients are multiplied by this factor]
         """
-        self.coefficients[start:stop, indices] *= np.linspace(
-            start=1, stop=magnitude, num=stop - start
-        )
-        self.coefficients[stop:, -2] *= magnitude
+    series.coefficients[start:stop, indices] *= np.linspace(
+        start=1, stop=magnitude, num=stop - start
+    )
+    series.coefficients[stop:, -2] *= magnitude
 
-    def _coeffGenerateLogIncrementalDrift(
-        self, indices: int, start: int, stop: int, magnitude: np.array
-    ) -> None:
-        """[Geometrically the coeffients of one or more variables during the window.]
+
+def coeffGenerateLogIncrementalDrift(
+    series: TimeSeriesGenerator,
+    indices: int,
+    start: int,
+    stop: int,
+    magnitude: np.array,
+) -> None:
+    """[Geometrically the coeffients of one or more variables during the window.]
 
         Args:
             variables (int or np.array): [The variable(s) to
@@ -271,7 +172,137 @@ class TimeSeriesGenerator:
             magnitude (float): [The coefficients are multiplied by this factor]
         """
 
-        self.coefficients[start:stop, indices] *= np.geomspace(
-            start=1, stop=magnitude, num=stop - start, endpoint=True
-        )
-        self.coefficients[stop:, -2] *= magnitude
+    series.coefficients[start:stop, indices] *= np.geomspace(
+        start=1, stop=magnitude, num=stop - start, endpoint=True
+    )
+    series.coefficients[stop:, -2] *= magnitude
+
+
+def suddenDrift(self, variables: np.array, time: int, magnitude: np.array) -> None:
+    """Generates drift by increasing the values of one or more variables
+            by a given magnitude.
+
+        Args:
+            variables (int or np.array): [Variable(s) to introduce drift to]
+            time (int): [The time point to introduce drift at]
+            magnitude (double or np.array): [The values are multiplied
+                                            by this amount]
+        """
+    self.data[time:, variables] *= magnitude
+
+
+def incrementalDrift(series: TimeSeriesGenerator, indices: int, magnitude: int) -> None:
+    """[Adds incremental drift to one or more variables' initial values]
+
+        Args:   
+            variables (int or np.array): [variables to add drift to]
+            magnitude (int or np.array): [The variables will linearly
+                                         increase by this magnitude.]
+        """
+
+    series.data[:, indices] *= np.linspace(start=1, stop=magnitude, num=series.size)
+
+
+def suddenShock(
+    series: TimeSeriesGenerator,
+    variables: np.array,
+    window: np.array,
+    magnitude: np.array,
+) -> None:
+
+    """[Increases the values of one or more variables
+            for a set amount of time. Revers afterwards.]
+
+        Args:
+            variables (int or np.array): [The variable(s) to
+                                         introduce drift to]
+            window (np.array): [The window the drift is introduced for
+                               (same for all variables)]
+            magnitude (double or np.array): [The initialValues are multiplied
+                                            by this factor]
+        """
+    series.data[window, variables] *= magnitude
+
+
+def coeffGenerateSuddenShock(
+    series: TimeSeriesGenerator,
+    variables: np.array,
+    window: np.array,
+    magnitude: np.array,
+) -> None:
+    """[Increases the coeffients of one or more variables
+            for a set amount of time. Revers afterwards.]
+
+        Args:
+            variables (int or np.array): [The variable(s) to
+                                         introduce drift to]
+            window (np.array): [The window the drift is introduced for
+                               (same for all variables)]
+            magnitude (double or np.array): [The coefficients are multiplied
+                                            by this factor]
+        """
+    series.coefficients[window, variables] *= magnitude
+
+
+# def coeffGenerateSuddenDrift(
+#     self, variables: np.array, time: int, magnitude: np.array
+# ) -> None:
+#     """Generates drift by increasing the cofficients of one or more variables
+#             by a given magnitude.
+
+#         Args:
+#             variables (int or np.array): [Variable(s) to introduce drift to]
+#             time (int): [The time point to introduce drift at]
+#             magnitude (double or np.array): [The coefficients are multiplied
+#                                             by this amount]
+#         """
+#     self.coefficients[time:, variables] *= magnitude
+
+
+def coeffGenerateSuddenShock(
+    series: TimeSeriesGenerator,
+    variables: np.array,
+    window: np.array,
+    magnitude: np.array,
+) -> None:
+    """[Increases the coeffients of one or more variables
+            for a set amount of time. Revers afterwards.]
+
+        Args:
+            variables (int or np.array): [The variable(s) to
+                                         introduce drift to]
+            window (np.array): [The window the drift is introduced for
+                               (same for all variables)]
+            magnitude (double or np.array): [The coefficients are multiplied
+                                            by this factor]
+        """
+    series.coefficients[window, variables] *= magnitude
+
+
+def generateTrend(series: TimeSeriesGenerator, indices: int, magnitude: int) -> None:
+    """[Adds trend to one or more variables' initial values]
+
+        Args:
+            variables (int or np.array): [variables to add trend]
+            magnitude (int or np.array): [The variables will linearly
+                                         increase by this magnitude.]
+        """
+    series.trendComponent = np.linspace(start=1, stop=magnitude, num=series.size)
+    series.trendComponent *= series.initialValues[indices]
+    series.data[:, indices] += series.trendComponent
+
+
+def generateSeasonality(
+    series: TimeSeriesGenerator, periods: int, indices: int
+) -> None:
+    """[Adds seasonality to one or more variables' initial values]
+
+        Args:
+            periods (int): [How many seasons per year?]
+            variables (int or np.array): [Variable(s)]
+        """
+    series.seasonalComponent = series.initialValues[indices] * np.sin(
+        (2 * np.pi) / 365 * periods * np.arange(series.size)
+    )
+    series.data[:, indices] += series.seasonalComponent
+
