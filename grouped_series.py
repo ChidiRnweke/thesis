@@ -76,7 +76,7 @@ class ExperimentTracker:
         self.customerList = customerList
         self.experiments = []
 
-    def runExperiment(self, MLalgo):
+    def runExperiment(self, algorithm):
         # Run experiment for each condition
         global_start = time.time()
         # Loop over conditions
@@ -96,7 +96,7 @@ class ExperimentTracker:
             for series in grouped_series.timeSeriesInstances:
                 driftCondition(series["series"])
             experiment = Experiment(
-                description=condition, grouped_series=grouped_series, MLalgo=MLalgo, drop=condition[
+                description=condition, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
                     "Dropped variable"]
             )
             self.experiments.append(experiment)
@@ -112,13 +112,13 @@ class Experiment:
         self,
         description: Dict,
         grouped_series: SeriesGrouper,
-        MLalgo,
+        algorithm,
         drop=None,
         univariate=False,
         online=False,
     ) -> None:
         self.grouped_series = grouped_series
-        self.MLaglo = MLalgo
+        self.algorithm = algorithm
         self.description = description
         self.univariate = univariate
         self.online = online
@@ -140,43 +140,25 @@ class Experiment:
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=365 * 9, shuffle=False
             )  # One year of data
-            self.MLaglo.fit(X_train, y_train)  # Fit the model
+            self.algorithm.fit(X_train, y_train)  # Fit the model
 
         if self.online:
             y_hat = []
             for i in range(len(y_test)):
 
-                y_hat.append(self.MLaglo.predict(X_test.iloc[[i]]))
+                y_hat.append(self.algorithm.predict(X_test.iloc[[i]]))
                 # Update the model
                 # y_test[[i]] is suspect if this does not work, maybe this is not the correct way to index a series
-                self.MLaglo.fit(X_test.iloc[[i]], y_test[i])
+                self.algorithm.fit(X_test.iloc[[i]], y_test[i])
             y_hat = pd.array(y_hat).T
             self.residuals = y_test - y_hat
             self.metrics = metrics(y_test, y_hat, description=self.description)
 
         else:
 
-            y_hat = self.MLaglo.predict(X_test)  # Predict
+            y_hat = self.algorithm.predict(X_test)  # Predict
             self.residuals = y_test - y_hat  # Calculate residuals
             self.metrics = metrics(y_test, y_hat, description=self.description)
-
-            # # Calculate metrics per product or customer in dataFrame
-
-            # residuals_per_series = pd.concat(
-            #     [X_test[["product_number", "customer_number", "combinationID"]], y_test, y_hat], axis=1)
-            # per_product = residuals_per_series.groupby(
-            #     "product_number").sum()
-            # per_customer = rcoesiduals_per_series.groupby(
-            #     "customer_number").sum()
-            # per_combination = residuals_per_series.groupby(
-            #     "combinationID").sum()
-
-            # self.metrics_per_product = metrics(
-            #     per_product["y_test"], per_product["y_hat"])
-            # self.metrics_per_customer = metrics(
-            #     per_customer["y_test"], per_customer["y_hat"])
-            # self.metrics_per_combination = metrics(
-            #     per_combination["y_test"], per_combination["y_hat"])
 
 
 def metrics(y_test, y_hat, description):
