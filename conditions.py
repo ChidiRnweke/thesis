@@ -7,10 +7,10 @@ import pandas as pd
 def scenarios():
     functList = []
 
-    suddenDriftSmall = partial(suddenDrift, magnitude=1.5)
-    suddenDriftLarge = partial(suddenDrift, magnitude=4.5)
-    incrementalDriftSmall = partial(incrementalDrift, magnitude=1.5)
-    incrementalDriftLarge = partial(incrementalDrift, magnitude=4.5)
+    suddenDriftSmall = partial(suddenDrift, magnitude=3)
+    suddenDriftLarge = partial(suddenDrift, magnitude=10)
+    incrementalDriftSmall = partial(incrementalDrift, magnitude=3)
+    incrementalDriftLarge = partial(incrementalDrift, magnitude=10)
 
     suddenDriftSmallImportant = partial(suddenDriftSmall, variables=0)
     suddenDriftsmallMedium = partial(suddenDriftSmall, variables=3)

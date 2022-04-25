@@ -1,8 +1,8 @@
 # To do 1: implement the evaluation loop for online algorithms (e.g. RNN) => Done
 # To do 2: Deseason and detrend the data (LONG)
 # To do 3: Implement the training loop for univariate algorithms (SMALL)
-# To do 4: Write out the code to produce the conditions for the paper  (LONG) => NEXT
-# To do 5: Port the DM-test to Python (SMALL)
+# To do 4: Write out the code to produce the conditions for the paper  (LONG) => Done
+# To do 5: T-test workflow: ability to make a 100 experiments after each other and save data => WED
 # To do 6: Make and test EDDM's drift detection (LONG)
 # To do 7: Finish the hybrid model (SMALL)
 # To do 8: Make a simple online model (MEDIUM)
@@ -80,8 +80,8 @@ class ExperimentTracker:
         # Run experiment for each condition
         global_start = time.time()
         # Loop over conditions
-        seeds = np.random.randint(
-            size=len(self.productList) * len(self.customerList))
+        seeds = np.random.randint(100000000, size=len(
+            self.productList) * len(self.customerList))
         for condition in self.conditions:
             startTime = time.time()
 
@@ -138,7 +138,7 @@ class Experiment:
 
             # Test train split without shuffling
             X_train, X_test, y_train, y_test = train_test_split(
-                X, y, test_size=365, shuffle=False
+                X, y, test_size=365 * 9, shuffle=False
             )  # One year of data
             self.MLaglo.fit(X_train, y_train)  # Fit the model
 
@@ -188,4 +188,4 @@ def metrics(y_test, y_hat, description):
 
 
 def smape(a, f):
-    return 1 / len(a) * np.sum(2 * np.abs(f - a) / (np.abs(a) + np.abs(f)))
+    return round(np.mean(np.abs(a - f) / ((np.abs(f) + np.abs(a))/2))*100, 2)
