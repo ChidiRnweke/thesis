@@ -18,7 +18,7 @@ class TimeSeriesGenerator:
         if initialValues is None:
             self.nVariables = amountOfVariables
             self.initialValues = self.seed.integers(
-                35, 50, size=self.nVariables)
+                10, 30, size=self.nVariables)
             self.coefficients = self.generateCoefficients(sorted=True)
         else:
             self.initialValues = initialValues
@@ -208,6 +208,7 @@ def incrementalDrift(series: TimeSeriesGenerator, time, variables: np.array, mag
 
     series.data[time,
                 variables] *= np.linspace(start=1, stop=magnitude, num=len(time))
+    series.data[time[1]:, variables] *= magnitude
 
 
 def suddenShock(

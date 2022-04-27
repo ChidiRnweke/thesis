@@ -1,15 +1,14 @@
 # To do 1: implement the evaluation loop for online algorithms (e.g. RNN) => Done
-# To do 2: Deseason and detrend the data (LONG)
 # To do 3: Implement the training loop for univariate algorithms (SMALL)
 # To do 4: Write out the code to produce the conditions for the paper  (LONG) => Done
-# To do 5: T-test workflow: ability to make a 100 experiments after each other and save data => WED
-# To do 6: Make and test EDDM's drift detection (LONG)
+# To do 5: T-test workflow: ability to make a 100 experiments after each other and save data => DONE
+# To do 6: Make and test BOCP drift detection (SHORT) => code exists online
 # To do 7: Finish the hybrid model (SMALL)
-# To do 8: Make a simple online model (MEDIUM)
+# To do 8: Make a simple online model (SMALL)
 
 from typing import List, Dict
 
-from DataGenerator import TimeSeriesGenerator, incrementalDrift, suddenDrift
+from DataGenerator import TimeSeriesGenerator, incrementalDrift, suddenDrift, generateTrend, generateSeasonality
 import numpy as np
 import time
 import pandas as pd
@@ -95,6 +94,9 @@ class ExperimentTracker:
 
             for series in grouped_series.timeSeriesInstances:
                 driftCondition(series["series"])
+                generateTrend(series["series"], indices=1, magnitude=2)
+                generateSeasonality(series["series"], periods=6, indices=2)
+
             experiment = Experiment(
                 description=condition, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
                     "Dropped variable"]
@@ -138,7 +140,7 @@ class Experiment:
 
             # Test train split without shuffling
             X_train, X_test, y_train, y_test = train_test_split(
-                X, y, test_size=365 * 9, shuffle=False
+                X, y, test_size=91 * 4, shuffle=False
             )  # One year of data
             self.algorithm.fit(X_train, y_train)  # Fit the model
 

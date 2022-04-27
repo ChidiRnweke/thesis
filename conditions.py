@@ -4,13 +4,17 @@ import numpy as np
 import pandas as pd
 
 
+def noDrift(x):
+    return x
+
+
 def scenarios():
     functList = []
 
-    suddenDriftSmall = partial(suddenDrift, magnitude=3)
-    suddenDriftLarge = partial(suddenDrift, magnitude=10)
-    incrementalDriftSmall = partial(incrementalDrift, magnitude=3)
-    incrementalDriftLarge = partial(incrementalDrift, magnitude=10)
+    suddenDriftSmall = partial(suddenDrift, magnitude=1.5)
+    suddenDriftLarge = partial(suddenDrift, magnitude=3)
+    incrementalDriftSmall = partial(incrementalDrift, magnitude=1.5)
+    incrementalDriftLarge = partial(incrementalDrift, magnitude=3)
 
     suddenDriftSmallImportant = partial(suddenDriftSmall, variables=0)
     suddenDriftsmallMedium = partial(suddenDriftSmall, variables=3)
@@ -34,112 +38,112 @@ def scenarios():
 
     ############################################################################
 
-    suddenDriftSmallImportantO = partial(suddenDriftSmallImportant, time=364)
+    suddenDriftSmallImportantO = partial(suddenDriftSmallImportant, time=91)
     functList.append(suddenDriftSmallImportantO)
-    suddenDriftSmallImportantH = partial(suddenDriftSmallImportant, time=912)
+    suddenDriftSmallImportantH = partial(suddenDriftSmallImportant, time=259)
     functList.append(suddenDriftSmallImportantH)
-    suddenDriftSmallImportantU = partial(suddenDriftSmallImportant, time=1100)
+    suddenDriftSmallImportantU = partial(suddenDriftSmallImportant, time=275)
     functList.append(suddenDriftSmallImportantU)
 
-    suddenDriftsmallMediumO = partial(suddenDriftsmallMedium, time=364)
+    suddenDriftsmallMediumO = partial(suddenDriftsmallMedium, time=91)
     functList.append(suddenDriftsmallMediumO)
-    suddenDriftsmallMediumH = partial(suddenDriftsmallMedium, time=912)
+    suddenDriftsmallMediumH = partial(suddenDriftsmallMedium, time=259)
     functList.append(suddenDriftsmallMediumH)
-    suddenDriftsmallMediumU = partial(suddenDriftsmallMedium, time=1100)
+    suddenDriftsmallMediumU = partial(suddenDriftsmallMedium, time=275)
     functList.append(suddenDriftsmallMediumU)
 
     suddenDriftsmallUnimportantO = partial(
-        suddenDriftsmallUnimportant, time=364)
+        suddenDriftsmallUnimportant, time=91)
     functList.append(suddenDriftsmallUnimportantO)
     suddenDriftsmallUnimportantH = partial(
-        suddenDriftsmallUnimportant, time=912)
+        suddenDriftsmallUnimportant, time=259)
     functList.append(suddenDriftsmallUnimportantH)
     suddenDriftsmallUnimportantU = partial(
-        suddenDriftsmallUnimportant, time=1100)
+        suddenDriftsmallUnimportant, time=275)
     functList.append(suddenDriftsmallUnimportantU)
 
-    suddenDriftLargeImportantO = partial(suddenDriftLargeImportant, time=364)
+    suddenDriftLargeImportantO = partial(suddenDriftLargeImportant, time=91)
     functList.append(suddenDriftLargeImportantO)
-    suddenDriftLargeImportantH = partial(suddenDriftLargeImportant, time=912)
+    suddenDriftLargeImportantH = partial(suddenDriftLargeImportant, time=259)
     functList.append(suddenDriftLargeImportantH)
-    suddenDriftLargeImportantU = partial(suddenDriftLargeImportant, time=1100)
+    suddenDriftLargeImportantU = partial(suddenDriftLargeImportant, time=275)
     functList.append(suddenDriftLargeImportantU)
 
-    suddenDriftLargeMediumO = partial(suddenDriftLargeMedium, time=364)
+    suddenDriftLargeMediumO = partial(suddenDriftLargeMedium, time=91)
     functList.append(suddenDriftLargeMediumO)
-    suddenDriftLargeMediumH = partial(suddenDriftLargeMedium, time=912)
+    suddenDriftLargeMediumH = partial(suddenDriftLargeMedium, time=259)
     functList.append(suddenDriftLargeMediumH)
-    suddenDriftLargeMediumU = partial(suddenDriftLargeMedium, time=1100)
+    suddenDriftLargeMediumU = partial(suddenDriftLargeMedium, time=275)
     functList.append(suddenDriftLargeMediumU)
 
-    suddenDrifLargeUnimportantO = partial(suddenDrifLargeUnimportant, time=364)
+    suddenDrifLargeUnimportantO = partial(suddenDrifLargeUnimportant, time=91)
     functList.append(suddenDrifLargeUnimportantO)
-    suddenDrifLargeUnimportantH = partial(suddenDrifLargeUnimportant, time=912)
+    suddenDrifLargeUnimportantH = partial(suddenDrifLargeUnimportant, time=259)
     functList.append(suddenDrifLargeUnimportantH)
     suddenDrifLargeUnimportantU = partial(
-        suddenDrifLargeUnimportant, time=1100)
+        suddenDrifLargeUnimportant, time=275)
     functList.append(suddenDrifLargeUnimportantU)
 
     incrementalDriftSmallImportantO = partial(
-        incrementalDriftSmallImportant, time=[364, 729])
+        incrementalDriftSmallImportant, time=[91, 121])
     functList.append(incrementalDriftSmallImportantO)
     incrementalDriftSmallImportantH = partial(
-        incrementalDriftSmallImportant, time=[912, 1277])
+        incrementalDriftSmallImportant, time=[259, 289])
     functList.append(incrementalDriftSmallImportantH)
     incrementalDriftSmallImportantU = partial(
-        incrementalDriftSmallImportant, time=[1100, 1459])
+        incrementalDriftSmallImportant, time=[275, 305])
     functList.append(incrementalDriftSmallImportantU)
 
     incrementalDriftsmallMediumO = partial(
-        incrementalDriftsmallMedium, time=[364, 729])
+        incrementalDriftsmallMedium, time=[91, 121])
     functList.append(incrementalDriftsmallMediumO)
     incrementalDriftsmallMediumH = partial(
-        incrementalDriftsmallMedium, time=[912, 1277])
+        incrementalDriftsmallMedium, time=[259, 289])
     functList.append(incrementalDriftsmallMediumH)
     incrementalDriftsmallMediumU = partial(
-        incrementalDriftsmallMedium, time=[1100, 1459])
+        incrementalDriftsmallMedium, time=[275, 305])
     functList.append(incrementalDriftsmallMediumU)
 
     incrementalDriftsmallUnimportantO = partial(
-        incrementalDriftsmallUnimportant, time=[364, 729])
+        incrementalDriftsmallUnimportant, time=[91, 121])
     functList.append(incrementalDriftsmallUnimportantO)
     incrementalDriftsmallUnimportantH = partial(
-        incrementalDriftsmallUnimportant, time=[912, 1277])
+        incrementalDriftsmallUnimportant, time=[259, 289])
     functList.append(incrementalDriftsmallUnimportantH)
     incrementalDriftsmallUnimportantU = partial(
-        incrementalDriftsmallUnimportant, time=[1100, 1459])
+        incrementalDriftsmallUnimportant, time=[275, 305])
     functList.append(incrementalDriftsmallUnimportantU)
 
     incrementalDriftLargeImportantO = partial(
-        incrementalDriftLargeImportant, time=[364, 729])
+        incrementalDriftLargeImportant, time=[91, 121])
     functList.append(incrementalDriftLargeImportantO)
     incrementalDriftLargeImportantH = partial(
-        incrementalDriftLargeImportant, time=[912, 1277])
+        incrementalDriftLargeImportant, time=[259, 289])
     functList.append(incrementalDriftLargeImportantH)
     incrementalDriftLargeImportantU = partial(
-        incrementalDriftLargeImportant, time=[1100, 1459])
+        incrementalDriftLargeImportant, time=[275, 305])
     functList.append(incrementalDriftLargeImportantU)
 
     incrementalDriftLargeMediumO = partial(
-        incrementalDriftLargeMedium, time=[364, 729])
+        incrementalDriftLargeMedium, time=[91, 121])
     functList.append(incrementalDriftLargeMediumO)
     incrementalDriftLargeMediumH = partial(
-        incrementalDriftLargeMedium, time=[912, 1277])
+        incrementalDriftLargeMedium, time=[259, 289])
     functList.append(incrementalDriftLargeMediumH)
     incrementalDriftLargeMediumU = partial(
-        incrementalDriftLargeMedium, time=[1100, 1459])
+        incrementalDriftLargeMedium, time=[275, 305])
     functList.append(incrementalDriftLargeMediumU)
 
     incrementalDrifLargeUnimportantO = partial(
-        incrementalDrifLargeUnimportant, time=[364, 729])
+        incrementalDrifLargeUnimportant, time=[91, 121])
     functList.append(incrementalDrifLargeUnimportantO)
     incrementalDrifLargeUnimportantH = partial(
-        incrementalDrifLargeUnimportant, time=[912, 1277])
+        incrementalDrifLargeUnimportant, time=[259, 289])
     functList.append(incrementalDrifLargeUnimportantH)
     incrementalDrifLargeUnimportantU = partial(
-        incrementalDrifLargeUnimportant, time=[1100, 1459])
+        incrementalDrifLargeUnimportant, time=[275, 305])
     functList.append(incrementalDrifLargeUnimportantU)
-    functList.append(lambda x: x)  # no drift
+    functList.append(noDrift)
 
     ###########################################################################
 
