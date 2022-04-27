@@ -4,7 +4,7 @@
 # To do 5: T-test workflow: ability to make a 100 experiments after each other and save data => DONE
 # To do 6: Make and test BOCP drift detection (SHORT) => code exists online
 # To do 7: Finish the hybrid model (SMALL)
-# To do 8: Make a simple online model (SMALL)
+# To do 8: Make a simple online model (SMALL) => DONE
 
 from typing import List, Dict
 
@@ -165,10 +165,9 @@ class Experiment:
 
 def metrics(y_test, y_hat, description):
     MSE = mean_squared_error(y_test, y_hat)  # Calculate MSE
-    MAPE = mean_absolute_percentage_error(
-        y_test, y_hat)  # Calculate MAPE
+
     SMAPE = smape(y_test, y_hat)  # Calculate SMAPE
-    return {"Dropped variable": description["Dropped variable"], 'Drift type': description["Drift type"], 'Drift magnitude': description["Drift magnitude"], 'Variable importance': description["Variable importance"], 'Drift time': description["Drift time"],  "MSE": MSE, "MAPE": MAPE, "SMAPE": SMAPE}
+    return {"Dropped variable": description["Dropped variable"], 'Drift type': description["Drift type"], 'Drift magnitude': description["Drift magnitude"], 'Variable importance': description["Variable importance"], 'Drift time': description["Drift time"],  "MSE": MSE, "SMAPE": SMAPE}
 
 
 def smape(a, f):

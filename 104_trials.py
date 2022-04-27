@@ -5,6 +5,8 @@ from grouped_series import ExperimentTracker
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer, make_column_selector
 from sklearn.pipeline import Pipeline
+from sklearn.linear_model import SGDRegressor
+from sklearn.preprocessing import StandardScaler
 from xgboost import XGBRegressor
 import pandas as pd
 
@@ -13,7 +15,18 @@ def full_trail():
     onehot_cols = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
     ), make_column_selector(dtype_include=object))], remainder='passthrough')
 
-    xgb_pipe = Pipeline([('onehot', onehot_cols), ('xgb', XGBRegressor())])
+    onehot_cols = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
+    ), make_column_selector(dtype_include=object))], remainder='passthrough')
+
+    xgb_pipe = Pipeline([
+        ('onehot', onehot_cols),
+        ('sgd', XGBRegressor())])
+
+    sgd_pipe = Pipeline([
+        ('onehot', onehot_cols),
+        ('standardize', StandardScaler()),
+        ('sgd', SGDRegressor())])
+
     products = []
     customers = []
     for i in range(2):
@@ -22,7 +35,7 @@ def full_trail():
         products.append(product)
         customers.append(customer)
     thesis = ExperimentTracker(products, customers, scenarios())
-    thesis.runExperiment(algorithm=xgb_pipe)
+    thesis.runExperiment(algorithm=sgd_pipe)
     return thesis
 
 
