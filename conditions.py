@@ -1,5 +1,5 @@
 from functools import partial
-from DataGenerator import incrementalDrift, suddenDrift
+from DataGenerator import incrementalDrift, suddenDrift, suddenShock
 import numpy as np
 import pandas as pd
 
@@ -151,10 +151,9 @@ def scenarios():
     drop_important = 0
     drop_medium = 3
     drop_unimportant = 6
-    drop_combination = [0, 3, 6]
 
     dropList = [drop_none, drop_important, drop_medium,
-                drop_unimportant, drop_combination]
+                drop_unimportant]
 
     ###########################################################################
 

@@ -75,7 +75,7 @@ class ExperimentTracker:
         self.customerList = customerList
         self.experiments = []
 
-    def runExperiment(self, algorithm):
+    def runExperiment(self, algorithm, online=False):
         # Run experiment for each condition
         global_start = time.time()
         # Loop over conditions
@@ -99,8 +99,8 @@ class ExperimentTracker:
 
             experiment = Experiment(
                 description=condition, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
-                    "Dropped variable"]
-            )
+                    "Dropped variable"], online=online)
+
             self.experiments.append(experiment)
             print(
                 f"Finished experiment! Elapsed time: {time.time() - startTime}, total Elapsed time: {time.time() - global_start}, Type: {condition['Drift type']}, Dropped variables: {condition['Dropped variable']}, magnitude: {condition['Drift magnitude']}, Drift time: {condition['Drift time']}, importance: {condition['Variable importance']}")
@@ -120,7 +120,6 @@ class Experiment:
         online=False,
     ) -> None:
         self.grouped_series = grouped_series
-        self.algorithm = algorithm
         self.description = description
         self.univariate = univariate
         self.online = online
@@ -142,24 +141,24 @@ class Experiment:
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=91 * 4, shuffle=False
             )  # One year of data
-            self.algorithm.fit(X_train, y_train)  # Fit the model
+            algorithm.fit(X_train, y_train)  # Fit the model
 
         if self.online:
             y_hat = []
+            x = algorithm.named_steps['preprocessor'].transform(X_test)
             for i in range(len(y_test)):
 
-                y_hat.append(self.algorithm.predict(X_test.iloc[[i]]))
+                y_hat.append(algorithm.predict(X_test.iloc[[i]]))
                 # Update the model
                 # y_test[[i]] is suspect if this does not work, maybe this is not the correct way to index a series
-                self.algorithm.fit(X_test.iloc[[i]], y_test[i])
+                algorithm.named_steps["regressor"].partial_fit(
+                    x[i].reshape(1, -1), y_test[[i]])
             y_hat = pd.array(y_hat).T
-            self.residuals = y_test - y_hat
             self.metrics = metrics(y_test, y_hat, description=self.description)
 
         else:
 
-            y_hat = self.algorithm.predict(X_test)  # Predict
-            self.residuals = y_test - y_hat  # Calculate residuals
+            y_hat = algorithm.predict(X_test)  # Predict
             self.metrics = metrics(y_test, y_hat, description=self.description)
 
 
@@ -171,4 +170,4 @@ def metrics(y_test, y_hat, description):
 
 
 def smape(a, f):
-    return round(np.mean(np.abs(a - f) / ((np.abs(f) + np.abs(a))/2))*100, 2)
+    return np.round(np.mean(np.abs(a - f) / ((np.abs(f) + np.abs(a))/2))*100, 2)
