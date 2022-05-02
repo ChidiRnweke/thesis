@@ -1,15 +1,16 @@
 # To do 6: Make and test BOCP drift detection (SHORT) => code exists online
-# To do 7: Finish the hybrid model (SMALL)
-# To do 8: Make a simple online model (SMALL) => DONE
+# To do 7: Code out the switching procedure (MEDIUM)
+# To do 8: Make the online version of GBDT
+# To do 9: GRADUATEEEEEEEEEEE
 
 from typing import List, Dict
 
-from DataGenerator import TimeSeriesGenerator, incrementalDrift, suddenDrift, generateTrend, generateSeasonality
+from DataGenerator import TimeSeriesGenerator, generateTrend, generateSeasonality
 import numpy as np
 import time
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
+from sklearn.metrics import mean_squared_error
 
 
 class SeriesGrouper:
@@ -94,6 +95,7 @@ class ExperimentTracker:
                     driftCondition(series["series"])
                     generateTrend(series["series"], indices=1, magnitude=2)
                     generateSeasonality(series["series"], periods=6, indices=2)
+                    series["series"].weeklyPattern()
 
                 experiment = Experiment(
                     description=condition, algorithm_name=algorithm_name, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
