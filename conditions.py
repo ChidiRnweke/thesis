@@ -144,6 +144,14 @@ def scenarios():
         incrementalDrifLargeUnimportant, time=[275, 305])
     functList.append(incrementalDrifLargeUnimportantU)
     functList.append(noDrift)
+    functList.append(partial(suddenShock(variables=0, window=[
+                     [259, 262], [275, 278]], magnitude=1.5)))
+    functList.append(partial(suddenShock(variables=0, window=[
+                     [259, 262], [275, 278]], magnitude=3)))
+    functList.append(partial(suddenShock(variables=0, window=[
+                     [259, 266], [275, 281]], magnitude=1.5)))
+    functList.append(partial(suddenShock(variables=0, window=[
+                     [259, 266], [275, 281]], magnitude=3)))
 
     ###########################################################################
 
