@@ -5,14 +5,13 @@ class TimeSeriesGradientBoosting:
         self.model1_variables = model1_variables
 
     def fit(self, X, y):
-
         self.model1.fit(X[:, self.model1_variables], y)
-        self.y_pred = self.model1.predict(X)
+        self.y_pred = self.model1.predict(X[:, self.model1_variables])
         residuals = y - self.y_pred
         self.model2.fit(X, residuals)
 
-    def predict(self, X, y):
+    def predict(self, X):
 
-        predictions = self.model1.predict(X[self.model1_variables])
+        predictions = self.model1.predict(X[:, self.model1_variables])
         predictions += self.model2.predict(X)
         return predictions
