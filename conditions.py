@@ -144,14 +144,14 @@ def scenarios():
         incrementalDrifLargeUnimportant, time=[275, 305])
     functList.append(incrementalDrifLargeUnimportantU)
     functList.append(noDrift)
-    functList.append(partial(suddenShock(variables=0, window=[
-                     [259, 262], [275, 278]], magnitude=1.5)))
-    functList.append(partial(suddenShock(variables=0, window=[
-                     [259, 262], [275, 278]], magnitude=3)))
-    functList.append(partial(suddenShock(variables=0, window=[
-                     [259, 266], [275, 281]], magnitude=1.5)))
-    functList.append(partial(suddenShock(variables=0, window=[
-                     [259, 266], [275, 281]], magnitude=3)))
+    functList.append(partial(suddenShock, variables=0, window=[
+                     [259, 262], [275, 278]], magnitude=1.5))
+    functList.append(partial(suddenShock, variables=0, window=[
+                     [259, 262], [275, 278]], magnitude=3))
+    functList.append(partial(suddenShock, variables=0, window=[
+                     [259, 266], [275, 281]], magnitude=1.5))
+    functList.append(partial(suddenShock, variables=0, window=[
+                     [259, 266], [275, 281]], magnitude=3))
 
     ###########################################################################
 
@@ -169,6 +169,7 @@ def scenarios():
     driftType[0: 18] = 'Sudden Drift'
     driftType[18: 36] = 'Incremental Drift'
     driftType[36] = 'No Drift'
+    driftType[37: 40] = 'Sudden Shock'
 
     driftMagnitude = np.empty((len(functList)), dtype=object)
 
@@ -177,6 +178,10 @@ def scenarios():
     dMagnitude[9:18] = 'Large'
     driftMagnitude[0:36] = np.tile(dMagnitude, 2)
     driftMagnitude[36] = 'No Drift'
+    driftMagnitude[37] = 'Small'
+    driftMagnitude[38] = 'Large'
+    driftMagnitude[39] = 'Small'
+    driftMagnitude[40] = 'Large'
 
     driftImportance = np.empty((len(functList)), dtype=object)
 
@@ -186,6 +191,7 @@ def scenarios():
     dImportance[6:9] = 'Unimportant'
     driftImportance[0:36] = np.tile(dImportance, 4)
     driftImportance[36] = 'No Drift'
+    driftImportance[37:40] = 'Important'
 
     times = np.empty(3, dtype=object)
     driftTime = np.empty((len(functList)), dtype=object)
@@ -194,6 +200,7 @@ def scenarios():
     times[2] = 'Unobserved'
     driftTime[0:36] = np.tile(times, 12)
     driftTime[36] = 'No Drift'
+    driftTime[37:40] = 'Noise'
 
     ###########################################################################
 
