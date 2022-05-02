@@ -1,7 +1,3 @@
-# To do 1: implement the evaluation loop for online algorithms (e.g. RNN) => Done
-# To do 3: Implement the training loop for univariate algorithms (SMALL)
-# To do 4: Write out the code to produce the conditions for the paper  (LONG) => Done
-# To do 5: T-test workflow: ability to make a 100 experiments after each other and save data => DONE
 # To do 6: Make and test BOCP drift detection (SHORT) => code exists online
 # To do 7: Finish the hybrid model (SMALL)
 # To do 8: Make a simple online model (SMALL) => DONE
@@ -75,35 +71,37 @@ class ExperimentTracker:
         self.customerList = customerList
         self.experiments = []
 
-    def runExperiment(self, algorithm, online=False):
+    def runExperiment(self, algorithms, algorithm_name, online=False):
         # Run experiment for each condition
         global_start = time.time()
-        # Loop over conditions
-        seeds = np.random.randint(100000000, size=len(
-            self.productList) * len(self.customerList))
-        for condition in self.conditions:
-            startTime = time.time()
 
-            productCopy = self.productList.copy()
+        for algorithm, online, algorithm_name in zip(algorithms, online, algorithm_name):
+            # Loop over conditions
+            seeds = np.random.randint(100000000, size=len(
+                self.productList) * len(self.customerList))
+            for condition in self.conditions:
+                startTime = time.time()
 
-            # We need to copy the list to avoid changing the original list
-            driftCondition = condition["function"]
+                productCopy = self.productList.copy()
 
-            grouped_series = SeriesGrouper(
-                productCopy, self.customerList, seeds=seeds)
+                # We need to copy the list to avoid changing the original list
+                driftCondition = condition["function"]
 
-            for series in grouped_series.timeSeriesInstances:
-                driftCondition(series["series"])
-                generateTrend(series["series"], indices=1, magnitude=2)
-                generateSeasonality(series["series"], periods=6, indices=2)
+                grouped_series = SeriesGrouper(
+                    productCopy, self.customerList, seeds=seeds)
 
-            experiment = Experiment(
-                description=condition, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
-                    "Dropped variable"], online=online)
+                for series in grouped_series.timeSeriesInstances:
+                    driftCondition(series["series"])
+                    generateTrend(series["series"], indices=1, magnitude=2)
+                    generateSeasonality(series["series"], periods=6, indices=2)
 
-            self.experiments.append(experiment)
-            print(
-                f"Finished experiment! Elapsed time: {time.time() - startTime}, total Elapsed time: {time.time() - global_start}, Type: {condition['Drift type']}, Dropped variables: {condition['Dropped variable']}, magnitude: {condition['Drift magnitude']}, Drift time: {condition['Drift time']}, importance: {condition['Variable importance']}")
+                experiment = Experiment(
+                    description=condition, algorithm_name=algorithm_name, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
+                        "Dropped variable"], online=online)
+
+                self.experiments.append(experiment)
+                print(
+                    f"Finished experiment! Elapsed time: {time.time() - startTime}, total Elapsed time: {time.time() - global_start}, Algorithm: {algorithm_name} Type: {condition['Drift type']}, Dropped variables: {condition['Dropped variable']}, magnitude: {condition['Drift magnitude']}, Drift time: {condition['Drift time']}, importance: {condition['Variable importance']}")
 
     def resultsToDF(self):
         return pd.DataFrame([x.metrics for x in self.experiments])
@@ -115,6 +113,7 @@ class Experiment:
         description: Dict,
         grouped_series: SeriesGrouper,
         algorithm,
+        algorithm_name,
         drop=None,
         univariate=False,
         online=False,
@@ -123,6 +122,7 @@ class Experiment:
         self.description = description
         self.univariate = univariate
         self.online = online
+        self.algorithm_name = algorithm_name
 
         if self.univariate:
             pass
@@ -154,19 +154,21 @@ class Experiment:
                 algorithm.named_steps["regressor"].partial_fit(
                     x[i].reshape(1, -1), y_test[[i]])
             y_hat = pd.array(y_hat).T
-            self.metrics = metrics(y_test, y_hat, description=self.description)
+            self.metrics = metrics(
+                y_test, y_hat, description=self.description, name=self.algorithm_name)
 
         else:
 
             y_hat = algorithm.predict(X_test)  # Predict
-            self.metrics = metrics(y_test, y_hat, description=self.description)
+            self.metrics = metrics(
+                y_test, y_hat, description=self.description, name=self.algorithm_name)
 
 
-def metrics(y_test, y_hat, description):
+def metrics(y_test, y_hat, description, name):
     MSE = mean_squared_error(y_test, y_hat)  # Calculate MSE
 
     SMAPE = smape(y_test, y_hat)  # Calculate SMAPE
-    return {"Dropped variable": description["Dropped variable"], 'Drift type': description["Drift type"], 'Drift magnitude': description["Drift magnitude"], 'Variable importance': description["Variable importance"], 'Drift time': description["Drift time"],  "MSE": MSE, "SMAPE": SMAPE}
+    return {"Algorithm": name, "Dropped variable": description["Dropped variable"], 'Drift type': description["Drift type"], 'Drift magnitude': description["Drift magnitude"], 'Variable importance': description["Variable importance"], 'Drift time': description["Drift time"],  "MSE": MSE, "SMAPE": SMAPE}
 
 
 def smape(a, f):
