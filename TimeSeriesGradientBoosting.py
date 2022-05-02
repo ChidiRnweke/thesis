@@ -1,17 +1,18 @@
 class TimeSeriesGradientBoosting:
-    def __init__(self, model1, model2) -> None:
+    def __init__(self, model1, model2, model1_variables) -> None:
         self.model1 = model1
         self.model2 = model2
+        self.model1_variables = model1_variables
 
-    def fit(self, X1, X2, y):
+    def fit(self, X, y):
 
-        self.model1.fit(X1, y)
-        self.y_pred = self.model1.predict(X1)
+        self.model1.fit(X[:, self.model1_variables], y)
+        self.y_pred = self.model1.predict(X)
         residuals = y - self.y_pred
-        self.model2.fit(X2, residuals)
+        self.model2.fit(X, residuals)
 
-    def predict(self, X1, X2):
+    def predict(self, X, y):
 
-        predictions = self.model1.predict(X1)
-        predictions += self.model2.predict(X2)
+        predictions = self.model1.predict(X[self.model1_variables])
+        predictions += self.model2.predict(X)
         return predictions
