@@ -6,7 +6,7 @@ from grouped_series import ExperimentTracker
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer, make_column_selector
 from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LinearRegression, SGDRegressor
+from sklearn.linear_model import RidgeCV, SGDRegressor
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBRegressor
 import pandas as pd
@@ -21,7 +21,7 @@ def full_trail():
 
     hybrid_vars = [0, 1, 2, 3, 4, 5, 6, 7, -3, -2, -1]
     hybrid_model = TimeSeriesGradientBoosting(
-        model1=LinearRegression(), model2=XGBRegressor(), model1_variables=hybrid_vars)
+        model1=RidgeCV(), model2=XGBRegressor(), model1_variables=hybrid_vars)
 
     hybrid_xgb_pipe = Pipeline([
         ('preprocessor', onehot1),
@@ -51,8 +51,8 @@ if __name__ == "__main__":
 
     results = []
     with ProcessPoolExecutor(max_workers=8) as executor:
-        for _ in range(8):
+        for _ in range(104):
             results.append(executor.submit(full_trail).result())
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("full_run_8.csv")
+    results_df.to_csv("full_run_104.csv")
