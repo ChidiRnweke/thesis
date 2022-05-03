@@ -29,6 +29,11 @@ def full_trail():
     ])
 
     sgd_pipe = Pipeline([
+        ('preprocessor', onehot1),
+        ('regressor', SGDRegressor())
+    ])
+
+    sgd_online = Pipeline([
         ('preprocessor', onehot2),
         ('regressor', SGDRegressor())
     ])
@@ -41,8 +46,8 @@ def full_trail():
         products.append(product)
         customers.append(customer)
     thesis = ExperimentTracker(products, customers, scenarios())
-    thesis.runExperiment(algorithms=[hybrid_xgb_pipe, sgd_pipe], algorithm_name=[
-                         "Gradient boosted decision tree", "Linear regression"], online=[False, False])
+    thesis.runExperiment(algorithms=[sgd_pipe, sgd_online], algorithm_name=[
+                         "Linear regression", "Linear regression online"], online=[False, True])
     return thesis
 
 
@@ -51,8 +56,8 @@ if __name__ == "__main__":
 
     results = []
     with ProcessPoolExecutor(max_workers=8) as executor:
-        for _ in range(104):
+        for _ in range(33):
             results.append(executor.submit(full_trail).result())
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("full_run_104.csv")
+    results_df.to_csv("RQ2_50.csv")
