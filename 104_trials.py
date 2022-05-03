@@ -12,7 +12,7 @@ from xgboost import XGBRegressor
 import pandas as pd
 
 
-def full_trail():
+def full_trail(_):
     onehot1 = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
     ), make_column_selector(dtype_include=object))], remainder=StandardScaler())
 
@@ -46,18 +46,17 @@ def full_trail():
         products.append(product)
         customers.append(customer)
     thesis = ExperimentTracker(products, customers, scenarios())
-    thesis.runExperiment(algorithms=[sgd_pipe, sgd_online], algorithm_name=[
-                         "Linear regression", "Linear regression online"], online=[False, True])
+    thesis.runExperiment(algorithms=[hybrid_xgb_pipe, sgd_pipe], algorithm_name=[
+                         "Gradient boosted decision tree", "Linear regression"], online=[False, False])
     return thesis
 
 
 if __name__ == "__main__":
     # run the full trail in parallel using a process pool executor and save the results in a list
 
-    results = []
-    with ProcessPoolExecutor(max_workers=8) as executor:
-        for _ in range(33):
-            results.append(executor.submit(full_trail).result())
+    with ProcessPoolExecutor() as executor:
+        results = executor.map(full_trail, range(100))
+
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
     results_df.to_csv("RQ2_50.csv")
