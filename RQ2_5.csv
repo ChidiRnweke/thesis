@@ -1,0 +1,1641 @@
+,Algorithm,Dropped variable,Drift type,Drift magnitude,Variable importance,Drift time,MSE,SMAPE
+0,Linear regression,,Sudden Drift,Small,Important,Fully observed,29.465579184674016,3.03
+1,Linear regression,,Sudden Drift,Small,Important,Half observed,27.992862505043405,3.01
+2,Linear regression,,Sudden Drift,Small,Important,Unobserved,95.96541422490684,5.99
+3,Linear regression,,Sudden Drift,Small,Medium,Fully observed,28.200591728385625,2.99
+4,Linear regression,,Sudden Drift,Small,Medium,Half observed,26.43237797245761,2.84
+5,Linear regression,,Sudden Drift,Small,Medium,Unobserved,131.9469201995457,7.39
+6,Linear regression,,Sudden Drift,Small,Unimportant,Fully observed,28.29657253654943,3.06
+7,Linear regression,,Sudden Drift,Small,Unimportant,Half observed,26.49934717860724,3.06
+8,Linear regression,,Sudden Drift,Small,Unimportant,Unobserved,41.854344231136956,4.07
+9,Linear regression,,Sudden Drift,Large,Important,Fully observed,32.59109587145198,2.87
+10,Linear regression,,Sudden Drift,Large,Important,Half observed,32.21784362787131,2.9
+11,Linear regression,,Sudden Drift,Large,Important,Unobserved,1047.1125081075004,22.48
+12,Linear regression,,Sudden Drift,Large,Medium,Fully observed,30.91357495643921,2.84
+13,Linear regression,,Sudden Drift,Large,Medium,Half observed,42.17347529715027,3.21
+14,Linear regression,,Sudden Drift,Large,Medium,Unobserved,1354.3044762098305,26.11
+15,Linear regression,,Sudden Drift,Large,Unimportant,Fully observed,28.109971284792334,2.97
+16,Linear regression,,Sudden Drift,Large,Unimportant,Half observed,25.584790263124322,2.93
+17,Linear regression,,Sudden Drift,Large,Unimportant,Unobserved,771.8581142481854,18.02
+18,Linear regression,,Incremental Drift,Small,Important,Fully observed,27.818475637754684,2.96
+19,Linear regression,,Incremental Drift,Small,Important,Half observed,118.45240484423238,6.66
+20,Linear regression,,Incremental Drift,Small,Important,Unobserved,72.17462496076706,4.66
+21,Linear regression,,Incremental Drift,Small,Medium,Fully observed,27.80828973332521,2.98
+22,Linear regression,,Incremental Drift,Small,Medium,Half observed,116.59189950023922,6.6
+23,Linear regression,,Incremental Drift,Small,Medium,Unobserved,98.88648823956574,5.63
+24,Linear regression,,Incremental Drift,Small,Unimportant,Fully observed,26.810695677152324,3.0
+25,Linear regression,,Incremental Drift,Small,Unimportant,Half observed,50.3128790363548,4.36
+26,Linear regression,,Incremental Drift,Small,Unimportant,Unobserved,36.283536745658644,3.64
+27,Linear regression,,Incremental Drift,Large,Important,Fully observed,32.663854263397575,2.88
+28,Linear regression,,Incremental Drift,Large,Important,Half observed,1507.9187316459515,24.57
+29,Linear regression,,Incremental Drift,Large,Important,Unobserved,1061.803322867684,17.72
+30,Linear regression,,Incremental Drift,Large,Medium,Fully observed,30.764512215436202,2.84
+31,Linear regression,,Incremental Drift,Large,Medium,Half observed,1407.0683186139222,23.59
+32,Linear regression,,Incremental Drift,Large,Medium,Unobserved,1277.328079962581,19.67
+33,Linear regression,,Incremental Drift,Large,Unimportant,Fully observed,27.437893219435505,2.96
+34,Linear regression,,Incremental Drift,Large,Unimportant,Half observed,304.6008373907652,10.26
+35,Linear regression,,Incremental Drift,Large,Unimportant,Unobserved,355.6991714064613,10.09
+36,Linear regression,,No Drift,No Drift,No Drift,No Drift,26.98830282165904,3.04
+37,Linear regression,,Sudden Shock,Small,Important,3 days,27.6677878866413,3.1
+38,Linear regression,,Sudden Shock,Large,Important,3 days,26.26391409975455,2.99
+39,Linear regression,,Sudden Shock,Small,Important,7 days,27.278900961539755,3.06
+40,Linear regression,,Sudden Shock,Large,Important,7 days,25.637768385742056,2.96
+41,Linear regression,0.0,Sudden Drift,Small,Important,Fully observed,37.322407058154944,3.64
+42,Linear regression,0.0,Sudden Drift,Small,Important,Half observed,48.195564413738545,3.84
+43,Linear regression,0.0,Sudden Drift,Small,Important,Unobserved,60.389579865794914,4.37
+44,Linear regression,0.0,Sudden Drift,Small,Medium,Fully observed,28.271582123840734,2.96
+45,Linear regression,0.0,Sudden Drift,Small,Medium,Half observed,26.44048706986112,2.83
+46,Linear regression,0.0,Sudden Drift,Small,Medium,Unobserved,131.74986351200062,7.39
+47,Linear regression,0.0,Sudden Drift,Small,Unimportant,Fully observed,27.018771959035504,2.98
+48,Linear regression,0.0,Sudden Drift,Small,Unimportant,Half observed,26.585207980081687,3.06
+49,Linear regression,0.0,Sudden Drift,Small,Unimportant,Unobserved,42.48135761636049,4.08
+50,Linear regression,0.0,Sudden Drift,Large,Important,Fully observed,184.36823558111143,7.47
+51,Linear regression,0.0,Sudden Drift,Large,Important,Half observed,310.12385306991774,11.15
+52,Linear regression,0.0,Sudden Drift,Large,Important,Unobserved,502.9791056064787,14.7
+53,Linear regression,0.0,Sudden Drift,Large,Medium,Fully observed,31.203550920450542,2.85
+54,Linear regression,0.0,Sudden Drift,Large,Medium,Half observed,41.40030002832457,3.18
+55,Linear regression,0.0,Sudden Drift,Large,Medium,Unobserved,1554.0563997032164,28.3
+56,Linear regression,0.0,Sudden Drift,Large,Unimportant,Fully observed,27.93064223829811,2.98
+57,Linear regression,0.0,Sudden Drift,Large,Unimportant,Half observed,25.605883770379183,2.94
+58,Linear regression,0.0,Sudden Drift,Large,Unimportant,Unobserved,747.8037974657278,17.76
+59,Linear regression,0.0,Incremental Drift,Small,Important,Fully observed,35.38793492564041,3.5
+60,Linear regression,0.0,Incremental Drift,Small,Important,Half observed,57.561250980517435,4.2
+61,Linear regression,0.0,Incremental Drift,Small,Important,Unobserved,55.3257746809188,4.0
+62,Linear regression,0.0,Incremental Drift,Small,Medium,Fully observed,27.39369330266361,2.94
+63,Linear regression,0.0,Incremental Drift,Small,Medium,Half observed,119.59335292812162,6.69
+64,Linear regression,0.0,Incremental Drift,Small,Medium,Unobserved,114.93522336291424,6.13
+65,Linear regression,0.0,Incremental Drift,Small,Unimportant,Fully observed,27.032787639352737,3.01
+66,Linear regression,0.0,Incremental Drift,Small,Unimportant,Half observed,46.54653323700365,4.19
+67,Linear regression,0.0,Incremental Drift,Small,Unimportant,Unobserved,47.265161510935854,4.12
+68,Linear regression,0.0,Incremental Drift,Large,Important,Fully observed,172.5113958461283,7.19
+69,Linear regression,0.0,Incremental Drift,Large,Important,Half observed,500.7284052443096,13.13
+70,Linear regression,0.0,Incremental Drift,Large,Important,Unobserved,445.4960390010735,10.95
+71,Linear regression,0.0,Incremental Drift,Large,Medium,Fully observed,30.925714757165924,2.87
+72,Linear regression,0.0,Incremental Drift,Large,Medium,Half observed,1331.7093151943047,22.84
+73,Linear regression,0.0,Incremental Drift,Large,Medium,Unobserved,1311.7231410978795,19.96
+74,Linear regression,0.0,Incremental Drift,Large,Unimportant,Fully observed,26.604382192321083,2.94
+75,Linear regression,0.0,Incremental Drift,Large,Unimportant,Half observed,519.0115492646476,13.21
+76,Linear regression,0.0,Incremental Drift,Large,Unimportant,Unobserved,543.6595685019171,12.17
+77,Linear regression,0.0,No Drift,No Drift,No Drift,No Drift,26.40929640757654,3.01
+78,Linear regression,0.0,Sudden Shock,Small,Important,3 days,27.290379382399525,3.07
+79,Linear regression,0.0,Sudden Shock,Large,Important,3 days,37.52217317156981,3.31
+80,Linear regression,0.0,Sudden Shock,Small,Important,7 days,27.289814256133496,3.07
+81,Linear regression,0.0,Sudden Shock,Large,Important,7 days,40.426335795044196,3.46
+82,Linear regression,3.0,Sudden Drift,Small,Important,Fully observed,28.780297053972415,2.99
+83,Linear regression,3.0,Sudden Drift,Small,Important,Half observed,27.66675197095305,2.99
+84,Linear regression,3.0,Sudden Drift,Small,Important,Unobserved,109.87634929076292,6.54
+85,Linear regression,3.0,Sudden Drift,Small,Medium,Fully observed,37.94618933110622,3.66
+86,Linear regression,3.0,Sudden Drift,Small,Medium,Half observed,46.60483421203102,3.76
+87,Linear regression,3.0,Sudden Drift,Small,Medium,Unobserved,60.41920101157878,4.36
+88,Linear regression,3.0,Sudden Drift,Small,Unimportant,Fully observed,28.401386122700373,3.07
+89,Linear regression,3.0,Sudden Drift,Small,Unimportant,Half observed,27.537097620582433,3.13
+90,Linear regression,3.0,Sudden Drift,Small,Unimportant,Unobserved,73.56855746458925,5.44
+91,Linear regression,3.0,Sudden Drift,Large,Important,Fully observed,32.31740657932778,2.85
+92,Linear regression,3.0,Sudden Drift,Large,Important,Half observed,33.159524373246064,2.94
+93,Linear regression,3.0,Sudden Drift,Large,Important,Unobserved,1888.392410531844,31.75
+94,Linear regression,3.0,Sudden Drift,Large,Medium,Fully observed,194.08560876119114,7.69
+95,Linear regression,3.0,Sudden Drift,Large,Medium,Half observed,316.86653285722537,11.41
+96,Linear regression,3.0,Sudden Drift,Large,Medium,Unobserved,511.01347791004986,14.91
+97,Linear regression,3.0,Sudden Drift,Large,Unimportant,Fully observed,28.256660694587385,2.99
+98,Linear regression,3.0,Sudden Drift,Large,Unimportant,Half observed,25.94612617464913,2.95
+99,Linear regression,3.0,Sudden Drift,Large,Unimportant,Unobserved,824.1166837188707,18.56
+100,Linear regression,3.0,Incremental Drift,Small,Important,Fully observed,28.40783427077113,2.98
+101,Linear regression,3.0,Incremental Drift,Small,Important,Half observed,102.67760365560378,6.09
+102,Linear regression,3.0,Incremental Drift,Small,Important,Unobserved,93.92629196079218,5.45
+103,Linear regression,3.0,Incremental Drift,Small,Medium,Fully observed,34.842439161139794,3.47
+104,Linear regression,3.0,Incremental Drift,Small,Medium,Half observed,57.87039782210321,4.23
+105,Linear regression,3.0,Incremental Drift,Small,Medium,Unobserved,55.01506652129283,3.96
+106,Linear regression,3.0,Incremental Drift,Small,Unimportant,Fully observed,27.773504626926876,3.06
+107,Linear regression,3.0,Incremental Drift,Small,Unimportant,Half observed,61.2459044202935,4.81
+108,Linear regression,3.0,Incremental Drift,Small,Unimportant,Unobserved,50.57063406795744,4.26
+109,Linear regression,3.0,Incremental Drift,Large,Important,Fully observed,32.5258151248089,2.87
+110,Linear regression,3.0,Incremental Drift,Large,Important,Half observed,1763.5202729935559,26.97
+111,Linear regression,3.0,Incremental Drift,Large,Important,Unobserved,1521.6501874934704,21.84
+112,Linear regression,3.0,Incremental Drift,Large,Medium,Fully observed,172.09540390315584,7.19
+113,Linear regression,3.0,Incremental Drift,Large,Medium,Half observed,513.760874215726,13.36
+114,Linear regression,3.0,Incremental Drift,Large,Medium,Unobserved,455.81520113884466,11.09
+115,Linear regression,3.0,Incremental Drift,Large,Unimportant,Fully observed,27.548579993631787,2.98
+116,Linear regression,3.0,Incremental Drift,Large,Unimportant,Half observed,1388.7952011653579,20.55
+117,Linear regression,3.0,Incremental Drift,Large,Unimportant,Unobserved,567.5787229283718,12.4
+118,Linear regression,3.0,No Drift,No Drift,No Drift,No Drift,26.48685035759707,3.02
+119,Linear regression,3.0,Sudden Shock,Small,Important,3 days,27.493777482288692,3.08
+120,Linear regression,3.0,Sudden Shock,Large,Important,3 days,27.155920704414513,3.05
+121,Linear regression,3.0,Sudden Shock,Small,Important,7 days,27.04710651585213,3.06
+122,Linear regression,3.0,Sudden Shock,Large,Important,7 days,26.57211999129426,3.02
+123,Linear regression,6.0,Sudden Drift,Small,Important,Fully observed,27.977339005464916,2.95
+124,Linear regression,6.0,Sudden Drift,Small,Important,Half observed,28.851721983715006,3.07
+125,Linear regression,6.0,Sudden Drift,Small,Important,Unobserved,112.36334136303954,6.61
+126,Linear regression,6.0,Sudden Drift,Small,Medium,Fully observed,29.01207430359182,3.01
+127,Linear regression,6.0,Sudden Drift,Small,Medium,Half observed,27.1019882865142,2.88
+128,Linear regression,6.0,Sudden Drift,Small,Medium,Unobserved,111.34814323100667,6.62
+129,Linear regression,6.0,Sudden Drift,Small,Unimportant,Fully observed,28.023377309186618,3.13
+130,Linear regression,6.0,Sudden Drift,Small,Unimportant,Half observed,26.287465368634273,2.94
+131,Linear regression,6.0,Sudden Drift,Small,Unimportant,Unobserved,27.07607446595625,2.94
+132,Linear regression,6.0,Sudden Drift,Large,Important,Fully observed,32.712943343971595,2.86
+133,Linear regression,6.0,Sudden Drift,Large,Important,Half observed,33.189931780087136,2.96
+134,Linear regression,6.0,Sudden Drift,Large,Important,Unobserved,1141.0451026613446,23.61
+135,Linear regression,6.0,Sudden Drift,Large,Medium,Fully observed,31.90955496982392,2.88
+136,Linear regression,6.0,Sudden Drift,Large,Medium,Half observed,42.097588570615535,3.23
+137,Linear regression,6.0,Sudden Drift,Large,Medium,Unobserved,1758.8813921223036,30.41
+138,Linear regression,6.0,Sudden Drift,Large,Unimportant,Fully observed,29.294984206888184,3.22
+139,Linear regression,6.0,Sudden Drift,Large,Unimportant,Half observed,30.591097830115284,2.99
+140,Linear regression,6.0,Sudden Drift,Large,Unimportant,Unobserved,34.47828053111532,3.16
+141,Linear regression,6.0,Incremental Drift,Small,Important,Fully observed,28.34800718062738,2.99
+142,Linear regression,6.0,Incremental Drift,Small,Important,Half observed,80.38024301124909,5.22
+143,Linear regression,6.0,Incremental Drift,Small,Important,Unobserved,66.96602418518475,4.46
+144,Linear regression,6.0,Incremental Drift,Small,Medium,Fully observed,28.5444353106535,3.01
+145,Linear regression,6.0,Incremental Drift,Small,Medium,Half observed,130.60550001728444,7.07
+146,Linear regression,6.0,Incremental Drift,Small,Medium,Unobserved,100.61808497144341,5.68
+147,Linear regression,6.0,Incremental Drift,Small,Unimportant,Fully observed,25.897349946544878,2.99
+148,Linear regression,6.0,Incremental Drift,Small,Unimportant,Half observed,27.028794257999856,2.98
+149,Linear regression,6.0,Incremental Drift,Small,Unimportant,Unobserved,27.97403564508864,3.03
+150,Linear regression,6.0,Incremental Drift,Large,Important,Fully observed,31.93930632935779,2.85
+151,Linear regression,6.0,Incremental Drift,Large,Important,Half observed,1079.0159601170558,20.24
+152,Linear regression,6.0,Incremental Drift,Large,Important,Unobserved,953.1901086642445,16.68
+153,Linear regression,6.0,Incremental Drift,Large,Medium,Fully observed,30.61480718466937,2.84
+154,Linear regression,6.0,Incremental Drift,Large,Medium,Half observed,1499.3990298485196,24.48
+155,Linear regression,6.0,Incremental Drift,Large,Medium,Unobserved,1368.7753564839447,20.47
+156,Linear regression,6.0,Incremental Drift,Large,Unimportant,Fully observed,27.765073044036058,3.12
+157,Linear regression,6.0,Incremental Drift,Large,Unimportant,Half observed,34.67916744068271,3.19
+158,Linear regression,6.0,Incremental Drift,Large,Unimportant,Unobserved,37.7799735293177,3.26
+159,Linear regression,6.0,No Drift,No Drift,No Drift,No Drift,27.256320182458964,3.07
+160,Linear regression,6.0,Sudden Shock,Small,Important,3 days,26.597039442886334,3.02
+161,Linear regression,6.0,Sudden Shock,Large,Important,3 days,26.809914046021152,3.04
+162,Linear regression,6.0,Sudden Shock,Small,Important,7 days,26.981388235211732,3.06
+163,Linear regression,6.0,Sudden Shock,Large,Important,7 days,27.052525991442877,3.05
+164,Linear regression online,,Sudden Drift,Small,Important,Fully observed,23.710254711123955,[2.67]
+165,Linear regression online,,Sudden Drift,Small,Important,Half observed,24.072544099839092,[2.69]
+166,Linear regression online,,Sudden Drift,Small,Important,Unobserved,24.46570798254819,[2.74]
+167,Linear regression online,,Sudden Drift,Small,Medium,Fully observed,23.519918259092243,[2.66]
+168,Linear regression online,,Sudden Drift,Small,Medium,Half observed,23.583274678461024,[2.63]
+169,Linear regression online,,Sudden Drift,Small,Medium,Unobserved,39.07058878958661,[3.55]
+170,Linear regression online,,Sudden Drift,Small,Unimportant,Fully observed,22.769476147706733,[2.69]
+171,Linear regression online,,Sudden Drift,Small,Unimportant,Half observed,22.511210840884683,[2.66]
+172,Linear regression online,,Sudden Drift,Small,Unimportant,Unobserved,22.522171745658053,[2.68]
+173,Linear regression online,,Sudden Drift,Large,Important,Fully observed,27.12514351541835,[2.57]
+174,Linear regression online,,Sudden Drift,Large,Important,Half observed,27.663507603213905,[2.6]
+175,Linear regression online,,Sudden Drift,Large,Important,Unobserved,29.70118604998728,[2.51]
+176,Linear regression online,,Sudden Drift,Large,Medium,Fully observed,26.824704184734546,[2.58]
+177,Linear regression online,,Sudden Drift,Large,Medium,Half observed,32.555008787105784,[2.82]
+178,Linear regression online,,Sudden Drift,Large,Medium,Unobserved,86.8781097264007,[4.44]
+179,Linear regression online,,Sudden Drift,Large,Unimportant,Fully observed,22.95461601478192,[2.66]
+180,Linear regression online,,Sudden Drift,Large,Unimportant,Half observed,22.710374077027133,[2.62]
+181,Linear regression online,,Sudden Drift,Large,Unimportant,Unobserved,20.189040085136888,[2.23]
+182,Linear regression online,,Incremental Drift,Small,Important,Fully observed,23.647339991430723,[2.66]
+183,Linear regression online,,Incremental Drift,Small,Important,Half observed,24.25978365653811,[2.74]
+184,Linear regression online,,Incremental Drift,Small,Important,Unobserved,24.402152016192794,[2.73]
+185,Linear regression online,,Incremental Drift,Small,Medium,Fully observed,23.62349216167544,[2.68]
+186,Linear regression online,,Incremental Drift,Small,Medium,Half observed,39.642984785506215,[3.44]
+187,Linear regression online,,Incremental Drift,Small,Medium,Unobserved,40.01503921264774,[3.23]
+188,Linear regression online,,Incremental Drift,Small,Unimportant,Fully observed,22.596492661836233,[2.68]
+189,Linear regression online,,Incremental Drift,Small,Unimportant,Half observed,22.693679786485838,[2.7]
+190,Linear regression online,,Incremental Drift,Small,Unimportant,Unobserved,22.6770974992013,[2.68]
+191,Linear regression online,,Incremental Drift,Large,Important,Fully observed,27.515489561826193,[2.59]
+192,Linear regression online,,Incremental Drift,Large,Important,Half observed,8117249980.01349,[156.55]
+193,Linear regression online,,Incremental Drift,Large,Important,Unobserved,1794191152.110118,[123.65]
+194,Linear regression online,,Incremental Drift,Large,Medium,Fully observed,26.812106618508015,[2.6]
+195,Linear regression online,,Incremental Drift,Large,Medium,Half observed,215.299324400922,[4.34]
+196,Linear regression online,,Incremental Drift,Large,Medium,Unobserved,213.50045659322683,[4.14]
+197,Linear regression online,,Incremental Drift,Large,Unimportant,Fully observed,22.862874067305896,[2.66]
+198,Linear regression online,,Incremental Drift,Large,Unimportant,Half observed,99523628.07588051,[112.62]
+199,Linear regression online,,Incremental Drift,Large,Unimportant,Unobserved,57698749.06004828,[100.53]
+200,Linear regression online,,No Drift,No Drift,No Drift,No Drift,22.565247330117955,[2.7]
+201,Linear regression online,,Sudden Shock,Small,Important,3 days,22.79671328753723,[2.73]
+202,Linear regression online,,Sudden Shock,Large,Important,3 days,22.831260057953802,[2.73]
+203,Linear regression online,,Sudden Shock,Small,Important,7 days,22.605433367756742,[2.71]
+204,Linear regression online,,Sudden Shock,Large,Important,7 days,22.50201056198962,[2.69]
+205,Linear regression online,0.0,Sudden Drift,Small,Important,Fully observed,26.28901542328772,[2.89]
+206,Linear regression online,0.0,Sudden Drift,Small,Important,Half observed,28.338079300485752,[2.92]
+207,Linear regression online,0.0,Sudden Drift,Small,Important,Unobserved,30.969502065600903,[3.09]
+208,Linear regression online,0.0,Sudden Drift,Small,Medium,Fully observed,23.72411722818675,[2.68]
+209,Linear regression online,0.0,Sudden Drift,Small,Medium,Half observed,23.609153042918035,[2.64]
+210,Linear regression online,0.0,Sudden Drift,Small,Medium,Unobserved,40.81763006108111,[3.64]
+211,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Fully observed,22.81695620253004,[2.69]
+212,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Half observed,22.55980339345062,[2.66]
+213,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Unobserved,22.602635419355934,[2.68]
+214,Linear regression online,0.0,Sudden Drift,Large,Important,Fully observed,62.84405121533566,[4.29]
+215,Linear regression online,0.0,Sudden Drift,Large,Important,Half observed,99.27053790429967,[5.26]
+216,Linear regression online,0.0,Sudden Drift,Large,Important,Unobserved,142.3831295423989,[6.38]
+217,Linear regression online,0.0,Sudden Drift,Large,Medium,Fully observed,26.76554002508892,[2.57]
+218,Linear regression online,0.0,Sudden Drift,Large,Medium,Half observed,33.2263488352277,[2.86]
+219,Linear regression online,0.0,Sudden Drift,Large,Medium,Unobserved,95.62967620505869,[4.71]
+220,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Fully observed,23.09715144995476,[2.67]
+221,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Half observed,22.607897623190464,[2.61]
+222,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Unobserved,20.243689766615727,[2.24]
+223,Linear regression online,0.0,Incremental Drift,Small,Important,Fully observed,26.199224996409775,[2.88]
+224,Linear regression online,0.0,Incremental Drift,Small,Important,Half observed,30.186506602317554,[3.03]
+225,Linear regression online,0.0,Incremental Drift,Small,Important,Unobserved,30.428189616772915,[2.94]
+226,Linear regression online,0.0,Incremental Drift,Small,Medium,Fully observed,23.911789727013165,[2.69]
+227,Linear regression online,0.0,Incremental Drift,Small,Medium,Half observed,38.546219442921,[3.4]
+228,Linear regression online,0.0,Incremental Drift,Small,Medium,Unobserved,37.59717004397193,[3.16]
+229,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Fully observed,22.60502929538666,[2.67]
+230,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Half observed,23.76131660926296,[2.76]
+231,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Unobserved,22.83589503882703,[2.69]
+232,Linear regression online,0.0,Incremental Drift,Large,Important,Fully observed,63.694378865625374,[4.26]
+233,Linear regression online,0.0,Incremental Drift,Large,Important,Half observed,191.2245770286533,[5.99]
+234,Linear regression online,0.0,Incremental Drift,Large,Important,Unobserved,195.03175730764534,[5.61]
+235,Linear regression online,0.0,Incremental Drift,Large,Medium,Fully observed,26.621695192315276,[2.57]
+236,Linear regression online,0.0,Incremental Drift,Large,Medium,Half observed,202.6437718963715,[4.66]
+237,Linear regression online,0.0,Incremental Drift,Large,Medium,Unobserved,242.3445522890474,[4.3]
+238,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Fully observed,22.773590817091605,[2.64]
+239,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Half observed,180912379.7629921,[122.73]
+240,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Unobserved,346418.3853041439,[20.16]
+241,Linear regression online,0.0,No Drift,No Drift,No Drift,No Drift,22.602947077510905,[2.7]
+242,Linear regression online,0.0,Sudden Shock,Small,Important,3 days,23.71680734846514,[2.79]
+243,Linear regression online,0.0,Sudden Shock,Large,Important,3 days,34.28384371571071,[3.07]
+244,Linear regression online,0.0,Sudden Shock,Small,Important,7 days,23.794347280812193,[2.8]
+245,Linear regression online,0.0,Sudden Shock,Large,Important,7 days,33.96541424355259,[3.07]
+246,Linear regression online,3.0,Sudden Drift,Small,Important,Fully observed,24.028032039405073,[2.7]
+247,Linear regression online,3.0,Sudden Drift,Small,Important,Half observed,24.129638352544788,[2.7]
+248,Linear regression online,3.0,Sudden Drift,Small,Important,Unobserved,24.71276652535196,[2.75]
+249,Linear regression online,3.0,Sudden Drift,Small,Medium,Fully observed,26.156625068712994,[2.89]
+250,Linear regression online,3.0,Sudden Drift,Small,Medium,Half observed,27.63321406593243,[2.91]
+251,Linear regression online,3.0,Sudden Drift,Small,Medium,Unobserved,31.297024680979515,[3.13]
+252,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Fully observed,22.676062196651742,[2.69]
+253,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Half observed,22.551882941101052,[2.68]
+254,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Unobserved,22.599541059953875,[2.69]
+255,Linear regression online,3.0,Sudden Drift,Large,Important,Fully observed,27.318407153213844,[2.58]
+256,Linear regression online,3.0,Sudden Drift,Large,Important,Half observed,27.96910390676321,[2.62]
+257,Linear regression online,3.0,Sudden Drift,Large,Important,Unobserved,29.61449197752294,[2.48]
+258,Linear regression online,3.0,Sudden Drift,Large,Medium,Fully observed,69.8033155906954,[4.53]
+259,Linear regression online,3.0,Sudden Drift,Large,Medium,Half observed,98.48146747321492,[5.23]
+260,Linear regression online,3.0,Sudden Drift,Large,Medium,Unobserved,160.162226264021,[6.87]
+261,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Fully observed,23.0517179441305,[2.67]
+262,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Half observed,22.73865923100401,[2.63]
+263,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Unobserved,20.39015262480042,[2.26]
+264,Linear regression online,3.0,Incremental Drift,Small,Important,Fully observed,24.07437238419571,[2.7]
+265,Linear regression online,3.0,Incremental Drift,Small,Important,Half observed,24.144966524463303,[2.74]
+266,Linear regression online,3.0,Incremental Drift,Small,Important,Unobserved,24.689586127668903,[2.74]
+267,Linear regression online,3.0,Incremental Drift,Small,Medium,Fully observed,26.510630698236476,[2.91]
+268,Linear regression online,3.0,Incremental Drift,Small,Medium,Half observed,30.960273121802786,[3.09]
+269,Linear regression online,3.0,Incremental Drift,Small,Medium,Unobserved,31.029138784193332,[2.96]
+270,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Fully observed,22.943897825587026,[2.71]
+271,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Half observed,22.881154113588945,[2.72]
+272,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Unobserved,23.341684231570895,[2.74]
+273,Linear regression online,3.0,Incremental Drift,Large,Important,Fully observed,27.40138173136936,[2.59]
+274,Linear regression online,3.0,Incremental Drift,Large,Important,Half observed,3355002553.8263235,[151.39]
+275,Linear regression online,3.0,Incremental Drift,Large,Important,Unobserved,6913393378.874066,[127.72]
+276,Linear regression online,3.0,Incremental Drift,Large,Medium,Fully observed,69.7718124990675,[4.45]
+277,Linear regression online,3.0,Incremental Drift,Large,Medium,Half observed,205.0976625670147,[6.36]
+278,Linear regression online,3.0,Incremental Drift,Large,Medium,Unobserved,199.73862995950734,[5.63]
+279,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Fully observed,22.843221797705056,[2.66]
+280,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Half observed,31272066.27998245,[89.26]
+281,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Unobserved,24784689.56389934,[86.81]
+282,Linear regression online,3.0,No Drift,No Drift,No Drift,No Drift,22.856479213539572,[2.73]
+283,Linear regression online,3.0,Sudden Shock,Small,Important,3 days,22.84755355093939,[2.74]
+284,Linear regression online,3.0,Sudden Shock,Large,Important,3 days,23.097715452525012,[2.75]
+285,Linear regression online,3.0,Sudden Shock,Small,Important,7 days,22.982024459859332,[2.75]
+286,Linear regression online,3.0,Sudden Shock,Large,Important,7 days,22.907178289870338,[2.73]
+287,Linear regression online,6.0,Sudden Drift,Small,Important,Fully observed,23.91246006101103,[2.69]
+288,Linear regression online,6.0,Sudden Drift,Small,Important,Half observed,23.935160936302825,[2.68]
+289,Linear regression online,6.0,Sudden Drift,Small,Important,Unobserved,24.472314858264905,[2.74]
+290,Linear regression online,6.0,Sudden Drift,Small,Medium,Fully observed,23.618636345095762,[2.67]
+291,Linear regression online,6.0,Sudden Drift,Small,Medium,Half observed,23.533763276842325,[2.63]
+292,Linear regression online,6.0,Sudden Drift,Small,Medium,Unobserved,41.29108254260925,[3.66]
+293,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Fully observed,22.70124814908342,[2.71]
+294,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Half observed,22.225341259864326,[2.64]
+295,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Unobserved,22.333971505357557,[2.65]
+296,Linear regression online,6.0,Sudden Drift,Large,Important,Fully observed,26.919962819830932,[2.55]
+297,Linear regression online,6.0,Sudden Drift,Large,Important,Half observed,27.82621073774925,[2.6]
+298,Linear regression online,6.0,Sudden Drift,Large,Important,Unobserved,30.984219819843084,[2.56]
+299,Linear regression online,6.0,Sudden Drift,Large,Medium,Fully observed,26.799269920083912,[2.58]
+300,Linear regression online,6.0,Sudden Drift,Large,Medium,Half observed,32.33991543245565,[2.81]
+301,Linear regression online,6.0,Sudden Drift,Large,Medium,Unobserved,97.60156065755912,[4.73]
+302,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Fully observed,23.618582578462927,[2.75]
+303,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Half observed,23.832357667987598,[2.68]
+304,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Unobserved,24.745154792047888,[2.75]
+305,Linear regression online,6.0,Incremental Drift,Small,Important,Fully observed,23.843579963520813,[2.67]
+306,Linear regression online,6.0,Incremental Drift,Small,Important,Half observed,24.186035541291503,[2.74]
+307,Linear regression online,6.0,Incremental Drift,Small,Important,Unobserved,24.12691999135728,[2.72]
+308,Linear regression online,6.0,Incremental Drift,Small,Medium,Fully observed,23.497961978324074,[2.67]
+309,Linear regression online,6.0,Incremental Drift,Small,Medium,Half observed,41.44272025520927,[3.51]
+310,Linear regression online,6.0,Incremental Drift,Small,Medium,Unobserved,42.37855531472807,[3.31]
+311,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Fully observed,22.745230415442645,[2.7]
+312,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Half observed,22.515147198232636,[2.67]
+313,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Unobserved,22.607649414800203,[2.69]
+314,Linear regression online,6.0,Incremental Drift,Large,Important,Fully observed,27.406610628378985,[2.59]
+315,Linear regression online,6.0,Incremental Drift,Large,Important,Half observed,616403911.024427,[136.43]
+316,Linear regression online,6.0,Incremental Drift,Large,Important,Unobserved,3231329553.9798503,[126.33]
+317,Linear regression online,6.0,Incremental Drift,Large,Medium,Fully observed,26.72350006225409,[2.59]
+318,Linear regression online,6.0,Incremental Drift,Large,Medium,Half observed,194.07909818914206,[4.48]
+319,Linear regression online,6.0,Incremental Drift,Large,Medium,Unobserved,232.0358858896501,[4.49]
+320,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Fully observed,23.35610378962802,[2.74]
+321,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Half observed,25.306528307976006,[2.78]
+322,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Unobserved,26.817113443563162,[2.81]
+323,Linear regression online,6.0,No Drift,No Drift,No Drift,No Drift,22.516554617942077,[2.69]
+324,Linear regression online,6.0,Sudden Shock,Small,Important,3 days,22.918967600830076,[2.74]
+325,Linear regression online,6.0,Sudden Shock,Large,Important,3 days,22.919763940881225,[2.73]
+326,Linear regression online,6.0,Sudden Shock,Small,Important,7 days,22.691417548073478,[2.72]
+327,Linear regression online,6.0,Sudden Shock,Large,Important,7 days,22.68869860520224,[2.72]
+0,Linear regression,,Sudden Drift,Small,Important,Fully observed,37.85584410021345,3.14
+1,Linear regression,,Sudden Drift,Small,Important,Half observed,36.4550725296939,3.08
+2,Linear regression,,Sudden Drift,Small,Important,Unobserved,258.2930849090518,9.62
+3,Linear regression,,Sudden Drift,Small,Medium,Fully observed,39.53679453211216,3.41
+4,Linear regression,,Sudden Drift,Small,Medium,Half observed,35.27300224543737,3.21
+5,Linear regression,,Sudden Drift,Small,Medium,Unobserved,33.59217583401193,3.01
+6,Linear regression,,Sudden Drift,Small,Unimportant,Fully observed,38.925537929711695,3.52
+7,Linear regression,,Sudden Drift,Small,Unimportant,Half observed,33.047666312022415,3.22
+8,Linear regression,,Sudden Drift,Small,Unimportant,Unobserved,40.365205479549495,3.64
+9,Linear regression,,Sudden Drift,Large,Important,Fully observed,53.43501282355708,2.93
+10,Linear regression,,Sudden Drift,Large,Important,Half observed,44.319249765241345,2.73
+11,Linear regression,,Sudden Drift,Large,Important,Unobserved,3970.854454074761,36.5
+12,Linear regression,,Sudden Drift,Large,Medium,Fully observed,42.17352982546109,3.09
+13,Linear regression,,Sudden Drift,Large,Medium,Half observed,35.20247300228839,2.89
+14,Linear regression,,Sudden Drift,Large,Medium,Unobserved,241.6867048020019,8.44
+15,Linear regression,,Sudden Drift,Large,Unimportant,Fully observed,38.827943007697286,3.43
+16,Linear regression,,Sudden Drift,Large,Unimportant,Half observed,29.948478859770184,3.02
+17,Linear regression,,Sudden Drift,Large,Unimportant,Unobserved,138.17469617538143,7.03
+18,Linear regression,,Incremental Drift,Small,Important,Fully observed,39.85139321056608,3.22
+19,Linear regression,,Incremental Drift,Small,Important,Half observed,244.3232000948641,8.96
+20,Linear regression,,Incremental Drift,Small,Important,Unobserved,211.36363153063115,7.81
+21,Linear regression,,Incremental Drift,Small,Medium,Fully observed,37.6091335616687,3.31
+22,Linear regression,,Incremental Drift,Small,Medium,Half observed,38.67661696389394,3.32
+23,Linear regression,,Incremental Drift,Small,Medium,Unobserved,55.52630466323322,4.03
+24,Linear regression,,Incremental Drift,Small,Unimportant,Fully observed,34.54292983573267,3.29
+25,Linear regression,,Incremental Drift,Small,Unimportant,Half observed,35.151689095245054,3.34
+26,Linear regression,,Incremental Drift,Small,Unimportant,Unobserved,35.18071819532262,3.35
+27,Linear regression,,Incremental Drift,Large,Important,Fully observed,52.68476101379037,2.9
+28,Linear regression,,Incremental Drift,Large,Important,Half observed,3982.506421691601,31.67
+29,Linear regression,,Incremental Drift,Large,Important,Unobserved,3430.190491596643,25.73
+30,Linear regression,,Incremental Drift,Large,Medium,Fully observed,43.05901007592882,3.13
+31,Linear regression,,Incremental Drift,Large,Medium,Half observed,180.86560115666657,6.54
+32,Linear regression,,Incremental Drift,Large,Medium,Unobserved,247.9134362483349,7.34
+33,Linear regression,,Incremental Drift,Large,Unimportant,Fully observed,37.72362216251522,3.37
+34,Linear regression,,Incremental Drift,Large,Unimportant,Half observed,86.696923825267,5.18
+35,Linear regression,,Incremental Drift,Large,Unimportant,Unobserved,44.75872343242073,3.75
+36,Linear regression,,No Drift,No Drift,No Drift,No Drift,32.55318955854863,3.2
+37,Linear regression,,Sudden Shock,Small,Important,3 days,34.64919453039215,3.3
+38,Linear regression,,Sudden Shock,Large,Important,3 days,36.967234697047445,3.41
+39,Linear regression,,Sudden Shock,Small,Important,7 days,36.050857933425625,3.37
+40,Linear regression,,Sudden Shock,Large,Important,7 days,36.11381989842245,3.36
+41,Linear regression,0.0,Sudden Drift,Small,Important,Fully observed,127.34877984064863,6.13
+42,Linear regression,0.0,Sudden Drift,Small,Important,Half observed,141.1381496814149,6.55
+43,Linear regression,0.0,Sudden Drift,Small,Important,Unobserved,221.44095016133033,8.82
+44,Linear regression,0.0,Sudden Drift,Small,Medium,Fully observed,39.701885950580085,3.41
+45,Linear regression,0.0,Sudden Drift,Small,Medium,Half observed,34.226501830564,3.15
+46,Linear regression,0.0,Sudden Drift,Small,Medium,Unobserved,44.119315114166035,3.5
+47,Linear regression,0.0,Sudden Drift,Small,Unimportant,Fully observed,36.61260519334527,3.41
+48,Linear regression,0.0,Sudden Drift,Small,Unimportant,Half observed,31.9559512898647,3.18
+49,Linear regression,0.0,Sudden Drift,Small,Unimportant,Unobserved,39.779488888657795,3.59
+50,Linear regression,0.0,Sudden Drift,Large,Important,Fully observed,1203.4059000882955,15.22
+51,Linear regression,0.0,Sudden Drift,Large,Important,Half observed,1829.60443843629,23.25
+52,Linear regression,0.0,Sudden Drift,Large,Important,Unobserved,3269.770773705792,32.51
+53,Linear regression,0.0,Sudden Drift,Large,Medium,Fully observed,44.385969992324796,3.17
+54,Linear regression,0.0,Sudden Drift,Large,Medium,Half observed,35.03036054581915,2.87
+55,Linear regression,0.0,Sudden Drift,Large,Medium,Unobserved,236.14150655547587,8.38
+56,Linear regression,0.0,Sudden Drift,Large,Unimportant,Fully observed,39.76304393968186,3.47
+57,Linear regression,0.0,Sudden Drift,Large,Unimportant,Half observed,29.36231366060632,2.98
+58,Linear regression,0.0,Sudden Drift,Large,Unimportant,Unobserved,56.82052347267499,4.34
+59,Linear regression,0.0,Incremental Drift,Small,Important,Fully observed,112.01969887888293,5.69
+60,Linear regression,0.0,Incremental Drift,Small,Important,Half observed,209.89397602413612,8.2
+61,Linear regression,0.0,Incremental Drift,Small,Important,Unobserved,183.43505026112297,7.23
+62,Linear regression,0.0,Incremental Drift,Small,Medium,Fully observed,39.64795844676313,3.41
+63,Linear regression,0.0,Incremental Drift,Small,Medium,Half observed,35.01876927697208,3.16
+64,Linear regression,0.0,Incremental Drift,Small,Medium,Unobserved,40.131530227781994,3.37
+65,Linear regression,0.0,Incremental Drift,Small,Unimportant,Fully observed,36.127950759127536,3.37
+66,Linear regression,0.0,Incremental Drift,Small,Unimportant,Half observed,45.5303090162371,3.86
+67,Linear regression,0.0,Incremental Drift,Small,Unimportant,Unobserved,37.40362005736907,3.46
+68,Linear regression,0.0,Incremental Drift,Large,Important,Fully observed,1145.0446329403665,14.7
+69,Linear regression,0.0,Incremental Drift,Large,Important,Half observed,3333.5749183161374,28.52
+70,Linear regression,0.0,Incremental Drift,Large,Important,Unobserved,2858.809166658247,23.17
+71,Linear regression,0.0,Incremental Drift,Large,Medium,Fully observed,40.38278102651049,3.02
+72,Linear regression,0.0,Incremental Drift,Large,Medium,Half observed,234.92614215623126,7.6
+73,Linear regression,0.0,Incremental Drift,Large,Medium,Unobserved,172.7862065814949,6.04
+74,Linear regression,0.0,Incremental Drift,Large,Unimportant,Fully observed,38.89686559310384,3.42
+75,Linear regression,0.0,Incremental Drift,Large,Unimportant,Half observed,122.54509634242557,6.14
+76,Linear regression,0.0,Incremental Drift,Large,Unimportant,Unobserved,87.43772316251986,5.16
+77,Linear regression,0.0,No Drift,No Drift,No Drift,No Drift,34.01380135645035,3.28
+78,Linear regression,0.0,Sudden Shock,Small,Important,3 days,36.75153816751666,3.4
+79,Linear regression,0.0,Sudden Shock,Large,Important,3 days,111.71416446453759,4.53
+80,Linear regression,0.0,Sudden Shock,Small,Important,7 days,41.40438261997821,3.62
+81,Linear regression,0.0,Sudden Shock,Large,Important,7 days,119.62763886883121,4.71
+82,Linear regression,3.0,Sudden Drift,Small,Important,Fully observed,46.22279508438943,3.5
+83,Linear regression,3.0,Sudden Drift,Small,Important,Half observed,40.14551633442948,3.25
+84,Linear regression,3.0,Sudden Drift,Small,Important,Unobserved,272.74270174778354,9.91
+85,Linear regression,3.0,Sudden Drift,Small,Medium,Fully observed,57.767874398729525,4.16
+86,Linear regression,3.0,Sudden Drift,Small,Medium,Half observed,43.04495504423271,3.43
+87,Linear regression,3.0,Sudden Drift,Small,Medium,Unobserved,56.92203157190312,4.07
+88,Linear regression,3.0,Sudden Drift,Small,Unimportant,Fully observed,38.25727735477791,3.49
+89,Linear regression,3.0,Sudden Drift,Small,Unimportant,Half observed,35.49066102073057,3.35
+90,Linear regression,3.0,Sudden Drift,Small,Unimportant,Unobserved,43.609888433034754,3.76
+91,Linear regression,3.0,Sudden Drift,Large,Important,Fully observed,53.685536887445195,2.93
+92,Linear regression,3.0,Sudden Drift,Large,Important,Half observed,44.03677706136054,2.7
+93,Linear regression,3.0,Sudden Drift,Large,Important,Unobserved,4213.299417133249,37.81
+94,Linear regression,3.0,Sudden Drift,Large,Medium,Fully observed,266.533167778143,8.48
+95,Linear regression,3.0,Sudden Drift,Large,Medium,Half observed,391.61733258235785,11.39
+96,Linear regression,3.0,Sudden Drift,Large,Medium,Unobserved,654.3822020998442,15.24
+97,Linear regression,3.0,Sudden Drift,Large,Unimportant,Fully observed,37.34175784976718,3.35
+98,Linear regression,3.0,Sudden Drift,Large,Unimportant,Half observed,30.069506342008257,3.03
+99,Linear regression,3.0,Sudden Drift,Large,Unimportant,Unobserved,103.46858000883783,6.01
+100,Linear regression,3.0,Incremental Drift,Small,Important,Fully observed,40.00690858305364,3.22
+101,Linear regression,3.0,Incremental Drift,Small,Important,Half observed,263.96569624445516,9.36
+102,Linear regression,3.0,Incremental Drift,Small,Important,Unobserved,239.63710441407815,8.37
+103,Linear regression,3.0,Incremental Drift,Small,Medium,Fully observed,54.99618699952872,4.07
+104,Linear regression,3.0,Incremental Drift,Small,Medium,Half observed,57.72796573090224,4.16
+105,Linear regression,3.0,Incremental Drift,Small,Medium,Unobserved,56.54582658123078,4.07
+106,Linear regression,3.0,Incremental Drift,Small,Unimportant,Fully observed,35.57271383332117,3.34
+107,Linear regression,3.0,Incremental Drift,Small,Unimportant,Half observed,48.67908821201646,4.0
+108,Linear regression,3.0,Incremental Drift,Small,Unimportant,Unobserved,40.16503028744456,3.59
+109,Linear regression,3.0,Incremental Drift,Large,Important,Fully observed,51.906497971095256,2.88
+110,Linear regression,3.0,Incremental Drift,Large,Important,Half observed,4452.306014856758,33.85
+111,Linear regression,3.0,Incremental Drift,Large,Important,Unobserved,3731.196188836832,27.04
+112,Linear regression,3.0,Incremental Drift,Large,Medium,Fully observed,246.80317668375443,8.12
+113,Linear regression,3.0,Incremental Drift,Large,Medium,Half observed,686.1502618009135,13.83
+114,Linear regression,3.0,Incremental Drift,Large,Medium,Unobserved,595.9529399162112,11.62
+115,Linear regression,3.0,Incremental Drift,Large,Unimportant,Fully observed,39.02606427569244,3.43
+116,Linear regression,3.0,Incremental Drift,Large,Unimportant,Half observed,249.85943664680934,8.79
+117,Linear regression,3.0,Incremental Drift,Large,Unimportant,Unobserved,99.70356372305778,5.48
+118,Linear regression,3.0,No Drift,No Drift,No Drift,No Drift,37.93627320106042,3.49
+119,Linear regression,3.0,Sudden Shock,Small,Important,3 days,35.46456119037606,3.35
+120,Linear regression,3.0,Sudden Shock,Large,Important,3 days,34.746384759780554,3.29
+121,Linear regression,3.0,Sudden Shock,Small,Important,7 days,38.80489138843082,3.52
+122,Linear regression,3.0,Sudden Shock,Large,Important,7 days,39.5786008249409,3.54
+123,Linear regression,6.0,Sudden Drift,Small,Important,Fully observed,37.25406558511367,3.11
+124,Linear regression,6.0,Sudden Drift,Small,Important,Half observed,36.21759390251271,3.07
+125,Linear regression,6.0,Sudden Drift,Small,Important,Unobserved,287.2867499824049,10.33
+126,Linear regression,6.0,Sudden Drift,Small,Medium,Fully observed,37.044146872485015,3.28
+127,Linear regression,6.0,Sudden Drift,Small,Medium,Half observed,33.89068638503466,3.13
+128,Linear regression,6.0,Sudden Drift,Small,Medium,Unobserved,36.26519448855051,3.13
+129,Linear regression,6.0,Sudden Drift,Small,Unimportant,Fully observed,35.922375530705665,3.37
+130,Linear regression,6.0,Sudden Drift,Small,Unimportant,Half observed,32.27710039847579,3.13
+131,Linear regression,6.0,Sudden Drift,Small,Unimportant,Unobserved,30.350284132199196,3.03
+132,Linear regression,6.0,Sudden Drift,Large,Important,Fully observed,53.75490207802523,2.94
+133,Linear regression,6.0,Sudden Drift,Large,Important,Half observed,43.46006770101778,2.71
+134,Linear regression,6.0,Sudden Drift,Large,Important,Unobserved,3997.2024348635664,36.63
+135,Linear regression,6.0,Sudden Drift,Large,Medium,Fully observed,43.29193585467368,3.13
+136,Linear regression,6.0,Sudden Drift,Large,Medium,Half observed,35.44423732111231,2.89
+137,Linear regression,6.0,Sudden Drift,Large,Medium,Unobserved,176.21061269154816,7.05
+138,Linear regression,6.0,Sudden Drift,Large,Unimportant,Fully observed,43.55793950377696,3.65
+139,Linear regression,6.0,Sudden Drift,Large,Unimportant,Half observed,29.779550774939597,2.89
+140,Linear regression,6.0,Sudden Drift,Large,Unimportant,Unobserved,35.58031132103791,3.19
+141,Linear regression,6.0,Incremental Drift,Small,Important,Fully observed,40.4227393343745,3.25
+142,Linear regression,6.0,Incremental Drift,Small,Important,Half observed,253.49075792695984,9.19
+143,Linear regression,6.0,Incremental Drift,Small,Important,Unobserved,213.42877344191052,7.85
+144,Linear regression,6.0,Incremental Drift,Small,Medium,Fully observed,36.15904814159912,3.25
+145,Linear regression,6.0,Incremental Drift,Small,Medium,Half observed,35.75040581536661,3.2
+146,Linear regression,6.0,Incremental Drift,Small,Medium,Unobserved,37.02137210196555,3.24
+147,Linear regression,6.0,Incremental Drift,Small,Unimportant,Fully observed,35.03636434869192,3.32
+148,Linear regression,6.0,Incremental Drift,Small,Unimportant,Half observed,32.49682260466349,3.16
+149,Linear regression,6.0,Incremental Drift,Small,Unimportant,Unobserved,33.61423166099174,3.23
+150,Linear regression,6.0,Incremental Drift,Large,Important,Fully observed,49.71384236305373,2.82
+151,Linear regression,6.0,Incremental Drift,Large,Important,Half observed,4316.881729354706,33.22
+152,Linear regression,6.0,Incremental Drift,Large,Important,Unobserved,3609.499195982458,26.49
+153,Linear regression,6.0,Incremental Drift,Large,Medium,Fully observed,40.80774876373532,3.03
+154,Linear regression,6.0,Incremental Drift,Large,Medium,Half observed,303.68760973623466,8.79
+155,Linear regression,6.0,Incremental Drift,Large,Medium,Unobserved,130.93024944233534,5.19
+156,Linear regression,6.0,Incremental Drift,Large,Unimportant,Fully observed,43.72358525490132,3.65
+157,Linear regression,6.0,Incremental Drift,Large,Unimportant,Half observed,38.57558770949687,3.34
+158,Linear regression,6.0,Incremental Drift,Large,Unimportant,Unobserved,42.195006199437444,3.41
+159,Linear regression,6.0,No Drift,No Drift,No Drift,No Drift,33.15026552561979,3.23
+160,Linear regression,6.0,Sudden Shock,Small,Important,3 days,37.19754568170334,3.44
+161,Linear regression,6.0,Sudden Shock,Large,Important,3 days,36.88129224033411,3.41
+162,Linear regression,6.0,Sudden Shock,Small,Important,7 days,33.51557978503836,3.25
+163,Linear regression,6.0,Sudden Shock,Large,Important,7 days,37.32684060700653,3.43
+164,Linear regression online,,Sudden Drift,Small,Important,Fully observed,31.44923738833287,[2.89]
+165,Linear regression online,,Sudden Drift,Small,Important,Half observed,30.17065981025203,[2.82]
+166,Linear regression online,,Sudden Drift,Small,Important,Unobserved,30.839078980387857,[2.8]
+167,Linear regression online,,Sudden Drift,Small,Medium,Fully observed,29.02102919659883,[2.94]
+168,Linear regression online,,Sudden Drift,Small,Medium,Half observed,27.376342869270143,[2.81]
+169,Linear regression online,,Sudden Drift,Small,Medium,Unobserved,28.158445509147132,[2.75]
+170,Linear regression online,,Sudden Drift,Small,Unimportant,Fully observed,28.368988009657098,[3.01]
+171,Linear regression online,,Sudden Drift,Small,Unimportant,Half observed,27.426094376859265,[2.91]
+172,Linear regression online,,Sudden Drift,Small,Unimportant,Unobserved,26.980484482842762,[2.88]
+173,Linear regression online,,Sudden Drift,Large,Important,Fully observed,42.22209239128655,[2.63]
+174,Linear regression online,,Sudden Drift,Large,Important,Half observed,40.09158283779252,[2.54]
+175,Linear regression online,,Sudden Drift,Large,Important,Unobserved,52.26873836178906,[2.64]
+176,Linear regression online,,Sudden Drift,Large,Medium,Fully observed,33.48768829237392,[2.79]
+177,Linear regression online,,Sudden Drift,Large,Medium,Half observed,30.297249446113977,[2.61]
+178,Linear regression online,,Sudden Drift,Large,Medium,Unobserved,42.66863084095422,[2.99]
+179,Linear regression online,,Sudden Drift,Large,Unimportant,Fully observed,28.379079853888975,[2.94]
+180,Linear regression online,,Sudden Drift,Large,Unimportant,Half observed,25.189006602461102,[2.7]
+181,Linear regression online,,Sudden Drift,Large,Unimportant,Unobserved,26.107482554211153,[2.69]
+182,Linear regression online,,Incremental Drift,Small,Important,Fully observed,32.33277249441366,[2.94]
+183,Linear regression online,,Incremental Drift,Small,Important,Half observed,30.31804996350194,[2.82]
+184,Linear regression online,,Incremental Drift,Small,Important,Unobserved,30.418322695822848,[2.88]
+185,Linear regression online,,Incremental Drift,Small,Medium,Fully observed,29.088536573120887,[2.94]
+186,Linear regression online,,Incremental Drift,Small,Medium,Half observed,26.485344008984903,[2.78]
+187,Linear regression online,,Incremental Drift,Small,Medium,Unobserved,36.0792752504933,[3.11]
+188,Linear regression online,,Incremental Drift,Small,Unimportant,Fully observed,28.0637211180761,[2.98]
+189,Linear regression online,,Incremental Drift,Small,Unimportant,Half observed,26.147496447723643,[2.86]
+190,Linear regression online,,Incremental Drift,Small,Unimportant,Unobserved,27.137884978065564,[2.92]
+191,Linear regression online,,Incremental Drift,Large,Important,Fully observed,42.29551771275406,[2.63]
+192,Linear regression online,,Incremental Drift,Large,Important,Half observed,101947387135.52678,[163.64]
+193,Linear regression online,,Incremental Drift,Large,Important,Unobserved,11920033788.148964,[127.78]
+194,Linear regression online,,Incremental Drift,Large,Medium,Fully observed,32.22202935506395,[2.71]
+195,Linear regression online,,Incremental Drift,Large,Medium,Half observed,46.49600026699026,[2.92]
+196,Linear regression online,,Incremental Drift,Large,Medium,Unobserved,33.48548587492548,[2.8]
+197,Linear regression online,,Incremental Drift,Large,Unimportant,Fully observed,28.593254116050108,[2.94]
+198,Linear regression online,,Incremental Drift,Large,Unimportant,Half observed,1554.7176512690874,[5.52]
+199,Linear regression online,,Incremental Drift,Large,Unimportant,Unobserved,657.1747993314285,[4.8]
+200,Linear regression online,,No Drift,No Drift,No Drift,No Drift,27.872909165550446,[2.99]
+201,Linear regression online,,Sudden Shock,Small,Important,3 days,27.233241567788824,[2.93]
+202,Linear regression online,,Sudden Shock,Large,Important,3 days,27.805906193153074,[2.96]
+203,Linear regression online,,Sudden Shock,Small,Important,7 days,28.62958921909245,[3.02]
+204,Linear regression online,,Sudden Shock,Large,Important,7 days,28.027141561829414,[2.97]
+205,Linear regression online,0.0,Sudden Drift,Small,Important,Fully observed,50.92274200496278,[3.79]
+206,Linear regression online,0.0,Sudden Drift,Small,Important,Half observed,64.16918754166406,[3.97]
+207,Linear regression online,0.0,Sudden Drift,Small,Important,Unobserved,98.39859324690671,[5.13]
+208,Linear regression online,0.0,Sudden Drift,Small,Medium,Fully observed,29.93159881650495,[2.98]
+209,Linear regression online,0.0,Sudden Drift,Small,Medium,Half observed,28.444092918921218,[2.87]
+210,Linear regression online,0.0,Sudden Drift,Small,Medium,Unobserved,28.40710572929582,[2.76]
+211,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Fully observed,28.76998789414008,[3.02]
+212,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Half observed,27.09865718531427,[2.88]
+213,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Unobserved,26.838645895493794,[2.86]
+214,Linear regression online,0.0,Sudden Drift,Large,Important,Fully observed,284.89034709327984,[7.23]
+215,Linear regression online,0.0,Sudden Drift,Large,Important,Half observed,530.3322771454939,[9.52]
+216,Linear regression online,0.0,Sudden Drift,Large,Important,Unobserved,1147.9407344789975,[16.13]
+217,Linear regression online,0.0,Sudden Drift,Large,Medium,Fully observed,33.53784263755006,[2.77]
+218,Linear regression online,0.0,Sudden Drift,Large,Medium,Half observed,30.497030374901097,[2.61]
+219,Linear regression online,0.0,Sudden Drift,Large,Medium,Unobserved,31.54892759881283,[2.6]
+220,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Fully observed,29.376426225714198,[2.99]
+221,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Half observed,25.48207462868309,[2.7]
+222,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Unobserved,25.961964365429065,[2.66]
+223,Linear regression online,0.0,Incremental Drift,Small,Important,Fully observed,48.73673795422179,[3.7]
+224,Linear regression online,0.0,Incremental Drift,Small,Important,Half observed,110.2706775485549,[5.18]
+225,Linear regression online,0.0,Incremental Drift,Small,Important,Unobserved,101.10982635733195,[4.81]
+226,Linear regression online,0.0,Incremental Drift,Small,Medium,Fully observed,29.329725649554963,[2.93]
+227,Linear regression online,0.0,Incremental Drift,Small,Medium,Half observed,28.6703483056752,[2.87]
+228,Linear regression online,0.0,Incremental Drift,Small,Medium,Unobserved,37.538159692131096,[3.17]
+229,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Fully observed,29.126667652405906,[3.02]
+230,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Half observed,27.361490293030997,[2.92]
+231,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Unobserved,28.103837889069048,[2.96]
+232,Linear regression online,0.0,Incremental Drift,Large,Important,Fully observed,271.19685221984327,[7.05]
+233,Linear regression online,0.0,Incremental Drift,Large,Important,Half observed,1459.452269272635,[13.72]
+234,Linear regression online,0.0,Incremental Drift,Large,Important,Unobserved,1444.7551027787852,[12.78]
+235,Linear regression online,0.0,Incremental Drift,Large,Medium,Fully observed,33.29603117841574,[2.75]
+236,Linear regression online,0.0,Incremental Drift,Large,Medium,Half observed,40.97167722857729,[2.85]
+237,Linear regression online,0.0,Incremental Drift,Large,Medium,Unobserved,39.0209251305585,[2.88]
+238,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Fully observed,28.843053970180986,[2.95]
+239,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Half observed,241.5181793449358,[4.21]
+240,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Unobserved,544.4995458643913,[4.66]
+241,Linear regression online,0.0,No Drift,No Drift,No Drift,No Drift,28.494728782516397,[3.02]
+242,Linear regression online,0.0,Sudden Shock,Small,Important,3 days,31.8105607885759,[3.16]
+243,Linear regression online,0.0,Sudden Shock,Large,Important,3 days,96.63384412570952,[3.89]
+244,Linear regression online,0.0,Sudden Shock,Small,Important,7 days,32.171090927252116,[3.18]
+245,Linear regression online,0.0,Sudden Shock,Large,Important,7 days,102.45185430900008,[4.01]
+246,Linear regression online,3.0,Sudden Drift,Small,Important,Fully observed,32.30404592219915,[2.94]
+247,Linear regression online,3.0,Sudden Drift,Small,Important,Half observed,30.810368095487373,[2.86]
+248,Linear regression online,3.0,Sudden Drift,Small,Important,Unobserved,31.315760494876052,[2.83]
+249,Linear regression online,3.0,Sudden Drift,Small,Medium,Fully observed,31.033025761595482,[3.09]
+250,Linear regression online,3.0,Sudden Drift,Small,Medium,Half observed,32.15480360665135,[2.89]
+251,Linear regression online,3.0,Sudden Drift,Small,Medium,Unobserved,38.112302741126214,[3.15]
+252,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Fully observed,30.199499658595094,[3.12]
+253,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Half observed,27.24021371185701,[2.9]
+254,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Unobserved,27.838180922845556,[2.93]
+255,Linear regression online,3.0,Sudden Drift,Large,Important,Fully observed,42.98263578155301,[2.66]
+256,Linear regression online,3.0,Sudden Drift,Large,Important,Half observed,40.249266583681894,[2.55]
+257,Linear regression online,3.0,Sudden Drift,Large,Important,Unobserved,64.59329002409724,[2.99]
+258,Linear regression online,3.0,Sudden Drift,Large,Medium,Fully observed,84.12881260456402,[4.58]
+259,Linear regression online,3.0,Sudden Drift,Large,Medium,Half observed,140.72977041676762,[5.79]
+260,Linear regression online,3.0,Sudden Drift,Large,Medium,Unobserved,240.58919127277733,[7.85]
+261,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Fully observed,30.109169299315408,[3.03]
+262,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Half observed,25.64635596929997,[2.73]
+263,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Unobserved,26.794302874169503,[2.71]
+264,Linear regression online,3.0,Incremental Drift,Small,Important,Fully observed,31.594975413229353,[2.9]
+265,Linear regression online,3.0,Incremental Drift,Small,Important,Half observed,32.50403788862263,[2.93]
+266,Linear regression online,3.0,Incremental Drift,Small,Important,Unobserved,31.405041000590135,[2.94]
+267,Linear regression online,3.0,Incremental Drift,Small,Medium,Fully observed,31.708754264458257,[3.12]
+268,Linear regression online,3.0,Incremental Drift,Small,Medium,Half observed,40.86334447876839,[3.28]
+269,Linear regression online,3.0,Incremental Drift,Small,Medium,Unobserved,43.9572484007503,[3.4]
+270,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Fully observed,28.949894650946135,[3.04]
+271,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Half observed,28.77660564534286,[3.04]
+272,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Unobserved,29.095816059742592,[3.03]
+273,Linear regression online,3.0,Incremental Drift,Large,Important,Fully observed,42.93999975671331,[2.66]
+274,Linear regression online,3.0,Incremental Drift,Large,Important,Half observed,197235956179.79095,[164.06]
+275,Linear regression online,3.0,Incremental Drift,Large,Important,Unobserved,154766964922.55566,[130.52]
+276,Linear regression online,3.0,Incremental Drift,Large,Medium,Fully observed,67.45187189416401,[4.05]
+277,Linear regression online,3.0,Incremental Drift,Large,Medium,Half observed,351.98002798720665,[7.72]
+278,Linear regression online,3.0,Incremental Drift,Large,Medium,Unobserved,306.28672432888175,[6.17]
+279,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Fully observed,28.81667827621182,[2.95]
+280,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Half observed,4514.755658449429,[6.96]
+281,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Unobserved,7180.231455932782,[7.13]
+282,Linear regression online,3.0,No Drift,No Drift,No Drift,No Drift,28.02710763612619,[3.]
+283,Linear regression online,3.0,Sudden Shock,Small,Important,3 days,28.707250925173263,[3.04]
+284,Linear regression online,3.0,Sudden Shock,Large,Important,3 days,29.386584637545933,[3.07]
+285,Linear regression online,3.0,Sudden Shock,Small,Important,7 days,28.777345197163633,[3.04]
+286,Linear regression online,3.0,Sudden Shock,Large,Important,7 days,29.651468399546502,[3.08]
+287,Linear regression online,6.0,Sudden Drift,Small,Important,Fully observed,31.768724755108295,[2.91]
+288,Linear regression online,6.0,Sudden Drift,Small,Important,Half observed,30.243412459097986,[2.82]
+289,Linear regression online,6.0,Sudden Drift,Small,Important,Unobserved,30.010144595657607,[2.75]
+290,Linear regression online,6.0,Sudden Drift,Small,Medium,Fully observed,29.790552912279697,[2.99]
+291,Linear regression online,6.0,Sudden Drift,Small,Medium,Half observed,27.801600526290418,[2.83]
+292,Linear regression online,6.0,Sudden Drift,Small,Medium,Unobserved,26.93036596765752,[2.75]
+293,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Fully observed,28.068029983041775,[3.]
+294,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Half observed,26.811708243204645,[2.85]
+295,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Unobserved,26.219155038898133,[2.8]
+296,Linear regression online,6.0,Sudden Drift,Large,Important,Fully observed,42.954677103376994,[2.65]
+297,Linear regression online,6.0,Sudden Drift,Large,Important,Half observed,40.8867938219805,[2.57]
+298,Linear regression online,6.0,Sudden Drift,Large,Important,Unobserved,47.72618622459958,[2.47]
+299,Linear regression online,6.0,Sudden Drift,Large,Medium,Fully observed,33.859239748252485,[2.81]
+300,Linear regression online,6.0,Sudden Drift,Large,Medium,Half observed,30.350080901061173,[2.61]
+301,Linear regression online,6.0,Sudden Drift,Large,Medium,Unobserved,30.29448916593932,[2.57]
+302,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Fully observed,29.267421728086408,[3.02]
+303,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Half observed,27.08174420929995,[2.73]
+304,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Unobserved,28.739160826505827,[2.77]
+305,Linear regression online,6.0,Incremental Drift,Small,Important,Fully observed,31.542152454540034,[2.9]
+306,Linear regression online,6.0,Incremental Drift,Small,Important,Half observed,32.60106128833453,[2.94]
+307,Linear regression online,6.0,Incremental Drift,Small,Important,Unobserved,30.27871675074268,[2.86]
+308,Linear regression online,6.0,Incremental Drift,Small,Medium,Fully observed,29.3344272380881,[2.95]
+309,Linear regression online,6.0,Incremental Drift,Small,Medium,Half observed,30.9822246168273,[2.95]
+310,Linear regression online,6.0,Incremental Drift,Small,Medium,Unobserved,28.795735680385807,[2.88]
+311,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Fully observed,28.95293149230549,[3.05]
+312,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Half observed,27.582911638593618,[2.91]
+313,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Unobserved,28.195261139119932,[2.94]
+314,Linear regression online,6.0,Incremental Drift,Large,Important,Fully observed,42.3866660641743,[2.63]
+315,Linear regression online,6.0,Incremental Drift,Large,Important,Half observed,175140275312.54764,[164.02]
+316,Linear regression online,6.0,Incremental Drift,Large,Important,Unobserved,43885383813.99362,[129.03]
+317,Linear regression online,6.0,Incremental Drift,Large,Medium,Fully observed,33.37584217679069,[2.77]
+318,Linear regression online,6.0,Incremental Drift,Large,Medium,Half observed,52.164922143948935,[2.97]
+319,Linear regression online,6.0,Incremental Drift,Large,Medium,Unobserved,36.02507676226304,[2.84]
+320,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Fully observed,28.61432092534005,[2.98]
+321,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Half observed,34.788247921807844,[3.03]
+322,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Unobserved,38.101159617719134,[3.15]
+323,Linear regression online,6.0,No Drift,No Drift,No Drift,No Drift,27.268605027893535,[2.94]
+324,Linear regression online,6.0,Sudden Shock,Small,Important,3 days,28.06879677782179,[2.99]
+325,Linear regression online,6.0,Sudden Shock,Large,Important,3 days,28.286647998678575,[2.99]
+326,Linear regression online,6.0,Sudden Shock,Small,Important,7 days,28.87184644637238,[3.04]
+327,Linear regression online,6.0,Sudden Shock,Large,Important,7 days,29.27319151477012,[3.05]
+0,Linear regression,,Sudden Drift,Small,Important,Fully observed,30.687177742859323,3.12
+1,Linear regression,,Sudden Drift,Small,Important,Half observed,33.74593144365789,3.25
+2,Linear regression,,Sudden Drift,Small,Important,Unobserved,206.74671786458921,9.48
+3,Linear regression,,Sudden Drift,Small,Medium,Fully observed,29.555814941492677,3.17
+4,Linear regression,,Sudden Drift,Small,Medium,Half observed,29.194900075143423,3.14
+5,Linear regression,,Sudden Drift,Small,Medium,Unobserved,29.48077311240545,3.16
+6,Linear regression,,Sudden Drift,Small,Unimportant,Fully observed,29.66305657321924,3.28
+7,Linear regression,,Sudden Drift,Small,Unimportant,Half observed,32.034952528224416,3.42
+8,Linear regression,,Sudden Drift,Small,Unimportant,Unobserved,46.1551585876905,4.19
+9,Linear regression,,Sudden Drift,Large,Important,Fully observed,36.40339030184658,2.81
+10,Linear regression,,Sudden Drift,Large,Important,Half observed,39.59169699965482,2.9
+11,Linear regression,,Sudden Drift,Large,Important,Unobserved,3253.1770296410873,38.36
+12,Linear regression,,Sudden Drift,Large,Medium,Fully observed,33.565103118012395,3.01
+13,Linear regression,,Sudden Drift,Large,Medium,Half observed,41.54610592681752,3.31
+14,Linear regression,,Sudden Drift,Large,Medium,Unobserved,119.42787435253938,6.08
+15,Linear regression,,Sudden Drift,Large,Unimportant,Fully observed,31.84018235531196,3.34
+16,Linear regression,,Sudden Drift,Large,Unimportant,Half observed,32.865298975644414,3.39
+17,Linear regression,,Sudden Drift,Large,Unimportant,Unobserved,243.23530172826548,10.94
+18,Linear regression,,Incremental Drift,Small,Important,Fully observed,31.152990004405403,3.15
+19,Linear regression,,Incremental Drift,Small,Important,Half observed,205.54746099697826,9.08
+20,Linear regression,,Incremental Drift,Small,Important,Unobserved,158.65892550528883,7.4
+21,Linear regression,,Incremental Drift,Small,Medium,Fully observed,29.84918159913576,3.17
+22,Linear regression,,Incremental Drift,Small,Medium,Half observed,30.04092298598825,3.2
+23,Linear regression,,Incremental Drift,Small,Medium,Unobserved,31.453736973543673,3.31
+24,Linear regression,,Incremental Drift,Small,Unimportant,Fully observed,30.406955752393255,3.33
+25,Linear regression,,Incremental Drift,Small,Unimportant,Half observed,46.88044327179111,4.21
+26,Linear regression,,Incremental Drift,Small,Unimportant,Unobserved,43.262120852277015,3.98
+27,Linear regression,,Incremental Drift,Large,Important,Fully observed,36.60355040885828,2.82
+28,Linear regression,,Incremental Drift,Large,Important,Half observed,2938.212871431381,31.49
+29,Linear regression,,Incremental Drift,Large,Important,Unobserved,2216.5380567133516,23.64
+30,Linear regression,,Incremental Drift,Large,Medium,Fully observed,34.48252330067972,3.05
+31,Linear regression,,Incremental Drift,Large,Medium,Half observed,68.97648030350877,4.32
+32,Linear regression,,Incremental Drift,Large,Medium,Unobserved,237.7412513616379,7.85
+33,Linear regression,,Incremental Drift,Large,Unimportant,Fully observed,30.231611515211526,3.26
+34,Linear regression,,Incremental Drift,Large,Unimportant,Half observed,376.6808203854881,13.16
+35,Linear regression,,Incremental Drift,Large,Unimportant,Unobserved,309.3380024668023,10.69
+36,Linear regression,,No Drift,No Drift,No Drift,No Drift,29.95048903033516,3.31
+37,Linear regression,,Sudden Shock,Small,Important,3 days,30.750906659019513,3.35
+38,Linear regression,,Sudden Shock,Large,Important,3 days,29.44812255173666,3.28
+39,Linear regression,,Sudden Shock,Small,Important,7 days,29.372659317708166,3.28
+40,Linear regression,,Sudden Shock,Large,Important,7 days,28.589092346643497,3.21
+41,Linear regression,0.0,Sudden Drift,Small,Important,Fully observed,58.79523997416461,4.37
+42,Linear regression,0.0,Sudden Drift,Small,Important,Half observed,103.46284441839528,6.21
+43,Linear regression,0.0,Sudden Drift,Small,Important,Unobserved,145.11688384552423,7.63
+44,Linear regression,0.0,Sudden Drift,Small,Medium,Fully observed,29.61967913811164,3.16
+45,Linear regression,0.0,Sudden Drift,Small,Medium,Half observed,29.269650456375416,3.14
+46,Linear regression,0.0,Sudden Drift,Small,Medium,Unobserved,29.29445588359378,3.14
+47,Linear regression,0.0,Sudden Drift,Small,Unimportant,Fully observed,29.455492928255378,3.27
+48,Linear regression,0.0,Sudden Drift,Small,Unimportant,Half observed,34.00968694197284,3.5
+49,Linear regression,0.0,Sudden Drift,Small,Unimportant,Unobserved,57.800715414575706,4.79
+50,Linear regression,0.0,Sudden Drift,Large,Important,Fully observed,559.1719658879864,11.9
+51,Linear regression,0.0,Sudden Drift,Large,Important,Half observed,1025.2084585601913,19.28
+52,Linear regression,0.0,Sudden Drift,Large,Important,Unobserved,1665.6043076347758,25.68
+53,Linear regression,0.0,Sudden Drift,Large,Medium,Fully observed,33.78623546980165,3.03
+54,Linear regression,0.0,Sudden Drift,Large,Medium,Half observed,42.27927867768416,3.33
+55,Linear regression,0.0,Sudden Drift,Large,Medium,Unobserved,194.85700926065184,7.98
+56,Linear regression,0.0,Sudden Drift,Large,Unimportant,Fully observed,30.587042877661794,3.27
+57,Linear regression,0.0,Sudden Drift,Large,Unimportant,Half observed,35.678322305574014,3.53
+58,Linear regression,0.0,Sudden Drift,Large,Unimportant,Unobserved,362.4998537753197,13.86
+59,Linear regression,0.0,Incremental Drift,Small,Important,Fully observed,56.66980081598418,4.3
+60,Linear regression,0.0,Incremental Drift,Small,Important,Half observed,135.13318488203606,7.14
+61,Linear regression,0.0,Incremental Drift,Small,Important,Unobserved,114.41846820747753,6.2
+62,Linear regression,0.0,Incremental Drift,Small,Medium,Fully observed,29.517611395540555,3.16
+63,Linear regression,0.0,Incremental Drift,Small,Medium,Half observed,31.998177840258624,3.28
+64,Linear regression,0.0,Incremental Drift,Small,Medium,Unobserved,30.401752666875208,3.26
+65,Linear regression,0.0,Incremental Drift,Small,Unimportant,Fully observed,30.737610560723944,3.35
+66,Linear regression,0.0,Incremental Drift,Small,Unimportant,Half observed,49.188204011048796,4.32
+67,Linear regression,0.0,Incremental Drift,Small,Unimportant,Unobserved,50.30292546945656,4.29
+68,Linear regression,0.0,Incremental Drift,Large,Important,Fully observed,512.2045906896558,11.33
+69,Linear regression,0.0,Incremental Drift,Large,Important,Half observed,1661.2750774268377,22.54
+70,Linear regression,0.0,Incremental Drift,Large,Important,Unobserved,1426.4331563647506,18.39
+71,Linear regression,0.0,Incremental Drift,Large,Medium,Fully observed,34.95017016924997,3.06
+72,Linear regression,0.0,Incremental Drift,Large,Medium,Half observed,116.67717520509237,5.6
+73,Linear regression,0.0,Incremental Drift,Large,Medium,Unobserved,88.5094181951212,4.88
+74,Linear regression,0.0,Incremental Drift,Large,Unimportant,Fully observed,29.61748891982374,3.23
+75,Linear regression,0.0,Incremental Drift,Large,Unimportant,Half observed,637.2211004017216,17.87
+76,Linear regression,0.0,Incremental Drift,Large,Unimportant,Unobserved,299.6075697960035,10.48
+77,Linear regression,0.0,No Drift,No Drift,No Drift,No Drift,30.18610407742477,3.33
+78,Linear regression,0.0,Sudden Shock,Small,Important,3 days,32.25553233189938,3.43
+79,Linear regression,0.0,Sudden Shock,Large,Important,3 days,65.2308318140808,3.82
+80,Linear regression,0.0,Sudden Shock,Small,Important,7 days,32.803860827154445,3.45
+81,Linear regression,0.0,Sudden Shock,Large,Important,7 days,67.34988003817831,3.82
+82,Linear regression,3.0,Sudden Drift,Small,Important,Fully observed,31.18433459463661,3.15
+83,Linear regression,3.0,Sudden Drift,Small,Important,Half observed,33.33961777447945,3.24
+84,Linear regression,3.0,Sudden Drift,Small,Important,Unobserved,238.1519615724271,10.28
+85,Linear regression,3.0,Sudden Drift,Small,Medium,Fully observed,35.92237466831516,3.44
+86,Linear regression,3.0,Sudden Drift,Small,Medium,Half observed,54.33777091931761,4.35
+87,Linear regression,3.0,Sudden Drift,Small,Medium,Unobserved,66.4919698387257,4.85
+88,Linear regression,3.0,Sudden Drift,Small,Unimportant,Fully observed,29.464251192104843,3.28
+89,Linear regression,3.0,Sudden Drift,Small,Unimportant,Half observed,33.0952402522759,3.47
+90,Linear regression,3.0,Sudden Drift,Small,Unimportant,Unobserved,64.33004313751317,5.09
+91,Linear regression,3.0,Sudden Drift,Large,Important,Fully observed,37.04373016078224,2.83
+92,Linear regression,3.0,Sudden Drift,Large,Important,Half observed,38.50575707958913,2.87
+93,Linear regression,3.0,Sudden Drift,Large,Important,Unobserved,3148.283870775872,37.57
+94,Linear regression,3.0,Sudden Drift,Large,Medium,Fully observed,204.3566257106724,8.04
+95,Linear regression,3.0,Sudden Drift,Large,Medium,Half observed,382.34014535750674,11.71
+96,Linear regression,3.0,Sudden Drift,Large,Medium,Unobserved,605.7661420834305,15.52
+97,Linear regression,3.0,Sudden Drift,Large,Unimportant,Fully observed,30.545307335637506,3.27
+98,Linear regression,3.0,Sudden Drift,Large,Unimportant,Half observed,32.84008975070543,3.39
+99,Linear regression,3.0,Sudden Drift,Large,Unimportant,Unobserved,429.7756695200318,15.39
+100,Linear regression,3.0,Incremental Drift,Small,Important,Fully observed,31.59222955853419,3.17
+101,Linear regression,3.0,Incremental Drift,Small,Important,Half observed,214.41794783889003,9.31
+102,Linear regression,3.0,Incremental Drift,Small,Important,Unobserved,166.1645060621095,7.59
+103,Linear regression,3.0,Incremental Drift,Small,Medium,Fully observed,36.736351510096604,3.5
+104,Linear regression,3.0,Incremental Drift,Small,Medium,Half observed,65.29110106699923,4.77
+105,Linear regression,3.0,Incremental Drift,Small,Medium,Unobserved,62.54370629650603,4.51
+106,Linear regression,3.0,Incremental Drift,Small,Unimportant,Fully observed,29.2077074902907,3.26
+107,Linear regression,3.0,Incremental Drift,Small,Unimportant,Half observed,54.45884529453952,4.59
+108,Linear regression,3.0,Incremental Drift,Small,Unimportant,Unobserved,45.63670345157707,4.1
+109,Linear regression,3.0,Incremental Drift,Large,Important,Fully observed,36.578339819739355,2.83
+110,Linear regression,3.0,Incremental Drift,Large,Important,Half observed,3043.334990706709,32.17
+111,Linear regression,3.0,Incremental Drift,Large,Important,Unobserved,2671.4952659523046,26.45
+112,Linear regression,3.0,Incremental Drift,Large,Medium,Fully observed,176.52189885616966,7.35
+113,Linear regression,3.0,Incremental Drift,Large,Medium,Half observed,619.8943264965058,14.1
+114,Linear regression,3.0,Incremental Drift,Large,Medium,Unobserved,545.8258921060473,11.77
+115,Linear regression,3.0,Incremental Drift,Large,Unimportant,Fully observed,30.462738808340834,3.28
+116,Linear regression,3.0,Incremental Drift,Large,Unimportant,Half observed,426.56957667128466,14.16
+117,Linear regression,3.0,Incremental Drift,Large,Unimportant,Unobserved,351.0372396044968,11.45
+118,Linear regression,3.0,No Drift,No Drift,No Drift,No Drift,29.36729731899261,3.29
+119,Linear regression,3.0,Sudden Shock,Small,Important,3 days,30.326982974304684,3.33
+120,Linear regression,3.0,Sudden Shock,Large,Important,3 days,29.7338062620106,3.29
+121,Linear regression,3.0,Sudden Shock,Small,Important,7 days,29.914174819739365,3.32
+122,Linear regression,3.0,Sudden Shock,Large,Important,7 days,29.810282343754476,3.28
+123,Linear regression,6.0,Sudden Drift,Small,Important,Fully observed,30.84346663113713,3.12
+124,Linear regression,6.0,Sudden Drift,Small,Important,Half observed,35.0307487533987,3.31
+125,Linear regression,6.0,Sudden Drift,Small,Important,Unobserved,237.63014461055846,10.27
+126,Linear regression,6.0,Sudden Drift,Small,Medium,Fully observed,29.89177656388067,3.18
+127,Linear regression,6.0,Sudden Drift,Small,Medium,Half observed,29.3525439232317,3.14
+128,Linear regression,6.0,Sudden Drift,Small,Medium,Unobserved,32.394576167123766,3.31
+129,Linear regression,6.0,Sudden Drift,Small,Unimportant,Fully observed,29.097580840561587,3.25
+130,Linear regression,6.0,Sudden Drift,Small,Unimportant,Half observed,31.50829221864963,3.37
+131,Linear regression,6.0,Sudden Drift,Small,Unimportant,Unobserved,31.47255311282284,3.37
+132,Linear regression,6.0,Sudden Drift,Large,Important,Fully observed,36.48620772949059,2.8
+133,Linear regression,6.0,Sudden Drift,Large,Important,Half observed,38.82305127255774,2.87
+134,Linear regression,6.0,Sudden Drift,Large,Important,Unobserved,3274.9344637195304,38.52
+135,Linear regression,6.0,Sudden Drift,Large,Medium,Fully observed,34.00583519616993,3.03
+136,Linear regression,6.0,Sudden Drift,Large,Medium,Half observed,43.074027125139686,3.37
+137,Linear regression,6.0,Sudden Drift,Large,Medium,Unobserved,63.826326224600734,4.24
+138,Linear regression,6.0,Sudden Drift,Large,Unimportant,Fully observed,31.255376084073063,3.31
+139,Linear regression,6.0,Sudden Drift,Large,Unimportant,Half observed,41.66055541133824,3.85
+140,Linear regression,6.0,Sudden Drift,Large,Unimportant,Unobserved,46.34350816674147,4.11
+141,Linear regression,6.0,Incremental Drift,Small,Important,Fully observed,31.04085812500086,3.14
+142,Linear regression,6.0,Incremental Drift,Small,Important,Half observed,214.6356797589548,9.34
+143,Linear regression,6.0,Incremental Drift,Small,Important,Unobserved,164.8565889364438,7.56
+144,Linear regression,6.0,Incremental Drift,Small,Medium,Fully observed,29.66827739429996,3.16
+145,Linear regression,6.0,Incremental Drift,Small,Medium,Half observed,32.41797912432738,3.34
+146,Linear regression,6.0,Incremental Drift,Small,Medium,Unobserved,31.25590618268886,3.3
+147,Linear regression,6.0,Incremental Drift,Small,Unimportant,Fully observed,29.84599015861542,3.3
+148,Linear regression,6.0,Incremental Drift,Small,Unimportant,Half observed,30.643773368938326,3.32
+149,Linear regression,6.0,Incremental Drift,Small,Unimportant,Unobserved,31.178409283444505,3.35
+150,Linear regression,6.0,Incremental Drift,Large,Important,Fully observed,36.23608138086661,2.8
+151,Linear regression,6.0,Incremental Drift,Large,Important,Half observed,3100.4609246214177,32.54
+152,Linear regression,6.0,Incremental Drift,Large,Important,Unobserved,2857.874393570295,27.55
+153,Linear regression,6.0,Incremental Drift,Large,Medium,Fully observed,34.96869856268069,3.07
+154,Linear regression,6.0,Incremental Drift,Large,Medium,Half observed,57.36965930941865,3.81
+155,Linear regression,6.0,Incremental Drift,Large,Medium,Unobserved,54.17736014228364,3.91
+156,Linear regression,6.0,Incremental Drift,Large,Unimportant,Fully observed,32.21551916744813,3.38
+157,Linear regression,6.0,Incremental Drift,Large,Unimportant,Half observed,42.88531655521698,3.91
+158,Linear regression,6.0,Incremental Drift,Large,Unimportant,Unobserved,41.38147653176301,3.74
+159,Linear regression,6.0,No Drift,No Drift,No Drift,No Drift,29.520708188624383,3.29
+160,Linear regression,6.0,Sudden Shock,Small,Important,3 days,30.538299475681264,3.35
+161,Linear regression,6.0,Sudden Shock,Large,Important,3 days,30.008118973850966,3.3
+162,Linear regression,6.0,Sudden Shock,Small,Important,7 days,29.25449042681881,3.27
+163,Linear regression,6.0,Sudden Shock,Large,Important,7 days,29.359103597977903,3.26
+164,Linear regression online,,Sudden Drift,Small,Important,Fully observed,27.524733702078994,[2.99]
+165,Linear regression online,,Sudden Drift,Small,Important,Half observed,27.595134161333984,[2.99]
+166,Linear regression online,,Sudden Drift,Small,Important,Unobserved,45.93008152812899,[3.69]
+167,Linear regression online,,Sudden Drift,Small,Medium,Fully observed,26.683605582138405,[3.05]
+168,Linear regression online,,Sudden Drift,Small,Medium,Half observed,26.50336179293653,[3.04]
+169,Linear regression online,,Sudden Drift,Small,Medium,Unobserved,26.346275874734456,[3.03]
+170,Linear regression online,,Sudden Drift,Small,Unimportant,Fully observed,26.023312844296974,[3.11]
+171,Linear regression online,,Sudden Drift,Small,Unimportant,Half observed,25.827836819756197,[3.1]
+172,Linear regression online,,Sudden Drift,Small,Unimportant,Unobserved,26.80345581995777,[3.15]
+173,Linear regression online,,Sudden Drift,Large,Important,Fully observed,33.53157638014681,[2.75]
+174,Linear regression online,,Sudden Drift,Large,Important,Half observed,33.654864232751976,[2.75]
+175,Linear regression online,,Sudden Drift,Large,Important,Unobserved,90.21029030395775,[3.72]
+176,Linear regression online,,Sudden Drift,Large,Medium,Fully observed,30.015455268501544,[2.86]
+177,Linear regression online,,Sudden Drift,Large,Medium,Half observed,32.80111023111551,[3.01]
+178,Linear regression online,,Sudden Drift,Large,Medium,Unobserved,35.145682621350005,[3.09]
+179,Linear regression online,,Sudden Drift,Large,Unimportant,Fully observed,26.530027081250623,[3.09]
+180,Linear regression online,,Sudden Drift,Large,Unimportant,Half observed,26.947210737903237,[3.11]
+181,Linear regression online,,Sudden Drift,Large,Unimportant,Unobserved,30.478768927206506,[3.2]
+182,Linear regression online,,Incremental Drift,Small,Important,Fully observed,27.63310019703343,[3.]
+183,Linear regression online,,Incremental Drift,Small,Important,Half observed,47.4380515475554,[3.79]
+184,Linear regression online,,Incremental Drift,Small,Important,Unobserved,49.587554447207225,[3.64]
+185,Linear regression online,,Incremental Drift,Small,Medium,Fully observed,26.64362102130222,[3.03]
+186,Linear regression online,,Incremental Drift,Small,Medium,Half observed,27.411928100214258,[3.13]
+187,Linear regression online,,Incremental Drift,Small,Medium,Unobserved,27.086143897535443,[3.12]
+188,Linear regression online,,Incremental Drift,Small,Unimportant,Fully observed,26.08589188689177,[3.12]
+189,Linear regression online,,Incremental Drift,Small,Unimportant,Half observed,26.452439355516898,[3.14]
+190,Linear regression online,,Incremental Drift,Small,Unimportant,Unobserved,26.41319511386226,[3.11]
+191,Linear regression online,,Incremental Drift,Large,Important,Fully observed,33.567651948489456,[2.75]
+192,Linear regression online,,Incremental Drift,Large,Important,Half observed,288.1595206276922,[3.83]
+193,Linear regression online,,Incremental Drift,Large,Important,Unobserved,236.86959793417782,[3.76]
+194,Linear regression online,,Incremental Drift,Large,Medium,Fully observed,29.91528331814185,[2.85]
+195,Linear regression online,,Incremental Drift,Large,Medium,Half observed,57.85762545153141,[3.69]
+196,Linear regression online,,Incremental Drift,Large,Medium,Unobserved,109.06857435950995,[3.95]
+197,Linear regression online,,Incremental Drift,Large,Unimportant,Fully observed,26.420685967774173,[3.07]
+198,Linear regression online,,Incremental Drift,Large,Unimportant,Half observed,32.95324556611949,[3.21]
+199,Linear regression online,,Incremental Drift,Large,Unimportant,Unobserved,34.64091177122665,[3.2]
+200,Linear regression online,,No Drift,No Drift,No Drift,No Drift,25.735975986519687,[3.11]
+201,Linear regression online,,Sudden Shock,Small,Important,3 days,26.7990519918851,[3.18]
+202,Linear regression online,,Sudden Shock,Large,Important,3 days,25.857329129770772,[3.11]
+203,Linear regression online,,Sudden Shock,Small,Important,7 days,26.349390462050895,[3.14]
+204,Linear regression online,,Sudden Shock,Large,Important,7 days,25.375066890207687,[3.08]
+205,Linear regression online,0.0,Sudden Drift,Small,Important,Fully observed,32.314705767568796,[3.23]
+206,Linear regression online,0.0,Sudden Drift,Small,Important,Half observed,39.35332564934788,[3.52]
+207,Linear regression online,0.0,Sudden Drift,Small,Important,Unobserved,46.16307209113445,[3.79]
+208,Linear regression online,0.0,Sudden Drift,Small,Medium,Fully observed,26.466865679171097,[3.03]
+209,Linear regression online,0.0,Sudden Drift,Small,Medium,Half observed,26.622631758930552,[3.05]
+210,Linear regression online,0.0,Sudden Drift,Small,Medium,Unobserved,26.500174858403145,[3.04]
+211,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Fully observed,25.92520493764917,[3.11]
+212,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Half observed,25.948924166733477,[3.11]
+213,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Unobserved,27.014660139919975,[3.15]
+214,Linear regression online,0.0,Sudden Drift,Large,Important,Fully observed,101.46574620047028,[4.69]
+215,Linear regression online,0.0,Sudden Drift,Large,Important,Half observed,219.9010718683623,[6.62]
+216,Linear regression online,0.0,Sudden Drift,Large,Important,Unobserved,328.96569761689193,[8.59]
+217,Linear regression online,0.0,Sudden Drift,Large,Medium,Fully observed,29.92393594776304,[2.86]
+218,Linear regression online,0.0,Sudden Drift,Large,Medium,Half observed,33.79394912614274,[3.06]
+219,Linear regression online,0.0,Sudden Drift,Large,Medium,Unobserved,38.18858401699836,[3.23]
+220,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Fully observed,26.72214268144589,[3.1]
+221,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Half observed,26.997000463992524,[3.11]
+222,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Unobserved,30.159834214585413,[3.21]
+223,Linear regression online,0.0,Incremental Drift,Small,Important,Fully observed,31.778201890367203,[3.22]
+224,Linear regression online,0.0,Incremental Drift,Small,Important,Half observed,45.24104039249147,[3.82]
+225,Linear regression online,0.0,Incremental Drift,Small,Important,Unobserved,47.59181201926883,[3.71]
+226,Linear regression online,0.0,Incremental Drift,Small,Medium,Fully observed,26.702035710456784,[3.04]
+227,Linear regression online,0.0,Incremental Drift,Small,Medium,Half observed,27.346597839639358,[3.13]
+228,Linear regression online,0.0,Incremental Drift,Small,Medium,Unobserved,27.122451888122118,[3.13]
+229,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Fully observed,26.074752161565144,[3.11]
+230,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Half observed,27.242341641661334,[3.16]
+231,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Unobserved,27.442843444564684,[3.16]
+232,Linear regression online,0.0,Incremental Drift,Large,Important,Fully observed,100.54923780340826,[4.69]
+233,Linear regression online,0.0,Incremental Drift,Large,Important,Half observed,497.98391815492187,[8.27]
+234,Linear regression online,0.0,Incremental Drift,Large,Important,Unobserved,506.092947883183,[6.84]
+235,Linear regression online,0.0,Incremental Drift,Large,Medium,Fully observed,29.980912691419405,[2.86]
+236,Linear regression online,0.0,Incremental Drift,Large,Medium,Half observed,51.10488937029881,[3.65]
+237,Linear regression online,0.0,Incremental Drift,Large,Medium,Unobserved,93.40661427988583,[3.92]
+238,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Fully observed,26.76949024076501,[3.1]
+239,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Half observed,47.04062579408513,[3.38]
+240,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Unobserved,41.11282120957536,[3.29]
+241,Linear regression online,0.0,No Drift,No Drift,No Drift,No Drift,25.93096394213383,[3.12]
+242,Linear regression online,0.0,Sudden Shock,Small,Important,3 days,29.335036786125812,[3.28]
+243,Linear regression online,0.0,Sudden Shock,Large,Important,3 days,65.09958073448247,[3.75]
+244,Linear regression online,0.0,Sudden Shock,Small,Important,7 days,29.74067354266402,[3.25]
+245,Linear regression online,0.0,Sudden Shock,Large,Important,7 days,66.10849772958616,[3.74]
+246,Linear regression online,3.0,Sudden Drift,Small,Important,Fully observed,27.128698313524282,[2.99]
+247,Linear regression online,3.0,Sudden Drift,Small,Important,Half observed,27.332005409855046,[3.]
+248,Linear regression online,3.0,Sudden Drift,Small,Important,Unobserved,49.951995126423576,[3.86]
+249,Linear regression online,3.0,Sudden Drift,Small,Medium,Fully observed,27.730090869888073,[3.12]
+250,Linear regression online,3.0,Sudden Drift,Small,Medium,Half observed,29.58191909827577,[3.13]
+251,Linear regression online,3.0,Sudden Drift,Small,Medium,Unobserved,31.602576676085587,[3.23]
+252,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Fully observed,25.715235897368924,[3.1]
+253,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Half observed,25.61318203393525,[3.09]
+254,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Unobserved,26.765559807540004,[3.15]
+255,Linear regression online,3.0,Sudden Drift,Large,Important,Fully observed,33.160801268798785,[2.73]
+256,Linear regression online,3.0,Sudden Drift,Large,Important,Half observed,33.27213039554962,[2.75]
+257,Linear regression online,3.0,Sudden Drift,Large,Important,Unobserved,92.27243083276242,[3.79]
+258,Linear regression online,3.0,Sudden Drift,Large,Medium,Fully observed,47.84270180929473,[3.68]
+259,Linear regression online,3.0,Sudden Drift,Large,Medium,Half observed,95.33551924259942,[5.02]
+260,Linear regression online,3.0,Sudden Drift,Large,Medium,Unobserved,129.4629007758372,[5.75]
+261,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Fully observed,26.264832048305156,[3.08]
+262,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Half observed,26.732767576701512,[3.11]
+263,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Unobserved,30.3172655049781,[3.21]
+264,Linear regression online,3.0,Incremental Drift,Small,Important,Fully observed,27.46609497315064,[3.01]
+265,Linear regression online,3.0,Incremental Drift,Small,Important,Half observed,49.81267854065905,[3.91]
+266,Linear regression online,3.0,Incremental Drift,Small,Important,Unobserved,55.90624439233734,[3.81]
+267,Linear regression online,3.0,Incremental Drift,Small,Medium,Fully observed,27.243735526813797,[3.1]
+268,Linear regression online,3.0,Incremental Drift,Small,Medium,Half observed,32.85289540561428,[3.37]
+269,Linear regression online,3.0,Incremental Drift,Small,Medium,Unobserved,36.92391792155005,[3.36]
+270,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Fully observed,25.936370883445836,[3.11]
+271,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Half observed,26.61479576991205,[3.15]
+272,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Unobserved,27.011200569311754,[3.13]
+273,Linear regression online,3.0,Incremental Drift,Large,Important,Fully observed,33.32886851724117,[2.75]
+274,Linear regression online,3.0,Incremental Drift,Large,Important,Half observed,236.0315590275899,[3.81]
+275,Linear regression online,3.0,Incremental Drift,Large,Important,Unobserved,266.3246997029846,[3.81]
+276,Linear regression online,3.0,Incremental Drift,Large,Medium,Fully observed,49.021620567517225,[3.76]
+277,Linear regression online,3.0,Incremental Drift,Large,Medium,Half observed,198.37399643107082,[5.61]
+278,Linear regression online,3.0,Incremental Drift,Large,Medium,Unobserved,222.45214144673017,[5.03]
+279,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Fully observed,26.413513987693268,[3.08]
+280,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Half observed,34.1794468776238,[3.22]
+281,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Unobserved,35.13585746215825,[3.21]
+282,Linear regression online,3.0,No Drift,No Drift,No Drift,No Drift,25.67529652264381,[3.11]
+283,Linear regression online,3.0,Sudden Shock,Small,Important,3 days,26.936160550241425,[3.19]
+284,Linear regression online,3.0,Sudden Shock,Large,Important,3 days,25.750131520353538,[3.12]
+285,Linear regression online,3.0,Sudden Shock,Small,Important,7 days,26.780263451335827,[3.16]
+286,Linear regression online,3.0,Sudden Shock,Large,Important,7 days,25.164167965322502,[3.08]
+287,Linear regression online,6.0,Sudden Drift,Small,Important,Fully observed,27.976607115642114,[3.03]
+288,Linear regression online,6.0,Sudden Drift,Small,Important,Half observed,27.66259501361366,[3.]
+289,Linear regression online,6.0,Sudden Drift,Small,Important,Unobserved,46.93490434208679,[3.72]
+290,Linear regression online,6.0,Sudden Drift,Small,Medium,Fully observed,26.573695378040632,[3.04]
+291,Linear regression online,6.0,Sudden Drift,Small,Medium,Half observed,26.61080180002172,[3.04]
+292,Linear regression online,6.0,Sudden Drift,Small,Medium,Unobserved,26.369149494564507,[3.04]
+293,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Fully observed,25.950310594285835,[3.11]
+294,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Half observed,26.33848395957697,[3.13]
+295,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Unobserved,26.188743505612955,[3.11]
+296,Linear regression online,6.0,Sudden Drift,Large,Important,Fully observed,33.90124626833152,[2.75]
+297,Linear regression online,6.0,Sudden Drift,Large,Important,Half observed,33.828189087474925,[2.76]
+298,Linear regression online,6.0,Sudden Drift,Large,Important,Unobserved,92.56555810802445,[3.82]
+299,Linear regression online,6.0,Sudden Drift,Large,Medium,Fully observed,30.13069750213207,[2.87]
+300,Linear regression online,6.0,Sudden Drift,Large,Medium,Half observed,33.52724039782238,[3.05]
+301,Linear regression online,6.0,Sudden Drift,Large,Medium,Unobserved,39.276479724907354,[3.26]
+302,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Fully observed,27.593907941313944,[3.15]
+303,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Half observed,28.72131506070893,[3.22]
+304,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Unobserved,29.538604037448554,[3.27]
+305,Linear regression online,6.0,Incremental Drift,Small,Important,Fully observed,27.89269294625179,[3.02]
+306,Linear regression online,6.0,Incremental Drift,Small,Important,Half observed,45.85658407557671,[3.76]
+307,Linear regression online,6.0,Incremental Drift,Small,Important,Unobserved,50.91764168345963,[3.61]
+308,Linear regression online,6.0,Incremental Drift,Small,Medium,Fully observed,26.560339449788653,[3.03]
+309,Linear regression online,6.0,Incremental Drift,Small,Medium,Half observed,27.553485144362103,[3.14]
+310,Linear regression online,6.0,Incremental Drift,Small,Medium,Unobserved,27.17380381808042,[3.12]
+311,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Fully observed,26.256450564194008,[3.12]
+312,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Half observed,26.029178983891324,[3.11]
+313,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Unobserved,25.991663891711237,[3.1]
+314,Linear regression online,6.0,Incremental Drift,Large,Important,Fully observed,33.99675105392563,[2.76]
+315,Linear regression online,6.0,Incremental Drift,Large,Important,Half observed,272.73031440862894,[3.84]
+316,Linear regression online,6.0,Incremental Drift,Large,Important,Unobserved,223.502394289617,[3.76]
+317,Linear regression online,6.0,Incremental Drift,Large,Medium,Fully observed,30.194398501961427,[2.86]
+318,Linear regression online,6.0,Incremental Drift,Large,Medium,Half observed,542.5677528508759,[5.2]
+319,Linear regression online,6.0,Incremental Drift,Large,Medium,Unobserved,147.53602613358336,[4.15]
+320,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Fully observed,27.11111717100465,[3.12]
+321,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Half observed,28.98354599002117,[3.21]
+322,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Unobserved,30.461927743949946,[3.22]
+323,Linear regression online,6.0,No Drift,No Drift,No Drift,No Drift,25.849864765150134,[3.12]
+324,Linear regression online,6.0,Sudden Shock,Small,Important,3 days,27.820440054580402,[3.22]
+325,Linear regression online,6.0,Sudden Shock,Large,Important,3 days,26.071599298727186,[3.11]
+326,Linear regression online,6.0,Sudden Shock,Small,Important,7 days,26.775257847160642,[3.15]
+327,Linear regression online,6.0,Sudden Shock,Large,Important,7 days,25.56916945869277,[3.09]
+0,Linear regression,,Sudden Drift,Small,Important,Fully observed,38.7516531719624,2.84
+1,Linear regression,,Sudden Drift,Small,Important,Half observed,36.51532055517205,2.65
+2,Linear regression,,Sudden Drift,Small,Important,Unobserved,253.55854559153522,8.41
+3,Linear regression,,Sudden Drift,Small,Medium,Fully observed,36.66844304370387,2.74
+4,Linear regression,,Sudden Drift,Small,Medium,Half observed,42.8388712413058,2.96
+5,Linear regression,,Sudden Drift,Small,Medium,Unobserved,46.54306408849424,3.09
+6,Linear regression,,Sudden Drift,Small,Unimportant,Fully observed,33.522428452472624,2.71
+7,Linear regression,,Sudden Drift,Small,Unimportant,Half observed,36.861707305505654,2.89
+8,Linear regression,,Sudden Drift,Small,Unimportant,Unobserved,95.01534011167801,4.86
+9,Linear regression,,Sudden Drift,Large,Important,Fully observed,44.21632919141983,2.58
+10,Linear regression,,Sudden Drift,Large,Important,Half observed,42.668561257637414,2.5
+11,Linear regression,,Sudden Drift,Large,Important,Unobserved,3778.8633686407793,32.12
+12,Linear regression,,Sudden Drift,Large,Medium,Fully observed,42.44921239106475,2.54
+13,Linear regression,,Sudden Drift,Large,Medium,Half observed,114.0743476539288,4.31
+14,Linear regression,,Sudden Drift,Large,Medium,Unobserved,158.8242647164065,5.28
+15,Linear regression,,Sudden Drift,Large,Unimportant,Fully observed,37.19279345969118,2.83
+16,Linear regression,,Sudden Drift,Large,Unimportant,Half observed,49.36421970524593,3.24
+17,Linear regression,,Sudden Drift,Large,Unimportant,Unobserved,661.7987050792448,13.35
+18,Linear regression,,Incremental Drift,Small,Important,Fully observed,39.42932223539633,2.87
+19,Linear regression,,Incremental Drift,Small,Important,Half observed,230.76428181956294,7.5
+20,Linear regression,,Incremental Drift,Small,Important,Unobserved,186.36847155422407,6.42
+21,Linear regression,,Incremental Drift,Small,Medium,Fully observed,36.73042926236284,2.76
+22,Linear regression,,Incremental Drift,Small,Medium,Half observed,50.46002067088354,3.27
+23,Linear regression,,Incremental Drift,Small,Medium,Unobserved,48.48764353337611,3.23
+24,Linear regression,,Incremental Drift,Small,Unimportant,Fully observed,34.83066915084032,2.8
+25,Linear regression,,Incremental Drift,Small,Unimportant,Half observed,84.38185658550155,4.51
+26,Linear regression,,Incremental Drift,Small,Unimportant,Unobserved,71.35293497460259,4.1
+27,Linear regression,,Incremental Drift,Large,Important,Fully observed,46.03949106052733,2.65
+28,Linear regression,,Incremental Drift,Large,Important,Half observed,3785.1552814890165,27.73
+29,Linear regression,,Incremental Drift,Large,Important,Unobserved,3191.729884164198,22.6
+30,Linear regression,,Incremental Drift,Large,Medium,Fully observed,43.029139594606214,2.56
+31,Linear regression,,Incremental Drift,Large,Medium,Half observed,165.23505834553185,5.13
+32,Linear regression,,Incremental Drift,Large,Medium,Unobserved,136.21830003259,4.59
+33,Linear regression,,Incremental Drift,Large,Unimportant,Fully observed,35.37335116006605,2.76
+34,Linear regression,,Incremental Drift,Large,Unimportant,Half observed,648.952219289162,11.94
+35,Linear regression,,Incremental Drift,Large,Unimportant,Unobserved,619.2337662778293,10.65
+36,Linear regression,,No Drift,No Drift,No Drift,No Drift,33.665491241678794,2.77
+37,Linear regression,,Sudden Shock,Small,Important,3 days,36.49403489590715,2.91
+38,Linear regression,,Sudden Shock,Large,Important,3 days,34.137023620063886,2.8
+39,Linear regression,,Sudden Shock,Small,Important,7 days,35.9484901069213,2.87
+40,Linear regression,,Sudden Shock,Large,Important,7 days,33.67645457876239,2.76
+41,Linear regression,0.0,Sudden Drift,Small,Important,Fully observed,76.66522521373828,4.03
+42,Linear regression,0.0,Sudden Drift,Small,Important,Half observed,87.29260867785452,4.48
+43,Linear regression,0.0,Sudden Drift,Small,Important,Unobserved,124.99772543677533,5.57
+44,Linear regression,0.0,Sudden Drift,Small,Medium,Fully observed,36.104078930407695,2.72
+45,Linear regression,0.0,Sudden Drift,Small,Medium,Half observed,40.357043931636376,2.9
+46,Linear regression,0.0,Sudden Drift,Small,Medium,Unobserved,45.54624958862739,3.06
+47,Linear regression,0.0,Sudden Drift,Small,Unimportant,Fully observed,33.35687150700514,2.71
+48,Linear regression,0.0,Sudden Drift,Small,Unimportant,Half observed,35.8364287969249,2.85
+49,Linear regression,0.0,Sudden Drift,Small,Unimportant,Unobserved,79.55975841896725,4.39
+50,Linear regression,0.0,Sudden Drift,Large,Important,Fully observed,610.7623911719573,10.34
+51,Linear regression,0.0,Sudden Drift,Large,Important,Half observed,1070.6076080549092,14.97
+52,Linear regression,0.0,Sudden Drift,Large,Important,Unobserved,1686.7409545118667,19.96
+53,Linear regression,0.0,Sudden Drift,Large,Medium,Fully observed,42.42472198688434,2.53
+54,Linear regression,0.0,Sudden Drift,Large,Medium,Half observed,111.22923596312158,4.3
+55,Linear regression,0.0,Sudden Drift,Large,Medium,Unobserved,176.3784547715405,5.55
+56,Linear regression,0.0,Sudden Drift,Large,Unimportant,Fully observed,35.23130394925607,2.74
+57,Linear regression,0.0,Sudden Drift,Large,Unimportant,Half observed,50.68873912684708,3.28
+58,Linear regression,0.0,Sudden Drift,Large,Unimportant,Unobserved,625.3104226849296,13.0
+59,Linear regression,0.0,Incremental Drift,Small,Important,Fully observed,71.11775372476032,3.87
+60,Linear regression,0.0,Incremental Drift,Small,Important,Half observed,115.94663659621142,5.1
+61,Linear regression,0.0,Incremental Drift,Small,Important,Unobserved,95.36874732029901,4.53
+62,Linear regression,0.0,Incremental Drift,Small,Medium,Fully observed,35.79894609295075,2.71
+63,Linear regression,0.0,Incremental Drift,Small,Medium,Half observed,41.24849927882501,2.94
+64,Linear regression,0.0,Incremental Drift,Small,Medium,Unobserved,44.62332146439063,3.08
+65,Linear regression,0.0,Incremental Drift,Small,Unimportant,Fully observed,34.88325572047746,2.8
+66,Linear regression,0.0,Incremental Drift,Small,Unimportant,Half observed,80.84007410413342,4.42
+67,Linear regression,0.0,Incremental Drift,Small,Unimportant,Unobserved,79.1025371577275,4.33
+68,Linear regression,0.0,Incremental Drift,Large,Important,Fully observed,539.84556204429,9.55
+69,Linear regression,0.0,Incremental Drift,Large,Important,Half observed,1723.7154712105953,17.45
+70,Linear regression,0.0,Incremental Drift,Large,Important,Unobserved,1442.8272769736832,14.38
+71,Linear regression,0.0,Incremental Drift,Large,Medium,Fully observed,42.77335843772589,2.56
+72,Linear regression,0.0,Incremental Drift,Large,Medium,Half observed,140.70867328871608,4.8
+73,Linear regression,0.0,Incremental Drift,Large,Medium,Unobserved,222.40632856388723,5.66
+74,Linear regression,0.0,Incremental Drift,Large,Unimportant,Fully observed,36.08279522706371,2.79
+75,Linear regression,0.0,Incremental Drift,Large,Unimportant,Half observed,554.4729132678412,11.07
+76,Linear regression,0.0,Incremental Drift,Large,Unimportant,Unobserved,725.1011109619168,11.43
+77,Linear regression,0.0,No Drift,No Drift,No Drift,No Drift,33.4349825109796,2.76
+78,Linear regression,0.0,Sudden Shock,Small,Important,3 days,36.148901095343646,2.9
+79,Linear regression,0.0,Sudden Shock,Large,Important,3 days,71.45472458197116,3.36
+80,Linear regression,0.0,Sudden Shock,Small,Important,7 days,36.35954813692907,2.88
+81,Linear regression,0.0,Sudden Shock,Large,Important,7 days,74.27376921271663,3.35
+82,Linear regression,3.0,Sudden Drift,Small,Important,Fully observed,37.05540419189839,2.75
+83,Linear regression,3.0,Sudden Drift,Small,Important,Half observed,37.749149492834555,2.67
+84,Linear regression,3.0,Sudden Drift,Small,Important,Unobserved,242.44420392820263,8.21
+85,Linear regression,3.0,Sudden Drift,Small,Medium,Fully observed,77.40443305177442,4.12
+86,Linear regression,3.0,Sudden Drift,Small,Medium,Half observed,79.99976907003176,3.87
+87,Linear regression,3.0,Sudden Drift,Small,Medium,Unobserved,111.43328425143217,4.65
+88,Linear regression,3.0,Sudden Drift,Small,Unimportant,Fully observed,33.75596669467969,2.72
+89,Linear regression,3.0,Sudden Drift,Small,Unimportant,Half observed,37.06816095626823,2.87
+90,Linear regression,3.0,Sudden Drift,Small,Unimportant,Unobserved,80.79770368278061,4.45
+91,Linear regression,3.0,Sudden Drift,Large,Important,Fully observed,44.220970786958866,2.57
+92,Linear regression,3.0,Sudden Drift,Large,Important,Half observed,42.66065697008308,2.49
+93,Linear regression,3.0,Sudden Drift,Large,Important,Unobserved,3747.403097688021,31.93
+94,Linear regression,3.0,Sudden Drift,Large,Medium,Fully observed,564.6836194645683,10.32
+95,Linear regression,3.0,Sudden Drift,Large,Medium,Half observed,856.530264904019,13.47
+96,Linear regression,3.0,Sudden Drift,Large,Medium,Unobserved,1387.6531031430918,18.05
+97,Linear regression,3.0,Sudden Drift,Large,Unimportant,Fully observed,34.69992251696623,2.7
+98,Linear regression,3.0,Sudden Drift,Large,Unimportant,Half observed,48.26151908531371,3.19
+99,Linear regression,3.0,Sudden Drift,Large,Unimportant,Unobserved,917.9869931179097,15.65
+100,Linear regression,3.0,Incremental Drift,Small,Important,Fully observed,39.39572929023355,2.86
+101,Linear regression,3.0,Incremental Drift,Small,Important,Half observed,229.7158208946911,7.48
+102,Linear regression,3.0,Incremental Drift,Small,Important,Unobserved,183.35177534280336,6.37
+103,Linear regression,3.0,Incremental Drift,Small,Medium,Fully observed,71.43116750939254,3.95
+104,Linear regression,3.0,Incremental Drift,Small,Medium,Half observed,109.49281995249771,4.43
+105,Linear regression,3.0,Incremental Drift,Small,Medium,Unobserved,90.70347613336979,3.99
+106,Linear regression,3.0,Incremental Drift,Small,Unimportant,Fully observed,34.83255082631904,2.77
+107,Linear regression,3.0,Incremental Drift,Small,Unimportant,Half observed,73.09610167666054,4.19
+108,Linear regression,3.0,Incremental Drift,Small,Unimportant,Unobserved,65.81164038551057,3.95
+109,Linear regression,3.0,Incremental Drift,Large,Important,Fully observed,45.64267505669823,2.62
+110,Linear regression,3.0,Incremental Drift,Large,Important,Half observed,3745.8656573153303,27.57
+111,Linear regression,3.0,Incremental Drift,Large,Important,Unobserved,3290.292420763733,23.03
+112,Linear regression,3.0,Incremental Drift,Large,Medium,Fully observed,507.79046570117833,9.7
+113,Linear regression,3.0,Incremental Drift,Large,Medium,Half observed,1432.7935842739753,15.98
+114,Linear regression,3.0,Incremental Drift,Large,Medium,Unobserved,1226.5208599778634,13.13
+115,Linear regression,3.0,Incremental Drift,Large,Unimportant,Fully observed,35.903473103251414,2.77
+116,Linear regression,3.0,Incremental Drift,Large,Unimportant,Half observed,562.1315781124008,11.14
+117,Linear regression,3.0,Incremental Drift,Large,Unimportant,Unobserved,528.1798709476896,9.95
+118,Linear regression,3.0,No Drift,No Drift,No Drift,No Drift,34.16114454304408,2.77
+119,Linear regression,3.0,Sudden Shock,Small,Important,3 days,36.60434397418121,2.89
+120,Linear regression,3.0,Sudden Shock,Large,Important,3 days,34.87629686991077,2.82
+121,Linear regression,3.0,Sudden Shock,Small,Important,7 days,36.251355362302995,2.88
+122,Linear regression,3.0,Sudden Shock,Large,Important,7 days,33.758670493523944,2.75
+123,Linear regression,6.0,Sudden Drift,Small,Important,Fully observed,36.69754286471187,2.74
+124,Linear regression,6.0,Sudden Drift,Small,Important,Half observed,36.03920671934677,2.63
+125,Linear regression,6.0,Sudden Drift,Small,Important,Unobserved,257.1986896700506,8.47
+126,Linear regression,6.0,Sudden Drift,Small,Medium,Fully observed,36.38680018984532,2.72
+127,Linear regression,6.0,Sudden Drift,Small,Medium,Half observed,43.19594002256051,2.99
+128,Linear regression,6.0,Sudden Drift,Small,Medium,Unobserved,43.3045374155161,2.97
+129,Linear regression,6.0,Sudden Drift,Small,Unimportant,Fully observed,36.85374279720013,2.9
+130,Linear regression,6.0,Sudden Drift,Small,Unimportant,Half observed,35.60577380076096,2.76
+131,Linear regression,6.0,Sudden Drift,Small,Unimportant,Unobserved,35.147750140798124,2.74
+132,Linear regression,6.0,Sudden Drift,Large,Important,Fully observed,46.41039539820062,2.66
+133,Linear regression,6.0,Sudden Drift,Large,Important,Half observed,42.75696035895894,2.49
+134,Linear regression,6.0,Sudden Drift,Large,Important,Unobserved,3696.535518014902,31.74
+135,Linear regression,6.0,Sudden Drift,Large,Medium,Fully observed,43.21830753216268,2.55
+136,Linear regression,6.0,Sudden Drift,Large,Medium,Half observed,113.92469696182879,4.33
+137,Linear regression,6.0,Sudden Drift,Large,Medium,Unobserved,176.4112861137348,5.54
+138,Linear regression,6.0,Sudden Drift,Large,Unimportant,Fully observed,53.28336323289542,3.47
+139,Linear regression,6.0,Sudden Drift,Large,Unimportant,Half observed,62.37464443229994,3.43
+140,Linear regression,6.0,Sudden Drift,Large,Unimportant,Unobserved,78.63962991411408,3.75
+141,Linear regression,6.0,Incremental Drift,Small,Important,Fully observed,39.56955903355613,2.88
+142,Linear regression,6.0,Incremental Drift,Small,Important,Half observed,222.81173361770544,7.35
+143,Linear regression,6.0,Incremental Drift,Small,Important,Unobserved,181.1350671750901,6.32
+144,Linear regression,6.0,Incremental Drift,Small,Medium,Fully observed,36.37719014077883,2.74
+145,Linear regression,6.0,Incremental Drift,Small,Medium,Half observed,47.700871057201404,3.16
+146,Linear regression,6.0,Incremental Drift,Small,Medium,Unobserved,42.83787535842186,3.0
+147,Linear regression,6.0,Incremental Drift,Small,Unimportant,Fully observed,37.06717262118783,2.92
+148,Linear regression,6.0,Incremental Drift,Small,Unimportant,Half observed,36.2481684093416,2.79
+149,Linear regression,6.0,Incremental Drift,Small,Unimportant,Unobserved,36.55560111559828,2.81
+150,Linear regression,6.0,Incremental Drift,Large,Important,Fully observed,44.766857205429496,2.61
+151,Linear regression,6.0,Incremental Drift,Large,Important,Half observed,3823.6141896119807,27.95
+152,Linear regression,6.0,Incremental Drift,Large,Important,Unobserved,2901.011982825954,21.36
+153,Linear regression,6.0,Incremental Drift,Large,Medium,Fully observed,42.382341709684326,2.53
+154,Linear regression,6.0,Incremental Drift,Large,Medium,Half observed,182.10959333281133,5.35
+155,Linear regression,6.0,Incremental Drift,Large,Medium,Unobserved,168.8948367424398,5.0
+156,Linear regression,6.0,Incremental Drift,Large,Unimportant,Fully observed,52.17474532861392,3.42
+157,Linear regression,6.0,Incremental Drift,Large,Unimportant,Half observed,77.63564316478306,3.6
+158,Linear regression,6.0,Incremental Drift,Large,Unimportant,Unobserved,76.16106065757013,3.48
+159,Linear regression,6.0,No Drift,No Drift,No Drift,No Drift,33.79545553658627,2.78
+160,Linear regression,6.0,Sudden Shock,Small,Important,3 days,35.43336329296927,2.86
+161,Linear regression,6.0,Sudden Shock,Large,Important,3 days,34.249341138903205,2.8
+162,Linear regression,6.0,Sudden Shock,Small,Important,7 days,35.498985474830135,2.85
+163,Linear regression,6.0,Sudden Shock,Large,Important,7 days,33.638951998926274,2.75
+164,Linear regression online,,Sudden Drift,Small,Important,Fully observed,34.3943983351973,[2.61]
+165,Linear regression online,,Sudden Drift,Small,Important,Half observed,37.07748435225704,[2.71]
+166,Linear regression online,,Sudden Drift,Small,Important,Unobserved,77.4822075608141,[3.92]
+167,Linear regression online,,Sudden Drift,Small,Medium,Fully observed,35.025965169580616,[2.65]
+168,Linear regression online,,Sudden Drift,Small,Medium,Half observed,36.460124255099615,[2.68]
+169,Linear regression online,,Sudden Drift,Small,Medium,Unobserved,37.341728452441096,[2.45]
+170,Linear regression online,,Sudden Drift,Small,Unimportant,Fully observed,32.963386499038336,[2.67]
+171,Linear regression online,,Sudden Drift,Small,Unimportant,Half observed,34.05996839339024,[2.7]
+172,Linear regression online,,Sudden Drift,Small,Unimportant,Unobserved,36.142786063101454,[2.74]
+173,Linear regression online,,Sudden Drift,Large,Important,Fully observed,42.152005770977155,[2.49]
+174,Linear regression online,,Sudden Drift,Large,Important,Half observed,42.38207390079702,[2.49]
+175,Linear regression online,,Sudden Drift,Large,Important,Unobserved,286.0651768911098,[5.58]
+176,Linear regression online,,Sudden Drift,Large,Medium,Fully observed,42.6821687172219,[2.54]
+177,Linear regression online,,Sudden Drift,Large,Medium,Half observed,64.56959250846579,[3.07]
+178,Linear regression online,,Sudden Drift,Large,Medium,Unobserved,2.8711243548649895e+25,[197.17]
+179,Linear regression online,,Sudden Drift,Large,Unimportant,Fully observed,33.803763633995416,[2.65]
+180,Linear regression online,,Sudden Drift,Large,Unimportant,Half observed,39.44718768221857,[2.79]
+181,Linear regression online,,Sudden Drift,Large,Unimportant,Unobserved,1.340116541580119e+24,[194.85]
+182,Linear regression online,,Incremental Drift,Small,Important,Fully observed,34.42358104633272,[2.62]
+183,Linear regression online,,Incremental Drift,Small,Important,Half observed,83.6513907136638,[3.91]
+184,Linear regression online,,Incremental Drift,Small,Important,Unobserved,84.69414664883055,[3.88]
+185,Linear regression online,,Incremental Drift,Small,Medium,Fully observed,35.03646000095538,[2.64]
+186,Linear regression online,,Incremental Drift,Small,Medium,Half observed,21152.838423938894,[7.52]
+187,Linear regression online,,Incremental Drift,Small,Medium,Unobserved,16465.61414153884,[6.62]
+188,Linear regression online,,Incremental Drift,Small,Unimportant,Fully observed,33.30150824578069,[2.68]
+189,Linear regression online,,Incremental Drift,Small,Unimportant,Half observed,35.94231417279652,[2.73]
+190,Linear regression online,,Incremental Drift,Small,Unimportant,Unobserved,36.37162293951079,[2.77]
+191,Linear regression online,,Incremental Drift,Large,Important,Fully observed,42.11049648035823,[2.49]
+192,Linear regression online,,Incremental Drift,Large,Important,Half observed,413.9889805079511,[3.97]
+193,Linear regression online,,Incremental Drift,Large,Important,Unobserved,442.77226090045957,[3.82]
+194,Linear regression online,,Incremental Drift,Large,Medium,Fully observed,43.575696031582076,[2.6]
+195,Linear regression online,,Incremental Drift,Large,Medium,Half observed,2.660876871518942e+25,[167.24]
+196,Linear regression online,,Incremental Drift,Large,Medium,Unobserved,1.9000571632772572e+25,[132.49]
+197,Linear regression online,,Incremental Drift,Large,Unimportant,Fully observed,34.01419248286778,[2.65]
+198,Linear regression online,,Incremental Drift,Large,Unimportant,Half observed,1.2224232026390885e+24,[166.81]
+199,Linear regression online,,Incremental Drift,Large,Unimportant,Unobserved,1.0667805193985861e+24,[132.16]
+200,Linear regression online,,No Drift,No Drift,No Drift,No Drift,32.72991230669,[2.69]
+201,Linear regression online,,Sudden Shock,Small,Important,3 days,35.2058272527029,[2.74]
+202,Linear regression online,,Sudden Shock,Large,Important,3 days,32.28812632455202,[2.66]
+203,Linear regression online,,Sudden Shock,Small,Important,7 days,34.86745871368752,[2.76]
+204,Linear regression online,,Sudden Shock,Large,Important,7 days,32.152395493636604,[2.66]
+205,Linear regression online,0.0,Sudden Drift,Small,Important,Fully observed,41.45219809381065,[2.87]
+206,Linear regression online,0.0,Sudden Drift,Small,Important,Half observed,55.437882888942156,[3.39]
+207,Linear regression online,0.0,Sudden Drift,Small,Important,Unobserved,66.70060591014501,[3.72]
+208,Linear regression online,0.0,Sudden Drift,Small,Medium,Fully observed,35.04628517202408,[2.64]
+209,Linear regression online,0.0,Sudden Drift,Small,Medium,Half observed,36.810258683742454,[2.68]
+210,Linear regression online,0.0,Sudden Drift,Small,Medium,Unobserved,37.718134550052646,[2.45]
+211,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Fully observed,32.855691643828635,[2.66]
+212,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Half observed,33.53155168091016,[2.67]
+213,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Unobserved,35.644026584475924,[2.73]
+214,Linear regression online,0.0,Sudden Drift,Large,Important,Fully observed,152.54742712088998,[4.87]
+215,Linear regression online,0.0,Sudden Drift,Large,Important,Half observed,340.19515088956166,[7.14]
+216,Linear regression online,0.0,Sudden Drift,Large,Important,Unobserved,561.736921285833,[9.64]
+217,Linear regression online,0.0,Sudden Drift,Large,Medium,Fully observed,42.65421054701278,[2.52]
+218,Linear regression online,0.0,Sudden Drift,Large,Medium,Half observed,67.23700138158634,[3.13]
+219,Linear regression online,0.0,Sudden Drift,Large,Medium,Unobserved,4.0977283271028835e+25,[197.19]
+220,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Fully observed,33.67932091889187,[2.65]
+221,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Half observed,39.76536136629444,[2.79]
+222,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Unobserved,4.176088281896124e+23,[190.53]
+223,Linear regression online,0.0,Incremental Drift,Small,Important,Fully observed,38.699495638051594,[2.79]
+224,Linear regression online,0.0,Incremental Drift,Small,Important,Half observed,63.368122972821936,[3.51]
+225,Linear regression online,0.0,Incremental Drift,Small,Important,Unobserved,66.09517835680818,[3.56]
+226,Linear regression online,0.0,Incremental Drift,Small,Medium,Fully observed,34.88686658614732,[2.64]
+227,Linear regression online,0.0,Incremental Drift,Small,Medium,Half observed,32366.030810523982,[8.53]
+228,Linear regression online,0.0,Incremental Drift,Small,Medium,Unobserved,17427.584318472713,[6.64]
+229,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Fully observed,32.852416529703525,[2.66]
+230,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Half observed,35.49174436588999,[2.72]
+231,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Unobserved,36.44154070129767,[2.76]
+232,Linear regression online,0.0,Incremental Drift,Large,Important,Fully observed,179.7564870501367,[5.34]
+233,Linear regression online,0.0,Incremental Drift,Large,Important,Half observed,678.829211176924,[8.27]
+234,Linear regression online,0.0,Incremental Drift,Large,Important,Unobserved,701.1299571936313,[7.72]
+235,Linear regression online,0.0,Incremental Drift,Large,Medium,Fully observed,42.75852553046583,[2.55]
+236,Linear regression online,0.0,Incremental Drift,Large,Medium,Half observed,3.6366885555086252e+25,[167.32]
+237,Linear regression online,0.0,Incremental Drift,Large,Medium,Unobserved,2.695698316878647e+25,[132.52]
+238,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Fully observed,34.09659880550678,[2.64]
+239,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Half observed,1.0123994293367728e+24,[166.84]
+240,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Unobserved,8.573073869764158e+23,[132.14]
+241,Linear regression online,0.0,No Drift,No Drift,No Drift,No Drift,32.41071031800552,[2.68]
+242,Linear regression online,0.0,Sudden Shock,Small,Important,3 days,35.264928138901126,[2.75]
+243,Linear regression online,0.0,Sudden Shock,Large,Important,3 days,71.77219319228136,[3.12]
+244,Linear regression online,0.0,Sudden Shock,Small,Important,7 days,36.01909236224451,[2.79]
+245,Linear regression online,0.0,Sudden Shock,Large,Important,7 days,76.61069846620863,[3.18]
+246,Linear regression online,3.0,Sudden Drift,Small,Important,Fully observed,34.37996644169997,[2.61]
+247,Linear regression online,3.0,Sudden Drift,Small,Important,Half observed,36.54638444957693,[2.69]
+248,Linear regression online,3.0,Sudden Drift,Small,Important,Unobserved,79.33067355018986,[3.98]
+249,Linear regression online,3.0,Sudden Drift,Small,Medium,Fully observed,42.16191946882325,[2.91]
+250,Linear regression online,3.0,Sudden Drift,Small,Medium,Half observed,47.02572132255393,[3.]
+251,Linear regression online,3.0,Sudden Drift,Small,Medium,Unobserved,56.81116332714741,[3.31]
+252,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Fully observed,33.17917950051522,[2.69]
+253,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Half observed,33.88164923769103,[2.69]
+254,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Unobserved,35.638987385990504,[2.74]
+255,Linear regression online,3.0,Sudden Drift,Large,Important,Fully observed,41.87365563577765,[2.49]
+256,Linear regression online,3.0,Sudden Drift,Large,Important,Half observed,42.51910332237954,[2.49]
+257,Linear regression online,3.0,Sudden Drift,Large,Important,Unobserved,271.55497860311516,[5.34]
+258,Linear regression online,3.0,Sudden Drift,Large,Medium,Fully observed,153.6406856036161,[5.16]
+259,Linear regression online,3.0,Sudden Drift,Large,Medium,Half observed,236.96438430914137,[5.79]
+260,Linear regression online,3.0,Sudden Drift,Large,Medium,Unobserved,401.470292211226,[7.98]
+261,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Fully observed,33.790050696842435,[2.65]
+262,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Half observed,39.589680936725244,[2.81]
+263,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Unobserved,1.1974394835029408e+24,[194.49]
+264,Linear regression online,3.0,Incremental Drift,Small,Important,Fully observed,34.36991462530067,[2.61]
+265,Linear regression online,3.0,Incremental Drift,Small,Important,Half observed,79.06799730012382,[3.78]
+266,Linear regression online,3.0,Incremental Drift,Small,Important,Unobserved,87.07041449381437,[3.96]
+267,Linear regression online,3.0,Incremental Drift,Small,Medium,Fully observed,40.17353383376735,[2.84]
+268,Linear regression online,3.0,Incremental Drift,Small,Medium,Half observed,58.30739919299958,[3.26]
+269,Linear regression online,3.0,Incremental Drift,Small,Medium,Unobserved,60.441423497964394,[3.22]
+270,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Fully observed,33.255724064017706,[2.69]
+271,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Half observed,35.666029497356895,[2.73]
+272,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Unobserved,36.13176339093392,[2.77]
+273,Linear regression online,3.0,Incremental Drift,Large,Important,Fully observed,41.841367510703485,[2.49]
+274,Linear regression online,3.0,Incremental Drift,Large,Important,Half observed,410.3304519736291,[3.95]
+275,Linear regression online,3.0,Incremental Drift,Large,Important,Unobserved,433.64886704057346,[3.8]
+276,Linear regression online,3.0,Incremental Drift,Large,Medium,Fully observed,134.59992961745408,[4.77]
+277,Linear regression online,3.0,Incremental Drift,Large,Medium,Half observed,548.5531778373405,[7.16]
+278,Linear regression online,3.0,Incremental Drift,Large,Medium,Unobserved,529.2220737471237,[6.4]
+279,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Fully observed,33.91456330714224,[2.65]
+280,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Half observed,1.4103944000087115e+24,[166.93]
+281,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Unobserved,1.1051331337065786e+24,[132.2]
+282,Linear regression online,3.0,No Drift,No Drift,No Drift,No Drift,32.681532279991245,[2.69]
+283,Linear regression online,3.0,Sudden Shock,Small,Important,3 days,35.51708100969289,[2.76]
+284,Linear regression online,3.0,Sudden Shock,Large,Important,3 days,32.295603115660555,[2.66]
+285,Linear regression online,3.0,Sudden Shock,Small,Important,7 days,35.445535784530115,[2.78]
+286,Linear regression online,3.0,Sudden Shock,Large,Important,7 days,32.0447061815579,[2.66]
+287,Linear regression online,6.0,Sudden Drift,Small,Important,Fully observed,34.82258233020129,[2.62]
+288,Linear regression online,6.0,Sudden Drift,Small,Important,Half observed,36.47547296037568,[2.68]
+289,Linear regression online,6.0,Sudden Drift,Small,Important,Unobserved,78.69339649435734,[3.97]
+290,Linear regression online,6.0,Sudden Drift,Small,Medium,Fully observed,35.05584910607425,[2.65]
+291,Linear regression online,6.0,Sudden Drift,Small,Medium,Half observed,37.18768865062253,[2.69]
+292,Linear regression online,6.0,Sudden Drift,Small,Medium,Unobserved,38.4785868204989,[2.49]
+293,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Fully observed,33.334931491038596,[2.7]
+294,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Half observed,33.99100535906182,[2.7]
+295,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Unobserved,34.15794530243687,[2.7]
+296,Linear regression online,6.0,Sudden Drift,Large,Important,Fully observed,42.218841680506216,[2.49]
+297,Linear regression online,6.0,Sudden Drift,Large,Important,Half observed,42.56502266383146,[2.49]
+298,Linear regression online,6.0,Sudden Drift,Large,Important,Unobserved,230.2045510365602,[4.84]
+299,Linear regression online,6.0,Sudden Drift,Large,Medium,Fully observed,42.572491957919965,[2.54]
+300,Linear regression online,6.0,Sudden Drift,Large,Medium,Half observed,67.3024092146478,[3.14]
+301,Linear regression online,6.0,Sudden Drift,Large,Medium,Unobserved,3.4561717718885853e+25,[197.18]
+302,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Fully observed,37.403943168413406,[2.78]
+303,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Half observed,44.0716836339155,[2.92]
+304,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Unobserved,45.88144994087744,[2.96]
+305,Linear regression online,6.0,Incremental Drift,Small,Important,Fully observed,34.619615066133846,[2.62]
+306,Linear regression online,6.0,Incremental Drift,Small,Important,Half observed,87.21273154284717,[4.04]
+307,Linear regression online,6.0,Incremental Drift,Small,Important,Unobserved,80.7597613703782,[3.76]
+308,Linear regression online,6.0,Incremental Drift,Small,Medium,Fully observed,34.98198548150947,[2.64]
+309,Linear regression online,6.0,Incremental Drift,Small,Medium,Half observed,34692.86486452318,[8.64]
+310,Linear regression online,6.0,Incremental Drift,Small,Medium,Unobserved,9784.182507945856,[6.01]
+311,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Fully observed,33.22048971420664,[2.68]
+312,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Half observed,34.35084916647864,[2.72]
+313,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Unobserved,35.103257107311194,[2.74]
+314,Linear regression online,6.0,Incremental Drift,Large,Important,Fully observed,42.27491042620453,[2.49]
+315,Linear regression online,6.0,Incremental Drift,Large,Important,Half observed,406.0790128466332,[3.99]
+316,Linear regression online,6.0,Incremental Drift,Large,Important,Unobserved,421.7437605808697,[3.81]
+317,Linear regression online,6.0,Incremental Drift,Large,Medium,Fully observed,43.050553992603014,[2.53]
+318,Linear regression online,6.0,Incremental Drift,Large,Medium,Half observed,3.8855259307033645e+25,[167.22]
+319,Linear regression online,6.0,Incremental Drift,Large,Medium,Unobserved,2.1515553939110033e+25,[132.47]
+320,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Fully observed,36.02368984892992,[2.73]
+321,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Half observed,52.8523926118373,[3.05]
+322,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Unobserved,56.861648180383014,[3.04]
+323,Linear regression online,6.0,No Drift,No Drift,No Drift,No Drift,32.68200955988983,[2.69]
+324,Linear regression online,6.0,Sudden Shock,Small,Important,3 days,35.52572787894804,[2.75]
+325,Linear regression online,6.0,Sudden Shock,Large,Important,3 days,32.38807179842843,[2.66]
+326,Linear regression online,6.0,Sudden Shock,Small,Important,7 days,34.03009587876199,[2.74]
+327,Linear regression online,6.0,Sudden Shock,Large,Important,7 days,32.13452480161802,[2.66]
+0,Linear regression,,Sudden Drift,Small,Important,Fully observed,27.521476370080002,3.18
+1,Linear regression,,Sudden Drift,Small,Important,Half observed,25.329311788392896,3.01
+2,Linear regression,,Sudden Drift,Small,Important,Unobserved,96.00215207352606,6.61
+3,Linear regression,,Sudden Drift,Small,Medium,Fully observed,24.72469141725341,3.02
+4,Linear regression,,Sudden Drift,Small,Medium,Half observed,29.40171741227671,3.43
+5,Linear regression,,Sudden Drift,Small,Medium,Unobserved,29.29793284288037,3.37
+6,Linear regression,,Sudden Drift,Small,Unimportant,Fully observed,23.381941167051348,3.07
+7,Linear regression,,Sudden Drift,Small,Unimportant,Half observed,25.0667047805408,3.29
+8,Linear regression,,Sudden Drift,Small,Unimportant,Unobserved,39.838263696589,4.24
+9,Linear regression,,Sudden Drift,Large,Important,Fully observed,35.21824463469719,2.91
+10,Linear regression,,Sudden Drift,Large,Important,Half observed,31.377960397582317,2.76
+11,Linear regression,,Sudden Drift,Large,Important,Unobserved,628.7451006998209,16.04
+12,Linear regression,,Sudden Drift,Large,Medium,Fully observed,29.96477781275272,2.95
+13,Linear regression,,Sudden Drift,Large,Medium,Half observed,48.5507705978088,3.93
+14,Linear regression,,Sudden Drift,Large,Medium,Unobserved,60.88451854249365,4.4
+15,Linear regression,,Sudden Drift,Large,Unimportant,Fully observed,24.405691207131394,3.1
+16,Linear regression,,Sudden Drift,Large,Unimportant,Half observed,25.911362634231878,3.33
+17,Linear regression,,Sudden Drift,Large,Unimportant,Unobserved,190.51088700082676,9.45
+18,Linear regression,,Incremental Drift,Small,Important,Fully observed,25.37872339386421,3.02
+19,Linear regression,,Incremental Drift,Small,Important,Half observed,130.45745801995815,7.8
+20,Linear regression,,Incremental Drift,Small,Important,Unobserved,151.9367040714707,8.03
+21,Linear regression,,Incremental Drift,Small,Medium,Fully observed,24.429102568094745,3.0
+22,Linear regression,,Incremental Drift,Small,Medium,Half observed,29.658861002512896,3.33
+23,Linear regression,,Incremental Drift,Small,Medium,Unobserved,28.571646257107968,3.22
+24,Linear regression,,Incremental Drift,Small,Unimportant,Fully observed,23.814542058268458,3.07
+25,Linear regression,,Incremental Drift,Small,Unimportant,Half observed,37.066276458328595,4.07
+26,Linear regression,,Incremental Drift,Small,Unimportant,Unobserved,35.801843928733156,3.99
+27,Linear regression,,Incremental Drift,Large,Important,Fully observed,32.79164483449733,2.78
+28,Linear regression,,Incremental Drift,Large,Important,Half observed,1324.4752008899513,21.62
+29,Linear regression,,Incremental Drift,Large,Important,Unobserved,1864.0714094330751,23.39
+30,Linear regression,,Incremental Drift,Large,Medium,Fully observed,29.274525757306765,2.86
+31,Linear regression,,Incremental Drift,Large,Medium,Half observed,145.33251832176856,6.97
+32,Linear regression,,Incremental Drift,Large,Medium,Unobserved,88.78936919966245,4.35
+33,Linear regression,,Incremental Drift,Large,Unimportant,Fully observed,23.738540605594636,3.05
+34,Linear regression,,Incremental Drift,Large,Unimportant,Half observed,298.23921358707724,10.8
+35,Linear regression,,Incremental Drift,Large,Unimportant,Unobserved,246.0878385985454,9.35
+36,Linear regression,,No Drift,No Drift,No Drift,No Drift,25.125257478515135,3.24
+37,Linear regression,,Sudden Shock,Small,Important,3 days,23.3284852922883,3.13
+38,Linear regression,,Sudden Shock,Large,Important,3 days,23.465361930127468,3.12
+39,Linear regression,,Sudden Shock,Small,Important,7 days,23.542170918748035,3.13
+40,Linear regression,,Sudden Shock,Large,Important,7 days,23.69040657942332,3.13
+41,Linear regression,0.0,Sudden Drift,Small,Important,Fully observed,67.76936029088182,5.32
+42,Linear regression,0.0,Sudden Drift,Small,Important,Half observed,72.11510425637532,5.5
+43,Linear regression,0.0,Sudden Drift,Small,Important,Unobserved,111.39425982076736,7.22
+44,Linear regression,0.0,Sudden Drift,Small,Medium,Fully observed,24.4404391731017,3.03
+45,Linear regression,0.0,Sudden Drift,Small,Medium,Half observed,30.53013030937148,3.49
+46,Linear regression,0.0,Sudden Drift,Small,Medium,Unobserved,31.937431976371226,3.33
+47,Linear regression,0.0,Sudden Drift,Small,Unimportant,Fully observed,23.77597248375797,3.08
+48,Linear regression,0.0,Sudden Drift,Small,Unimportant,Half observed,25.057039300076838,3.3
+49,Linear regression,0.0,Sudden Drift,Small,Unimportant,Unobserved,36.603757001364826,4.0
+50,Linear regression,0.0,Sudden Drift,Large,Important,Fully observed,586.9268149902962,13.02
+51,Linear regression,0.0,Sudden Drift,Large,Important,Half observed,873.5982442733379,19.45
+52,Linear regression,0.0,Sudden Drift,Large,Important,Unobserved,1516.2257379745975,26.65
+53,Linear regression,0.0,Sudden Drift,Large,Medium,Fully observed,29.271098095899024,2.87
+54,Linear regression,0.0,Sudden Drift,Large,Medium,Half observed,47.2261773968855,3.86
+55,Linear regression,0.0,Sudden Drift,Large,Medium,Unobserved,94.48602645344191,4.73
+56,Linear regression,0.0,Sudden Drift,Large,Unimportant,Fully observed,24.320267469787172,3.07
+57,Linear regression,0.0,Sudden Drift,Large,Unimportant,Half observed,25.469652493216888,3.29
+58,Linear regression,0.0,Sudden Drift,Large,Unimportant,Unobserved,371.7257164217281,13.33
+59,Linear regression,0.0,Incremental Drift,Small,Important,Fully observed,59.592145805770286,4.94
+60,Linear regression,0.0,Incremental Drift,Small,Important,Half observed,102.50236653382132,6.72
+61,Linear regression,0.0,Incremental Drift,Small,Important,Unobserved,89.02157926023477,5.94
+62,Linear regression,0.0,Incremental Drift,Small,Medium,Fully observed,25.160702196084493,3.02
+63,Linear regression,0.0,Incremental Drift,Small,Medium,Half observed,29.102232298571955,3.42
+64,Linear regression,0.0,Incremental Drift,Small,Medium,Unobserved,30.657984853220892,3.55
+65,Linear regression,0.0,Incremental Drift,Small,Unimportant,Fully observed,25.139688656444566,3.11
+66,Linear regression,0.0,Incremental Drift,Small,Unimportant,Half observed,42.90634048789711,4.38
+67,Linear regression,0.0,Incremental Drift,Small,Unimportant,Unobserved,27.296153039104166,3.46
+68,Linear regression,0.0,Incremental Drift,Large,Important,Fully observed,513.0349086781202,12.05
+69,Linear regression,0.0,Incremental Drift,Large,Important,Half observed,1542.7462682655698,23.58
+70,Linear regression,0.0,Incremental Drift,Large,Important,Unobserved,1322.6906741290761,19.22
+71,Linear regression,0.0,Incremental Drift,Large,Medium,Fully observed,29.45592077939022,2.88
+72,Linear regression,0.0,Incremental Drift,Large,Medium,Half observed,126.48888253169115,6.52
+73,Linear regression,0.0,Incremental Drift,Large,Medium,Unobserved,52.31028369248928,4.12
+74,Linear regression,0.0,Incremental Drift,Large,Unimportant,Fully observed,24.35933467874548,3.07
+75,Linear regression,0.0,Incremental Drift,Large,Unimportant,Half observed,199.37099145301238,8.96
+76,Linear regression,0.0,Incremental Drift,Large,Unimportant,Unobserved,257.59542782446033,9.52
+77,Linear regression,0.0,No Drift,No Drift,No Drift,No Drift,24.002095544777035,3.17
+78,Linear regression,0.0,Sudden Shock,Small,Important,3 days,25.573714098518096,3.28
+79,Linear regression,0.0,Sudden Shock,Large,Important,3 days,58.71732862893077,3.98
+80,Linear regression,0.0,Sudden Shock,Small,Important,7 days,28.21173447474425,3.43
+81,Linear regression,0.0,Sudden Shock,Large,Important,7 days,65.64378533276835,4.12
+82,Linear regression,3.0,Sudden Drift,Small,Important,Fully observed,27.230170785650262,3.13
+83,Linear regression,3.0,Sudden Drift,Small,Important,Half observed,25.554164232014834,3.03
+84,Linear regression,3.0,Sudden Drift,Small,Important,Unobserved,105.85009338023927,7.04
+85,Linear regression,3.0,Sudden Drift,Small,Medium,Fully observed,40.846861758429895,4.13
+86,Linear regression,3.0,Sudden Drift,Small,Medium,Half observed,47.13264538897826,3.93
+87,Linear regression,3.0,Sudden Drift,Small,Medium,Unobserved,67.42397584417613,4.76
+88,Linear regression,3.0,Sudden Drift,Small,Unimportant,Fully observed,23.44212283134609,3.07
+89,Linear regression,3.0,Sudden Drift,Small,Unimportant,Half observed,24.629560454735582,3.25
+90,Linear regression,3.0,Sudden Drift,Small,Unimportant,Unobserved,36.09127614972762,3.94
+91,Linear regression,3.0,Sudden Drift,Large,Important,Fully observed,33.51436829310878,2.84
+92,Linear regression,3.0,Sudden Drift,Large,Important,Half observed,31.65356682233705,2.78
+93,Linear regression,3.0,Sudden Drift,Large,Important,Unobserved,2841.772245145326,38.79
+94,Linear regression,3.0,Sudden Drift,Large,Medium,Fully observed,257.2402022369313,9.58
+95,Linear regression,3.0,Sudden Drift,Large,Medium,Half observed,426.63089737771344,12.6
+96,Linear regression,3.0,Sudden Drift,Large,Medium,Unobserved,708.1494516537533,16.9
+97,Linear regression,3.0,Sudden Drift,Large,Unimportant,Fully observed,23.480390795908573,3.05
+98,Linear regression,3.0,Sudden Drift,Large,Unimportant,Half observed,24.937831460607462,3.24
+99,Linear regression,3.0,Sudden Drift,Large,Unimportant,Unobserved,335.64310715590324,12.54
+100,Linear regression,3.0,Incremental Drift,Small,Important,Fully observed,25.370902271727083,2.99
+101,Linear regression,3.0,Incremental Drift,Small,Important,Half observed,92.5738204464483,6.39
+102,Linear regression,3.0,Incremental Drift,Small,Important,Unobserved,120.26172101802307,7.07
+103,Linear regression,3.0,Incremental Drift,Small,Medium,Fully observed,38.68378519433141,4.01
+104,Linear regression,3.0,Incremental Drift,Small,Medium,Half observed,62.16539689401828,4.64
+105,Linear regression,3.0,Incremental Drift,Small,Medium,Unobserved,58.356446430287555,4.38
+106,Linear regression,3.0,Incremental Drift,Small,Unimportant,Fully observed,23.787179128201586,3.06
+107,Linear regression,3.0,Incremental Drift,Small,Unimportant,Half observed,44.181170586193254,4.44
+108,Linear regression,3.0,Incremental Drift,Small,Unimportant,Unobserved,29.797065474139163,3.59
+109,Linear regression,3.0,Incremental Drift,Large,Important,Fully observed,32.20634645779068,2.76
+110,Linear regression,3.0,Incremental Drift,Large,Important,Half observed,2372.5988175527305,30.35
+111,Linear regression,3.0,Incremental Drift,Large,Important,Unobserved,1337.943661296146,19.35
+112,Linear regression,3.0,Incremental Drift,Large,Medium,Fully observed,223.34396830636868,8.9
+113,Linear regression,3.0,Incremental Drift,Large,Medium,Half observed,694.1907226863067,15.31
+114,Linear regression,3.0,Incremental Drift,Large,Medium,Unobserved,614.7483388117464,12.71
+115,Linear regression,3.0,Incremental Drift,Large,Unimportant,Fully observed,23.930923358790366,3.04
+116,Linear regression,3.0,Incremental Drift,Large,Unimportant,Half observed,260.66765720118894,10.14
+117,Linear regression,3.0,Incremental Drift,Large,Unimportant,Unobserved,315.3864501048238,10.35
+118,Linear regression,3.0,No Drift,No Drift,No Drift,No Drift,23.639327798912287,3.15
+119,Linear regression,3.0,Sudden Shock,Small,Important,3 days,23.25849427892881,3.11
+120,Linear regression,3.0,Sudden Shock,Large,Important,3 days,23.612003456614335,3.12
+121,Linear regression,3.0,Sudden Shock,Small,Important,7 days,23.298901287197463,3.1
+122,Linear regression,3.0,Sudden Shock,Large,Important,7 days,22.960560492123793,3.06
+123,Linear regression,6.0,Sudden Drift,Small,Important,Fully observed,25.737249762868768,3.04
+124,Linear regression,6.0,Sudden Drift,Small,Important,Half observed,25.80301688370192,3.03
+125,Linear regression,6.0,Sudden Drift,Small,Important,Unobserved,82.44080665278585,6.01
+126,Linear regression,6.0,Sudden Drift,Small,Medium,Fully observed,24.342152729698437,3.02
+127,Linear regression,6.0,Sudden Drift,Small,Medium,Half observed,26.803123047911967,3.26
+128,Linear regression,6.0,Sudden Drift,Small,Medium,Unobserved,27.7580140948775,3.16
+129,Linear regression,6.0,Sudden Drift,Small,Unimportant,Fully observed,24.35043847164661,3.2
+130,Linear regression,6.0,Sudden Drift,Small,Unimportant,Half observed,24.7697656442553,3.18
+131,Linear regression,6.0,Sudden Drift,Small,Unimportant,Unobserved,24.457604418901916,3.14
+132,Linear regression,6.0,Sudden Drift,Large,Important,Fully observed,32.14368029715623,2.79
+133,Linear regression,6.0,Sudden Drift,Large,Important,Half observed,31.448105406181014,2.76
+134,Linear regression,6.0,Sudden Drift,Large,Important,Unobserved,1064.0506846587132,21.69
+135,Linear regression,6.0,Sudden Drift,Large,Medium,Fully observed,29.316010915753417,2.9
+136,Linear regression,6.0,Sudden Drift,Large,Medium,Half observed,43.016746192978715,3.66
+137,Linear regression,6.0,Sudden Drift,Large,Medium,Unobserved,66.26535036679843,4.83
+138,Linear regression,6.0,Sudden Drift,Large,Unimportant,Fully observed,25.826688876110303,3.33
+139,Linear regression,6.0,Sudden Drift,Large,Unimportant,Half observed,25.101101462161832,3.07
+140,Linear regression,6.0,Sudden Drift,Large,Unimportant,Unobserved,25.413460985232064,3.08
+141,Linear regression,6.0,Incremental Drift,Small,Important,Fully observed,25.468081143456043,3.0
+142,Linear regression,6.0,Incremental Drift,Small,Important,Half observed,97.1811579082346,6.59
+143,Linear regression,6.0,Incremental Drift,Small,Important,Unobserved,71.32876057753786,5.3
+144,Linear regression,6.0,Incremental Drift,Small,Medium,Fully observed,25.86581870955757,3.03
+145,Linear regression,6.0,Incremental Drift,Small,Medium,Half observed,31.719487654839632,3.32
+146,Linear regression,6.0,Incremental Drift,Small,Medium,Unobserved,27.403466386733342,3.16
+147,Linear regression,6.0,Incremental Drift,Small,Unimportant,Fully observed,24.431076538519488,3.2
+148,Linear regression,6.0,Incremental Drift,Small,Unimportant,Half observed,23.436072712036662,3.09
+149,Linear regression,6.0,Incremental Drift,Small,Unimportant,Unobserved,25.143925202248674,3.2
+150,Linear regression,6.0,Incremental Drift,Large,Important,Fully observed,31.929762342343654,2.76
+151,Linear regression,6.0,Incremental Drift,Large,Important,Half observed,2244.6612933526612,29.35
+152,Linear regression,6.0,Incremental Drift,Large,Important,Unobserved,1093.8963241050442,17.29
+153,Linear regression,6.0,Incremental Drift,Large,Medium,Fully observed,29.32698007610443,2.87
+154,Linear regression,6.0,Incremental Drift,Large,Medium,Half observed,94.57831469737609,4.63
+155,Linear regression,6.0,Incremental Drift,Large,Medium,Unobserved,51.57217257280002,3.9
+156,Linear regression,6.0,Incremental Drift,Large,Unimportant,Fully observed,25.942158312170086,3.34
+157,Linear regression,6.0,Incremental Drift,Large,Unimportant,Half observed,26.350980138502376,3.18
+158,Linear regression,6.0,Incremental Drift,Large,Unimportant,Unobserved,26.571727227470383,3.16
+159,Linear regression,6.0,No Drift,No Drift,No Drift,No Drift,23.66276338573423,3.14
+160,Linear regression,6.0,Sudden Shock,Small,Important,3 days,23.62233138608862,3.14
+161,Linear regression,6.0,Sudden Shock,Large,Important,3 days,23.093882702522205,3.08
+162,Linear regression,6.0,Sudden Shock,Small,Important,7 days,23.489154768649485,3.12
+163,Linear regression,6.0,Sudden Shock,Large,Important,7 days,23.232624932789953,3.08
+164,Linear regression online,,Sudden Drift,Small,Important,Fully observed,21.07236144074959,[2.65]
+165,Linear regression online,,Sudden Drift,Small,Important,Half observed,20.486097835992013,[2.61]
+166,Linear regression online,,Sudden Drift,Small,Important,Unobserved,37.12556958899625,[3.49]
+167,Linear regression online,,Sudden Drift,Small,Medium,Fully observed,19.397070643535795,[2.61]
+168,Linear regression online,,Sudden Drift,Small,Medium,Half observed,21.6845223936308,[2.79]
+169,Linear regression online,,Sudden Drift,Small,Medium,Unobserved,28.477732704064213,[3.24]
+170,Linear regression online,,Sudden Drift,Small,Unimportant,Fully observed,18.710277814025694,[2.67]
+171,Linear regression online,,Sudden Drift,Small,Unimportant,Half observed,19.344491544978318,[2.76]
+172,Linear regression online,,Sudden Drift,Small,Unimportant,Unobserved,23.206004178256777,[3.02]
+173,Linear regression online,,Sudden Drift,Large,Important,Fully observed,26.298341368578694,[2.4]
+174,Linear regression online,,Sudden Drift,Large,Important,Half observed,26.301995399424637,[2.4]
+175,Linear regression online,,Sudden Drift,Large,Important,Unobserved,36.55605543188457,[2.7]
+176,Linear regression online,,Sudden Drift,Large,Medium,Fully observed,22.97957826829464,[2.49]
+177,Linear regression online,,Sudden Drift,Large,Medium,Half observed,33.067375088963885,[3.08]
+178,Linear regression online,,Sudden Drift,Large,Medium,Unobserved,51.57715868358918,[3.82]
+179,Linear regression online,,Sudden Drift,Large,Unimportant,Fully observed,18.95813414589075,[2.67]
+180,Linear regression online,,Sudden Drift,Large,Unimportant,Half observed,19.290722998521403,[2.71]
+181,Linear regression online,,Sudden Drift,Large,Unimportant,Unobserved,28.79928429839008,[3.23]
+182,Linear regression online,,Incremental Drift,Small,Important,Fully observed,21.1716437982197,[2.65]
+183,Linear regression online,,Incremental Drift,Small,Important,Half observed,27.74114278923539,[3.02]
+184,Linear regression online,,Incremental Drift,Small,Important,Unobserved,26.95298761638637,[2.86]
+185,Linear regression online,,Incremental Drift,Small,Medium,Fully observed,19.611072013175587,[2.61]
+186,Linear regression online,,Incremental Drift,Small,Medium,Half observed,25.77264873158931,[3.1]
+187,Linear regression online,,Incremental Drift,Small,Medium,Unobserved,22.80451357103305,[2.94]
+188,Linear regression online,,Incremental Drift,Small,Unimportant,Fully observed,18.97721230040762,[2.68]
+189,Linear regression online,,Incremental Drift,Small,Unimportant,Half observed,21.78663916934115,[2.98]
+190,Linear regression online,,Incremental Drift,Small,Unimportant,Unobserved,19.94127267240512,[2.89]
+191,Linear regression online,,Incremental Drift,Large,Important,Fully observed,26.47356275125052,[2.41]
+192,Linear regression online,,Incremental Drift,Large,Important,Half observed,178.67543222200553,[3.16]
+193,Linear regression online,,Incremental Drift,Large,Important,Unobserved,68.88964910706851,[2.77]
+194,Linear regression online,,Incremental Drift,Large,Medium,Fully observed,23.105935842093714,[2.48]
+195,Linear regression online,,Incremental Drift,Large,Medium,Half observed,78.89050179203652,[3.89]
+196,Linear regression online,,Incremental Drift,Large,Medium,Unobserved,79.29194022330337,[3.8]
+197,Linear regression online,,Incremental Drift,Large,Unimportant,Fully observed,19.00084517435312,[2.66]
+198,Linear regression online,,Incremental Drift,Large,Unimportant,Half observed,40.09302227159295,[3.31]
+199,Linear regression online,,Incremental Drift,Large,Unimportant,Unobserved,29.016674508149283,[3.02]
+200,Linear regression online,,No Drift,No Drift,No Drift,No Drift,18.84982685046258,[2.7]
+201,Linear regression online,,Sudden Shock,Small,Important,3 days,18.85097601615617,[2.7]
+202,Linear regression online,,Sudden Shock,Large,Important,3 days,19.259971165723233,[2.71]
+203,Linear regression online,,Sudden Shock,Small,Important,7 days,19.4531548126835,[2.74]
+204,Linear regression online,,Sudden Shock,Large,Important,7 days,19.06189784399346,[2.7]
+205,Linear regression online,0.0,Sudden Drift,Small,Important,Fully observed,28.204361926145474,[3.19]
+206,Linear regression online,0.0,Sudden Drift,Small,Important,Half observed,31.388392656541978,[3.27]
+207,Linear regression online,0.0,Sudden Drift,Small,Important,Unobserved,45.24118193292446,[4.08]
+208,Linear regression online,0.0,Sudden Drift,Small,Medium,Fully observed,20.356796787863438,[2.66]
+209,Linear regression online,0.0,Sudden Drift,Small,Medium,Half observed,22.242603849592886,[2.82]
+210,Linear regression online,0.0,Sudden Drift,Small,Medium,Unobserved,28.960404482275038,[3.28]
+211,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Fully observed,19.192745491922953,[2.7]
+212,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Half observed,19.378741707410782,[2.76]
+213,Linear regression online,0.0,Sudden Drift,Small,Unimportant,Unobserved,24.082088115758665,[3.08]
+214,Linear regression online,0.0,Sudden Drift,Large,Important,Fully observed,142.16820020775737,[6.36]
+215,Linear regression online,0.0,Sudden Drift,Large,Important,Half observed,264.888385270432,[8.61]
+216,Linear regression online,0.0,Sudden Drift,Large,Important,Unobserved,506.11680710908576,[13.03]
+217,Linear regression online,0.0,Sudden Drift,Large,Medium,Fully observed,23.07558513132679,[2.47]
+218,Linear regression online,0.0,Sudden Drift,Large,Medium,Half observed,33.945815336142964,[3.12]
+219,Linear regression online,0.0,Sudden Drift,Large,Medium,Unobserved,53.76959539183598,[3.96]
+220,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Fully observed,19.44822517935933,[2.7]
+221,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Half observed,19.66011222553708,[2.74]
+222,Linear regression online,0.0,Sudden Drift,Large,Unimportant,Unobserved,26.26170246714466,[3.12]
+223,Linear regression online,0.0,Incremental Drift,Small,Important,Fully observed,27.452478202411026,[3.17]
+224,Linear regression online,0.0,Incremental Drift,Small,Important,Half observed,52.01479955013047,[4.32]
+225,Linear regression online,0.0,Incremental Drift,Small,Important,Unobserved,52.20385923210546,[3.97]
+226,Linear regression online,0.0,Incremental Drift,Small,Medium,Fully observed,20.22519767877724,[2.64]
+227,Linear regression online,0.0,Incremental Drift,Small,Medium,Half observed,31.39290917049878,[3.38]
+228,Linear regression online,0.0,Incremental Drift,Small,Medium,Unobserved,24.098597042354374,[3.01]
+229,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Fully observed,19.387992090252208,[2.71]
+230,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Half observed,21.362543999637793,[2.93]
+231,Linear regression online,0.0,Incremental Drift,Small,Unimportant,Unobserved,18.974936849283374,[2.79]
+232,Linear regression online,0.0,Incremental Drift,Large,Important,Fully observed,106.85848931205022,[5.31]
+233,Linear regression online,0.0,Incremental Drift,Large,Important,Half observed,639.3884394074337,[11.42]
+234,Linear regression online,0.0,Incremental Drift,Large,Important,Unobserved,727.9274327245122,[11.42]
+235,Linear regression online,0.0,Incremental Drift,Large,Medium,Fully observed,23.557159824136395,[2.47]
+236,Linear regression online,0.0,Incremental Drift,Large,Medium,Half observed,232.07888322455494,[5.02]
+237,Linear regression online,0.0,Incremental Drift,Large,Medium,Unobserved,67.61870911863706,[3.76]
+238,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Fully observed,19.731701274170117,[2.7]
+239,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Half observed,37.46220896452309,[3.26]
+240,Linear regression online,0.0,Incremental Drift,Large,Unimportant,Unobserved,24.34618691689394,[2.91]
+241,Linear regression online,0.0,No Drift,No Drift,No Drift,No Drift,19.228975559447647,[2.73]
+242,Linear regression online,0.0,Sudden Shock,Small,Important,3 days,22.65902842491171,[2.93]
+243,Linear regression online,0.0,Sudden Shock,Large,Important,3 days,58.715847065695826,[3.57]
+244,Linear regression online,0.0,Sudden Shock,Small,Important,7 days,22.105646646533142,[2.9]
+245,Linear regression online,0.0,Sudden Shock,Large,Important,7 days,57.53687527880389,[3.57]
+246,Linear regression online,3.0,Sudden Drift,Small,Important,Fully observed,20.154418268164736,[2.59]
+247,Linear regression online,3.0,Sudden Drift,Small,Important,Half observed,20.559427014758196,[2.61]
+248,Linear regression online,3.0,Sudden Drift,Small,Important,Unobserved,27.3082290463858,[2.97]
+249,Linear regression online,3.0,Sudden Drift,Small,Medium,Fully observed,23.03719938209771,[2.97]
+250,Linear regression online,3.0,Sudden Drift,Small,Medium,Half observed,28.091368277831755,[3.04]
+251,Linear regression online,3.0,Sudden Drift,Small,Medium,Unobserved,33.80901198525941,[3.3]
+252,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Fully observed,18.780565779539298,[2.68]
+253,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Half observed,18.89326010180573,[2.74]
+254,Linear regression online,3.0,Sudden Drift,Small,Unimportant,Unobserved,24.0339046832022,[3.1]
+255,Linear regression online,3.0,Sudden Drift,Large,Important,Fully observed,26.01178667886707,[2.41]
+256,Linear regression online,3.0,Sudden Drift,Large,Important,Half observed,25.51328019595861,[2.38]
+257,Linear regression online,3.0,Sudden Drift,Large,Important,Unobserved,42.400272605837955,[2.86]
+258,Linear regression online,3.0,Sudden Drift,Large,Medium,Fully observed,94.55365833309824,[5.85]
+259,Linear regression online,3.0,Sudden Drift,Large,Medium,Half observed,131.62408613008432,[5.85]
+260,Linear regression online,3.0,Sudden Drift,Large,Medium,Unobserved,236.50664795234192,[8.42]
+261,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Fully observed,19.209838780920194,[2.68]
+262,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Half observed,18.90361176520014,[2.7]
+263,Linear regression online,3.0,Sudden Drift,Large,Unimportant,Unobserved,32.434715835033735,[3.4]
+264,Linear regression online,3.0,Incremental Drift,Small,Important,Fully observed,20.18126676091591,[2.6]
+265,Linear regression online,3.0,Incremental Drift,Small,Important,Half observed,30.711800172705964,[3.16]
+266,Linear regression online,3.0,Incremental Drift,Small,Important,Unobserved,30.139748421878533,[2.96]
+267,Linear regression online,3.0,Incremental Drift,Small,Medium,Fully observed,23.12270281761898,[2.99]
+268,Linear regression online,3.0,Incremental Drift,Small,Medium,Half observed,37.17972957576928,[3.48]
+269,Linear regression online,3.0,Incremental Drift,Small,Medium,Unobserved,40.095256291084524,[3.38]
+270,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Fully observed,18.714578415658718,[2.67]
+271,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Half observed,22.05055400439126,[2.99]
+272,Linear regression online,3.0,Incremental Drift,Small,Unimportant,Unobserved,19.37405073952945,[2.83]
+273,Linear regression online,3.0,Incremental Drift,Large,Important,Fully observed,25.762521683765176,[2.39]
+274,Linear regression online,3.0,Incremental Drift,Large,Important,Half observed,93.36134943372745,[2.91]
+275,Linear regression online,3.0,Incremental Drift,Large,Important,Unobserved,126.04433392651477,[2.98]
+276,Linear regression online,3.0,Incremental Drift,Large,Medium,Fully observed,77.61385366160555,[5.21]
+277,Linear regression online,3.0,Incremental Drift,Large,Medium,Half observed,330.2359635588746,[8.41]
+278,Linear regression online,3.0,Incremental Drift,Large,Medium,Unobserved,349.7351928343089,[7.72]
+279,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Fully observed,18.844633727223155,[2.65]
+280,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Half observed,42.24744441620114,[3.31]
+281,Linear regression online,3.0,Incremental Drift,Large,Unimportant,Unobserved,37.67043940063939,[3.18]
+282,Linear regression online,3.0,No Drift,No Drift,No Drift,No Drift,18.117615517394373,[2.67]
+283,Linear regression online,3.0,Sudden Shock,Small,Important,3 days,18.44943473817418,[2.68]
+284,Linear regression online,3.0,Sudden Shock,Large,Important,3 days,18.928024540094412,[2.71]
+285,Linear regression online,3.0,Sudden Shock,Small,Important,7 days,18.579661334505666,[2.69]
+286,Linear regression online,3.0,Sudden Shock,Large,Important,7 days,18.756192714708238,[2.7]
+287,Linear regression online,6.0,Sudden Drift,Small,Important,Fully observed,20.430505017619073,[2.6]
+288,Linear regression online,6.0,Sudden Drift,Small,Important,Half observed,20.89842457689447,[2.62]
+289,Linear regression online,6.0,Sudden Drift,Small,Important,Unobserved,25.021006658489853,[2.83]
+290,Linear regression online,6.0,Sudden Drift,Small,Medium,Fully observed,20.18031157219992,[2.64]
+291,Linear regression online,6.0,Sudden Drift,Small,Medium,Half observed,22.002163055721,[2.81]
+292,Linear regression online,6.0,Sudden Drift,Small,Medium,Unobserved,27.55817517893534,[3.19]
+293,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Fully observed,18.838752587065397,[2.69]
+294,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Half observed,18.695279169113114,[2.67]
+295,Linear regression online,6.0,Sudden Drift,Small,Unimportant,Unobserved,18.936247552292297,[2.68]
+296,Linear regression online,6.0,Sudden Drift,Large,Important,Fully observed,26.22970560245035,[2.4]
+297,Linear regression online,6.0,Sudden Drift,Large,Important,Half observed,26.1226725173022,[2.38]
+298,Linear regression online,6.0,Sudden Drift,Large,Important,Unobserved,33.99049541988471,[2.62]
+299,Linear regression online,6.0,Sudden Drift,Large,Medium,Fully observed,23.065906707601513,[2.49]
+300,Linear regression online,6.0,Sudden Drift,Large,Medium,Half observed,34.008897316272744,[3.13]
+301,Linear regression online,6.0,Sudden Drift,Large,Medium,Unobserved,54.36041095836107,[3.97]
+302,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Fully observed,18.887540667468702,[2.69]
+303,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Half observed,20.383561092654492,[2.74]
+304,Linear regression online,6.0,Sudden Drift,Large,Unimportant,Unobserved,20.17300506077512,[2.71]
+305,Linear regression online,6.0,Incremental Drift,Small,Important,Fully observed,20.47256324966372,[2.6]
+306,Linear regression online,6.0,Incremental Drift,Small,Important,Half observed,34.65515423047908,[3.33]
+307,Linear regression online,6.0,Incremental Drift,Small,Important,Unobserved,27.06198356733583,[2.86]
+308,Linear regression online,6.0,Incremental Drift,Small,Medium,Fully observed,19.54992179749958,[2.6]
+309,Linear regression online,6.0,Incremental Drift,Small,Medium,Half observed,30.55315015169999,[3.33]
+310,Linear regression online,6.0,Incremental Drift,Small,Medium,Unobserved,27.294133651431874,[3.18]
+311,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Fully observed,18.83561089034851,[2.69]
+312,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Half observed,19.574906574492147,[2.73]
+313,Linear regression online,6.0,Incremental Drift,Small,Unimportant,Unobserved,19.336976586198436,[2.71]
+314,Linear regression online,6.0,Incremental Drift,Large,Important,Fully observed,25.978410846922728,[2.39]
+315,Linear regression online,6.0,Incremental Drift,Large,Important,Half observed,76.1052416269005,[2.83]
+316,Linear regression online,6.0,Incremental Drift,Large,Important,Unobserved,73.22399076148814,[2.79]
+317,Linear regression online,6.0,Incremental Drift,Large,Medium,Fully observed,23.270355970924502,[2.5]
+318,Linear regression online,6.0,Incremental Drift,Large,Medium,Half observed,82.74304352443099,[4.04]
+319,Linear regression online,6.0,Incremental Drift,Large,Medium,Unobserved,74.9841993951901,[3.83]
+320,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Fully observed,19.11177530892975,[2.7]
+321,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Half observed,20.84451327476998,[2.79]
+322,Linear regression online,6.0,Incremental Drift,Large,Unimportant,Unobserved,22.25040578517142,[2.8]
+323,Linear regression online,6.0,No Drift,No Drift,No Drift,No Drift,18.615399375407623,[2.68]
+324,Linear regression online,6.0,Sudden Shock,Small,Important,3 days,18.82436676738958,[2.69]
+325,Linear regression online,6.0,Sudden Shock,Large,Important,3 days,18.952497198559946,[2.68]
+326,Linear regression online,6.0,Sudden Shock,Small,Important,7 days,18.686938867544686,[2.68]
+327,Linear regression online,6.0,Sudden Shock,Large,Important,7 days,18.824585241649718,[2.68]
