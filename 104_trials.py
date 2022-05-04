@@ -46,8 +46,8 @@ def full_trail(_):
         products.append(product)
         customers.append(customer)
     thesis = ExperimentTracker(products, customers, scenarios())
-    thesis.runExperiment(algorithms=[sgd_pipe, sgd_online], algorithm_name=[
-                         "Linear regression", "Linear regression online"], online=[False, True])
+    thesis.runExperiment(algorithms=[hybrid_xgb_pipe, sgd_pipe], algorithm_name=[
+                         "Gradient boosted decision tree", "Linear regression online"], online=[False, False])
     return thesis
 
 
@@ -55,8 +55,8 @@ if __name__ == "__main__":
     # run the full trail in parallel using a process pool executor and save the results in a list
 
     with ProcessPoolExecutor() as executor:
-        results = executor.map(full_trail, range(5))
+        results = executor.map(full_trail, range(100))
 
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("RQ2_5.csv")
+    results_df.to_csv("RQ1_100.csv")

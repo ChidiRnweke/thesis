@@ -205,9 +205,9 @@ def incrementalDrift(series: TimeSeriesGenerator, time, variables: np.array, mag
             magnitude (int or np.array): [The variables will linearly
                                          increase by this magnitude.]
         """
-
-    series.data[time,
-                variables] *= np.linspace(start=1, stop=magnitude, num=len(time))
+    points = np.arange(start=time[0], stop=time[1], step=1)
+    series.data[points,
+                variables] *= np.linspace(start=1, stop=magnitude, num=points.size)
     series.data[time[1]:, variables] *= magnitude
 
 
