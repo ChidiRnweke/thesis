@@ -1,0 +1,134 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+library(tidyverse)
+input = read_csv("RQ1_100_cleaned.csv")
+
+```
+
+```{r}
+RQ1 <- input %>% 
+  mutate(Drift = case_when(
+    `Drift type` == "No Drift" ~ "No Drift",
+    `Drift type` == "Sudden Shock" ~ "Shock",
+    TRUE ~ "Drift"
+  ))
+
+```
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock') %>% 
+  group_by(Drift, Algorithm, `Drift type`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n())
+```
+```{r}
+GBT_no <- RQ1 %>% 
+  filter(Drift == 'No Drift', Algorithm=='Gradient boosted decision tree')
+
+GBT_D <-  RQ1 %>% 
+  filter(Drift == 'Drift', Algorithm=='Gradient boosted decision tree')
+
+var.test(GBT_no$SMAPE, GBT_D$SMAPE)
+t.test(GBT_no$SMAPE, GBT_D$SMAPE, var.equal = F, alternative = 'less')
+  
+  
+```
+  
+  
+```{r}
+no_shock <- RQ1 %>% 
+  filter(Drift!='Shock', Algorithm=='Gradient boosted decision tree')
+
+
+```
+
+```{r}
+inc_gb <- no_shock %>% 
+  filter(`Drift type` =='Incremental Drift')
+
+sudden_gb <- no_shock %>% 
+  filter(`Drift type`=='Sudden Drift')
+```
+
+```{r}
+var.test(sudden_gb$SMAPE, GBT_no$SMAPE)
+t.test(sudden_gb$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+```
+
+
+```{r}
+var.test(sudden_gb$SMAPE, GBT_no$SMAPE)
+t.test(sudden_gb$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+ 
+```{r}
+sudden_gb_train <- sudden_gb %>% 
+  filter(`Drift time`=="Training")
+
+sudden_gb_traintest <- sudden_gb %>% 
+  filter(`Drift time`=="Training/Test")
+
+sudden_gb_test <- sudden_gb %>% 
+  filter(`Drift time`=="Test")
+
+t.test(sudden_gb_train$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_gb_traintest$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_gb_test$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+```{r}
+t.test(sudden_gb_train$SMAPE, sudden_gb_test$SMAPE, var.equal = F)
+```
+
+
+```{r}
+sudden_gb_small <- sudden_gb %>% 
+  filter(`Drift magnitude`=='Small')
+
+sudden_gb_large <- sudden_gb %>% 
+  filter(`Drift magnitude`=='Large')
+
+t.test(sudden_gb_small$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_gb_large$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+```
+```{r}
+sudden_gb_important <- sudden_gb %>% 
+  filter(`Variable importance`=="Important")
+
+sudden_gb_medium <- sudden_gb %>% 
+  filter(`Variable importance`=="Medium")
+
+sudden_gb_unimportant <- sudden_gb %>% 
+  filter(`Variable importance`=="Unimportant")
+
+t.test(sudden_gb_important$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_gb_medium$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_gb_unimportant$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+```
+ 
+ 
+```{r}
+sudden_gb_driftingDropped <- sudden_gb %>% 
+  filter(`Dropped drifting`=="TRUE")
+
+sudden_gb_driftingNotDropped <- sudden_gb %>% 
+  filter(`Dropped drifting`=="FALSE")
+
+t.test(sudden_gb_driftingDropped$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_gb_driftingNotDropped$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+t.test(sudden_gb_driftingNotDropped$SMAPE, sudden_gb_driftingDropped$SMAPE, var.equal = F)
+
+
+```
+ 
