@@ -209,8 +209,5 @@ t.test(inc_gb_driftingNotDropped$SMAPE, inc_gb_driftingDropped$SMAPE, var.equal 
 
 ```
 
-```{r}
-RQ1 %>% 
-  ggplot(aes(x = `Dropped variable`, y=SMAPE, color =`Drift magnitude`, group= `Variable importance`)) + geom_boxplot()
-```
+
 

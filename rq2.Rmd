@@ -1,0 +1,238 @@
+---
+title: "RQ2"
+output: html_document
+---
+
+# IGNORE THE LINEAR REGRESSION IN HERE DONT USE THIS DATA, USE THE ONES ALREADY IN THE TABLE
+
+```{r}
+library(tidyverse)
+input = read_csv("RQ2_100_cleaned.csv")
+
+```
+
+```{r}
+RQ1 <- input %>% 
+  mutate(Drift = case_when(
+    `Drift type` == "No Drift" ~ "No Drift",
+    `Drift type` == "Sudden Shock" ~ "Shock",
+    TRUE ~ "Drift"
+  ))
+
+```
+
+# Global stats
+
+## SMAPE table for everything
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Linear regression online') %>% 
+  group_by(Drift, `Drift type`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n())
+```
+
+## T-test drift vs no drift
+```{r}
+LRonno <- RQ1 %>% 
+  filter(Drift == 'No Drift', Algorithm=='Linear regression online')
+
+LRonD <-  RQ1 %>% 
+  filter(Drift == 'Drift', Algorithm=='Linear regression online')
+
+t.test(LRonno$SMAPE, LRonD$SMAPE, var.equal = F, alternative = 'less')
+  
+  
+```
+
+
+  
+```{r}
+no_shock <- RQ1 %>% 
+  filter(Drift!='Shock', Algorithm=='Linear regression')
+
+
+```
+
+```{r}
+inc_LRon <- no_shock %>% 
+  filter(`Drift type` =='Incremental Drift')
+
+sudden_LRon <- no_shock %>% 
+  filter(`Drift type`=='Sudden Drift')
+```
+
+## T-test sudden vs no and incremental vs no
+```{r}
+t.test(sudden_LRon$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+```
+# Sudden drift
+
+## T-tests for time
+ 
+```{r}
+sudden_LRon_train <- sudden_LRon %>% 
+  filter(`Drift time`=="Training")
+
+sudden_LRon_traintest <- sudden_LRon %>% 
+  filter(`Drift time`=="Training/Test")
+
+sudden_LRon_test <- sudden_LRon %>% 
+  filter(`Drift time`=="Test")
+
+t.test(sudden_LRon_train$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_LRon_traintest$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_LRon_test$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+## SMAPE table for time
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Linear regression online') %>% 
+  group_by(Drift, `Drift type`, `Drift time`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n())
+```
+
+## T-test for magnitude
+```{r}
+sudden_LRon_small <- sudden_LRon %>% 
+  filter(`Drift magnitude`=='Small')
+
+sudden_LRon_large <- sudden_LRon %>% 
+  filter(`Drift magnitude`=='Large')
+
+t.test(sudden_LRon_small$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_LRon_large$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+```
+
+## SMAPE table for magnitude
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Linear regression online') %>% 
+  group_by(Drift, `Drift type`, `Drift magnitude`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n())
+
+```
+
+
+## T-tests for importance
+
+```{r}
+sudden_LRon_important <- sudden_LRon %>% 
+  filter(`Variable importance`=="Important")
+
+sudden_LRon_medium <- sudden_LRon %>% 
+  filter(`Variable importance`=="Medium")
+
+sudden_LRon_unimportant <- sudden_LRon %>% 
+  filter(`Variable importance`=="Unimportant")
+
+t.test(sudden_LRon_important$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_LRon_medium$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_LRon_unimportant$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+## SMAPE table for importance
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Linear regression online') %>% 
+  group_by(Drift, `Drift type`, `Variable importance`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n())
+```
+ 
+## T-tests for dropping drifting and not drifting
+ 
+```{r}
+sudden_LRon_driftingDropped <- sudden_LRon %>% 
+  filter(`Dropped drifting`=="TRUE")
+
+sudden_LRon_driftingNotDropped <- sudden_LRon %>% 
+  filter(`Dropped drifting`=="FALSE")
+
+t.test(sudden_LRon_driftingDropped$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_LRon_driftingNotDropped$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+
+
+```
+
+## SMAPE table for dropping drifting and not drifting
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Linear regression online') %>% 
+  group_by(Drift, `Drift type`,  `Dropped drifting`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n())
+
+```
+ 
+# Incremental
+
+## T-tests for time
+ 
+```{r}
+inc_LRon_train <- inc_LRon %>% 
+  filter(`Drift time`=="Training")
+
+inc_LRon_traintest <- inc_LRon %>% 
+  filter(`Drift time`=="Training/Test")
+
+inc_LRon_test <- inc_LRon %>% 
+  filter(`Drift time`=="Test")
+
+t.test(inc_LRon_train$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon_traintest$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon_test$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+## T-tests for magnitude
+
+```{r}
+inc_LRon_small <- inc_LRon %>% 
+  filter(`Drift magnitude`=='Small')
+
+inc_LRon_large <- inc_LRon %>% 
+  filter(`Drift magnitude`=='Large')
+
+t.test(inc_LRon_small$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon_large$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+```
+
+## T-tests for importance
+
+```{r}
+inc_LRon_important <- inc_LRon %>% 
+  filter(`Variable importance`=="Important")
+
+inc_LRon_medium <- inc_LRon %>% 
+  filter(`Variable importance`=="Medium")
+
+inc_LRon_unimportant <- inc_LRon %>% 
+  filter(`Variable importance`=="Unimportant")
+
+t.test(inc_LRon_important$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon_medium$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon_unimportant$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+
+```
+ 
+## T-tests for dropping drifting and not drifting
+
+```{r}
+inc_LRon_driftingDropped <- inc_LRon %>% 
+  filter(`Dropped drifting`=="TRUE")
+
+inc_LRon_driftingNotDropped <- inc_LRon %>% 
+  filter(`Dropped drifting`=="FALSE")
+
+t.test(inc_LRon_driftingDropped$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_LRon_driftingNotDropped$SMAPE, LRonno$SMAPE, var.equal = F, alternative='greater')
+
+
+
+```
+
