@@ -68,6 +68,10 @@ t.test(sudden_gb$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
 
 ```
 
+#############################################################################
+Under here is sudden
+###############################################################################
+
  
 ```{r}
 sudden_gb_train <- sudden_gb %>% 
@@ -132,3 +136,81 @@ t.test(sudden_gb_driftingNotDropped$SMAPE, sudden_gb_driftingDropped$SMAPE, var.
 
 ```
  
+#############################################################################
+Under here is incremental
+###############################################################################
+
+ 
+```{r}
+inc_gb_train <- inc_gb %>% 
+  filter(`Drift time`=="Training")
+
+inc_gb_traintest <- inc_gb %>% 
+  filter(`Drift time`=="Training/Test")
+
+inc_gb_test <- inc_gb %>% 
+  filter(`Drift time`=="Test")
+
+t.test(inc_gb_train$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_gb_traintest$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_gb_test$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+```{r}
+t.test(inc_gb_train$SMAPE, inc_gb_test$SMAPE, var.equal = F)
+```
+
+
+```{r}
+inc_gb_small <- inc_gb %>% 
+  filter(`Drift magnitude`=='Small')
+
+inc_gb_large <- inc_gb %>% 
+  filter(`Drift magnitude`=='Large')
+
+t.test(inc_gb_small$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_gb_large$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+```
+
+```{r}
+inc_gb_important <- inc_gb %>% 
+  filter(`Variable importance`=="Important")
+
+inc_gb_medium <- inc_gb %>% 
+  filter(`Variable importance`=="Medium")
+
+inc_gb_unimportant <- inc_gb %>% 
+  filter(`Variable importance`=="Unimportant")
+
+t.test(inc_gb_important$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_gb_medium$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_gb_unimportant$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+```
+ 
+ 
+```{r}
+inc_gb_driftingDropped <- inc_gb %>% 
+  filter(`Dropped drifting`=="TRUE")
+
+inc_gb_driftingNotDropped <- inc_gb %>% 
+  filter(`Dropped drifting`=="FALSE")
+
+t.test(inc_gb_driftingDropped$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_gb_driftingNotDropped$SMAPE, GBT_no$SMAPE, var.equal = F, alternative='greater')
+
+
+
+```
+ 
+```{r}
+t.test(inc_gb_driftingNotDropped$SMAPE, inc_gb_driftingDropped$SMAPE, var.equal = F)
+
+```
+
+```{r}
+RQ1 %>% 
+  ggplot(aes(x = `Dropped variable`, y=SMAPE, color =`Drift magnitude`, group= `Variable importance`)) + geom_boxplot()
+```
+
