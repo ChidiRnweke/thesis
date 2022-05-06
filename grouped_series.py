@@ -72,11 +72,11 @@ class ExperimentTracker:
         self.customerList = customerList
         self.experiments = []
 
-    def runExperiment(self, algorithms, algorithm_name, online=False):
+    def runExperiment(self, algorithms, algorithm_name, LearningModes):
         # Run experiment for each condition
         global_start = time.time()
 
-        for algorithm, online, algorithm_name in zip(algorithms, online, algorithm_name):
+        for algorithm, LearningMode, algorithm_name in zip(algorithms, LearningModes, algorithm_name):
             # Loop over conditions
             seeds = np.random.randint(100000000, size=len(
                 self.productList) * len(self.customerList))
@@ -99,7 +99,7 @@ class ExperimentTracker:
 
                 experiment = Experiment(
                     description=condition, algorithm_name=algorithm_name, grouped_series=grouped_series, algorithm=algorithm, drop=condition[
-                        "Dropped variable"], online=online)
+                        "Dropped variable"], LearningMode=LearningMode)
 
                 self.experiments.append(experiment)
                 print(
@@ -116,54 +116,94 @@ class Experiment:
         grouped_series: SeriesGrouper,
         algorithm,
         algorithm_name,
+        LearningMode,
         drop=None,
-        univariate=False,
-        online=False,
     ) -> None:
         self.grouped_series = grouped_series
         self.description = description
-        self.univariate = univariate
-        self.online = online
         self.algorithm_name = algorithm_name
 
-        if self.univariate:
-            pass
-        else:
-            data = self.grouped_series.toDataFrame()
-            data.sort_index(inplace=True)
+        data = self.grouped_series.toDataFrame()
+        data.sort_index(inplace=True)
 
-            # split data into train and test
-            X = data.drop(columns=["Response"], axis=1)
-            y = data["Response"]
+        # split data into train and test
+        X = data.drop(columns=["Response"], axis=1)
+        y = data["Response"]
 
-            if drop is not None:
-                X = X.drop(columns=X.columns[drop], axis=1)
+        if drop is not None:
+            X = X.drop(columns=X.columns[drop], axis=1)
 
             # Test train split without shuffling
-            X_train, X_test, y_train, y_test = train_test_split(
-                X, y, test_size=91 * 4, shuffle=False
-            )  # One year of data
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=91 * 4, shuffle=False
+        )  # One year of data
+
+        if LearningMode == "Online":
+
             algorithm.fit(X_train, y_train)  # Fit the model
 
-        if self.online:
             y_hat = []
             x = algorithm.named_steps['preprocessor'].transform(X_test)
-            for i in range(len(y_test)):
 
-                y_hat.append(algorithm.predict(X_test.iloc[[i]]))
-                # Update the model
-                # y_test[[i]] is suspect if this does not work, maybe this is not the correct way to index a series
+            for i in range(0, len(y_test), 4):
+                y_hat.append(algorithm.predict(X_test.iloc[i:i + 4, :]))
+
                 algorithm.named_steps["regressor"].partial_fit(
-                    x[i].reshape(1, -1), y_test[[i]])
-            y_hat = pd.array(y_hat).T
-            self.metrics = metrics(
-                y_test, y_hat, description=self.description, name=self.algorithm_name)
+                    x[i:i+4, :], y_test[i:i+4])
 
-        else:
+            y_hat = np.array(y_hat).flatten()
 
+        elif LearningMode == "Offline":
+            algorithm.fit(X_train, y_train)
             y_hat = algorithm.predict(X_test)  # Predict
-            self.metrics = metrics(
-                y_test, y_hat, description=self.description, name=self.algorithm_name)
+
+        elif LearningMode == "Hybrid":
+
+            changePoints = findChangepoints(self.description)
+
+            algorithm_1 = algorithm[0]
+            algorithm_2 = algorithm[1]
+
+            algorithm_1.fit(X_train, y_train)
+            algorithm_2.fit(X_train, y_train)
+
+            y_hat_1 = algorithm_1.predict(X_test)
+            y_hat = np.empty_like(y_hat_1)
+
+            x = algorithm_2.named_steps['preprocessor'].transform(X_test)
+
+            if len(changePoints) == 0:
+                y_hat = y_hat_1
+            else:
+                # Train model 2
+                y_hat_2 = []
+                for i in range(0, len(y_test), 4):
+                    y_hat_2.append(algorithm_2.predict(
+                        X_test.iloc[i:i + 4, :]))
+
+                    algorithm_2.named_steps["regressor"].partial_fit(
+                        x[i:i+4, :], y_test[i:i+4])
+
+                y_hat_2 = np.array(y_hat_2).flatten()
+
+                y_hat[:changePoints[0]["Detection time"]
+                      ] = y_hat_1[:changePoints[0]["Detection time"]]
+
+                for changePoint in changePoints:
+
+                    changeTime = changePoint["Changepoint time"]
+                    detTime = changePoint["Detection time"]
+                    smape_1 = smape(y_test[changeTime:detTime],
+                                    y_hat_1[changeTime:detTime])
+                    smape_2 = smape(y_test[changeTime:detTime],
+                                    y_hat_2[changeTime:detTime])
+                    if smape_1 < smape_2:
+                        y_hat[detTime:] = y_hat_1[detTime:]
+                    else:
+                        y_hat[detTime:] = y_hat_2[detTime:]
+
+        self.metrics = metrics(
+            y_test, y_hat, description=self.description, name=self.algorithm_name)
 
 
 def metrics(y_test, y_hat, description, name):
@@ -175,3 +215,26 @@ def metrics(y_test, y_hat, description, name):
 
 def smape(a, f):
     return np.round(np.mean(np.abs(a - f) / ((np.abs(f) + np.abs(a))/2))*100, 2)
+
+
+def findChangepoints(description):
+    changePoints = []
+    if description["Drift time"] == "Fully observed":
+        changePoints.append(
+            {"Changepoint time": 91 * 4, "Detection time": 106 * 4})
+        if description["Drift type"] == "Incremental Drift":
+            changePoints.append(
+                {"Changepoint time": 121 * 4, "Detection time": 136 * 4})
+    elif description["Drift time"] == "Half observed":
+        changePoints.append(
+            {"Changepoint time": 259 * 4, "Detection time": 274 * 4})
+        if description["Drift type"] == "Incremental Drift":
+            changePoints.append(
+                {"Changepoint time": 289 * 4, "Detection time": 304 * 4})
+    elif description["Drift time"] == "Unobserved":
+        changePoints.append(
+            {"Changepoint time": 275 * 4, "Detection time": 290 * 4})
+        if description["Drift type"] == "Incremental Drift":
+            changePoints.append(
+                {"Changepoint time": 305 * 4, "Detection time": 320 * 4})
+    return changePoints
