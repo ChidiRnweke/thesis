@@ -75,11 +75,12 @@ class ExperimentTracker:
     def runExperiment(self, algorithms, algorithm_name, LearningModes):
         # Run experiment for each condition
         global_start = time.time()
+        seeds = np.random.randint(100000000, size=len(
+            self.productList) + len(self.customerList))
 
         for algorithm, LearningMode, algorithm_name in zip(algorithms, LearningModes, algorithm_name):
             # Loop over conditions
-            seeds = np.random.randint(100000000, size=len(
-                self.productList) * len(self.customerList))
+
             for condition in self.conditions:
                 startTime = time.time()
 
@@ -123,6 +124,7 @@ class Experiment:
         self.description = description
         self.algorithm_name = algorithm_name
 
+        self.description["switch"] = False
         data = self.grouped_series.toDataFrame()
         data.sort_index(inplace=True)
 
@@ -169,17 +171,18 @@ class Experiment:
             algorithm_2 = algorithm[1]
 
             algorithm_1.fit(X_train, y_train)
-            algorithm_2.fit(X_train, y_train)
 
             y_hat_1 = algorithm_1.predict(X_test)
-            y_hat = np.empty_like(y_hat_1)
-
-            x_one_hot = algorithm_2.named_steps['preprocessor'].transform(
-                X_test)
 
             if len(changePoints) == 0:
                 y_hat = y_hat_1
             else:
+
+                algorithm_2.fit(X_train, y_train)
+                x_one_hot = algorithm_2.named_steps['preprocessor'].transform(
+                    X_test)
+                x = algorithm_2.named_steps['scaler'].transform(x_one_hot)
+                y_hat = np.empty_like(y_hat_1)
                 # Train model 2
                 y_hat_2 = []
                 for i in range(0, len(y_test), 4):
@@ -209,6 +212,7 @@ class Experiment:
                     if smape_1 < smape_2:
                         y_hat[detTime:] = y_hat_1[detTime:]
                     else:
+                        description["switch"] = True
                         y_hat[detTime:] = y_hat_2[detTime:]
 
         self.metrics = metrics(
@@ -219,7 +223,7 @@ def metrics(y_test, y_hat, description, name):
     MSE = mean_squared_error(y_test, y_hat)  # Calculate MSE
 
     SMAPE = smape(y_test, y_hat)  # Calculate SMAPE
-    return {"Algorithm": name, "Dropped variable": description["Dropped variable"], 'Drift type': description["Drift type"], 'Drift magnitude': description["Drift magnitude"], 'Variable importance': description["Variable importance"], 'Drift time': description["Drift time"],  "MSE": MSE, "SMAPE": SMAPE}
+    return {"Algorithm": name, "Dropped variable": description["Dropped variable"], 'Drift type': description["Drift type"], 'Drift magnitude': description["Drift magnitude"], 'Variable importance': description["Variable importance"], 'Drift time': description["Drift time"], "Switched": description["switch"], "MSE": MSE, "SMAPE": SMAPE}
 
 
 def smape(a, f):
@@ -228,22 +232,13 @@ def smape(a, f):
 
 def findChangepoints(description):
     changePoints = []
-    if description["Drift time"] == "Fully observed":
+    if description["Drift time"] == "Half observed" and description["Drift type"] == "Incremental Drift":
         changePoints.append(
-            {"Changepoint time": 91 * 4, "Detection time": 106 * 4})
-        if description["Drift type"] == "Incremental Drift":
-            changePoints.append(
-                {"Changepoint time": 121 * 4, "Detection time": 136 * 4})
-    elif description["Drift time"] == "Half observed":
-        changePoints.append(
-            {"Changepoint time": 259 * 4, "Detection time": 274 * 4})
-        if description["Drift type"] == "Incremental Drift":
-            changePoints.append(
-                {"Changepoint time": 289 * 4, "Detection time": 304 * 4})
+            {"Changepoint time": 15 * 4, "Detection time": 30 * 4})
     elif description["Drift time"] == "Unobserved":
         changePoints.append(
-            {"Changepoint time": 275 * 4, "Detection time": 290 * 4})
+            {"Changepoint time": 0 * 4, "Detection time": 15 * 4})
         if description["Drift type"] == "Incremental Drift":
             changePoints.append(
-                {"Changepoint time": 305 * 4, "Detection time": 320 * 4})
+                {"Changepoint time": 30 * 4, "Detection time": 45 * 4})
     return changePoints

@@ -638,16 +638,16 @@ n
 Drift
 </td>
 <td style="text-align:right;">
-6.007233
+4.558162
 </td>
 <td style="text-align:right;">
-20.4489906
+1.583788
 </td>
 <td style="text-align:right;">
-2.22
+2.53
 </td>
 <td style="text-align:right;">
-196.44
+16.12
 </td>
 <td style="text-align:right;">
 14400
@@ -658,16 +658,16 @@ Drift
 No Drift
 </td>
 <td style="text-align:right;">
-2.984875
+4.215175
 </td>
 <td style="text-align:right;">
-0.3614223
+1.137326
 </td>
 <td style="text-align:right;">
-2.27
+2.82
 </td>
 <td style="text-align:right;">
-4.36
+9.71
 </td>
 <td style="text-align:right;">
 400
@@ -713,16 +713,16 @@ Drift
 Incremental Drift
 </td>
 <td style="text-align:right;">
-5.676764
+4.536271
 </td>
 <td style="text-align:right;">
-17.5331415
+1.552831
 </td>
 <td style="text-align:right;">
-2.24
+2.59
 </td>
 <td style="text-align:right;">
-170.08
+13.75
 </td>
 <td style="text-align:right;">
 7200
@@ -736,16 +736,16 @@ Drift
 Sudden Drift
 </td>
 <td style="text-align:right;">
-6.337701
+4.580054
 </td>
 <td style="text-align:right;">
-22.9945867
+1.613963
 </td>
 <td style="text-align:right;">
-2.22
+2.53
 </td>
 <td style="text-align:right;">
-196.44
+16.12
 </td>
 <td style="text-align:right;">
 7200
@@ -759,16 +759,16 @@ No Drift
 No Drift
 </td>
 <td style="text-align:right;">
-2.984875
+4.215175
 </td>
 <td style="text-align:right;">
-0.3614223
+1.137326
 </td>
 <td style="text-align:right;">
-2.27
+2.82
 </td>
 <td style="text-align:right;">
-4.36
+9.71
 </td>
 <td style="text-align:right;">
 400
@@ -783,13 +783,13 @@ No Drift
 ##  Welch Two Sample t-test
 ## 
 ## data:  LinearRegressionOnlineNoDrift$SMAPE and LinearRegressionOnlineD$SMAPE
-## t = -17.637, df = 14658, p-value &lt; 2.2e-16
+## t = -5.8753, df = 443.11, p-value = 4.15e-09
 ## alternative hypothesis: true difference in means is less than 0
 ## 95 percent confidence interval:
-##       -Inf -2.740472
+##        -Inf -0.2467634
 ## sample estimates:
 ## mean of x mean of y 
-##  2.984875  6.007233</code></pre>
+##  4.215175  4.558162</code></pre>
 </div>
 <div id="t-test-sudden-vs-no-and-incremental-vs-no" class="section level2">
 <h2>T-test sudden vs no and incremental vs no</h2>
@@ -797,24 +797,24 @@ No Drift
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 12.345, df = 7260.6, p-value &lt; 2.2e-16
+## t = 6.0851, df = 492.93, p-value = 1.17e-09
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  2.906034      Inf
+##  0.2660631       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  6.337701  2.984875</code></pre>
+##  4.580054  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 12.978, df = 7301.8, p-value &lt; 2.2e-16
+## t = 5.375, df = 485.63, p-value = 5.956e-08
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  2.350672      Inf
+##  0.2226471       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  5.676764  2.984875</code></pre>
+##  4.536271  4.215175</code></pre>
 </div>
 </div>
 <div id="sudden-drift" class="section level1">
@@ -825,35 +825,35 @@ No Drift
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_train$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 4.7352, df = 1047, p-value = 1.244e-06
+## t = 4.2358, df = 629.56, p-value = 1.309e-05
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.07237856        Inf
+##  0.1654483       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  3.095829  2.984875</code></pre>
+##  4.485913  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_traintest$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 11.588, df = 1713.3, p-value &lt; 2.2e-16
+## t = 3.3204, df = 674.89, p-value = 0.0004736
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.2769583       Inf
+##  0.1089511       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  3.307679  2.984875</code></pre>
+##  4.431371  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_test$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 12.067, df = 2401.5, p-value &lt; 2.2e-16
+## t = 8.964, df = 782.87, p-value &lt; 2.2e-16
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  8.312273      Inf
+##  0.4960606       Inf
 ## sample estimates:
 ## mean of x mean of y 
-## 12.609596  2.984875</code></pre>
+##  4.822879  4.215175</code></pre>
 </div>
 <div id="smape-table-for-time" class="section level2">
 <h2>SMAPE table for time</h2>
@@ -898,16 +898,16 @@ Incremental Drift
 Test
 </td>
 <td style="text-align:right;">
-10.364546
+4.608667
 </td>
 <td style="text-align:right;">
-29.7829975
+1.555554
 </td>
 <td style="text-align:right;">
-2.28
+2.59
 </td>
 <td style="text-align:right;">
-170.08
+12.37
 </td>
 <td style="text-align:right;">
 2400
@@ -924,16 +924,16 @@ Incremental Drift
 Training
 </td>
 <td style="text-align:right;">
-3.094525
+4.486600
 </td>
 <td style="text-align:right;">
-0.7209775
+1.443102
 </td>
 <td style="text-align:right;">
-2.24
+2.71
 </td>
 <td style="text-align:right;">
-8.23
+13.56
 </td>
 <td style="text-align:right;">
 2400
@@ -950,16 +950,16 @@ Incremental Drift
 Training/Test
 </td>
 <td style="text-align:right;">
-3.571221
+4.513546
 </td>
 <td style="text-align:right;">
-1.3610039
+1.650860
 </td>
 <td style="text-align:right;">
-2.26
+2.60
 </td>
 <td style="text-align:right;">
-14.89
+13.75
 </td>
 <td style="text-align:right;">
 2400
@@ -976,16 +976,16 @@ Sudden Drift
 Test
 </td>
 <td style="text-align:right;">
-12.609596
+4.822879
 </td>
 <td style="text-align:right;">
-39.0644235
+1.808165
 </td>
 <td style="text-align:right;">
-2.27
+2.67
 </td>
 <td style="text-align:right;">
-196.44
+16.12
 </td>
 <td style="text-align:right;">
 2400
@@ -1002,16 +1002,16 @@ Sudden Drift
 Training
 </td>
 <td style="text-align:right;">
-3.095829
+4.485913
 </td>
 <td style="text-align:right;">
-0.7307078
+1.429644
 </td>
 <td style="text-align:right;">
-2.22
+2.72
 </td>
 <td style="text-align:right;">
-8.39
+13.00
 </td>
 <td style="text-align:right;">
 2400
@@ -1028,16 +1028,16 @@ Sudden Drift
 Training/Test
 </td>
 <td style="text-align:right;">
-3.307679
+4.431371
 </td>
 <td style="text-align:right;">
-1.0386088
+1.553542
 </td>
 <td style="text-align:right;">
-2.26
+2.53
 </td>
 <td style="text-align:right;">
-10.06
+12.08
 </td>
 <td style="text-align:right;">
 2400
@@ -1054,16 +1054,16 @@ No Drift
 No Drift
 </td>
 <td style="text-align:right;">
-2.984875
+4.215175
 </td>
 <td style="text-align:right;">
-0.3614223
+1.137326
 </td>
 <td style="text-align:right;">
-2.27
+2.82
 </td>
 <td style="text-align:right;">
-4.36
+9.71
 </td>
 <td style="text-align:right;">
 400
@@ -1078,24 +1078,24 @@ No Drift
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_small$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 8.5062, df = 627.62, p-value &lt; 2.2e-16
+## t = 0.15409, df = 494.76, p-value = 0.4388
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.1390674       Inf
+##  -0.08967561         Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  3.157342  2.984875</code></pre>
+##  4.224425  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_large$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 12.165, df = 3607.1, p-value &lt; 2.2e-16
+## t = 11.064, df = 678.97, p-value &lt; 2.2e-16
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  5.649606      Inf
+##  0.6132438       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  9.518061  2.984875</code></pre>
+##  4.935683  4.215175</code></pre>
 </div>
 <div id="smape-table-for-magnitude" class="section level2">
 <h2>SMAPE table for magnitude</h2>
@@ -1140,16 +1140,16 @@ Incremental Drift
 Large
 </td>
 <td style="text-align:right;">
-8.187925
+4.883456
 </td>
 <td style="text-align:right;">
-24.5361517
+1.814458
 </td>
 <td style="text-align:right;">
-2.24
+2.59
 </td>
 <td style="text-align:right;">
-170.08
+13.75
 </td>
 <td style="text-align:right;">
 3600
@@ -1166,16 +1166,16 @@ Incremental Drift
 Small
 </td>
 <td style="text-align:right;">
-3.165603
+4.189086
 </td>
 <td style="text-align:right;">
-0.5190491
+1.135710
 </td>
 <td style="text-align:right;">
-2.26
+2.63
 </td>
 <td style="text-align:right;">
-7.96
+10.41
 </td>
 <td style="text-align:right;">
 3600
@@ -1192,16 +1192,16 @@ Sudden Drift
 Large
 </td>
 <td style="text-align:right;">
-9.518061
+4.935683
 </td>
 <td style="text-align:right;">
-32.2041870
+1.904243
 </td>
 <td style="text-align:right;">
-2.22
+2.53
 </td>
 <td style="text-align:right;">
-196.44
+16.12
 </td>
 <td style="text-align:right;">
 3600
@@ -1218,16 +1218,16 @@ Sudden Drift
 Small
 </td>
 <td style="text-align:right;">
-3.157342
+4.224425
 </td>
 <td style="text-align:right;">
-0.5516249
+1.153830
 </td>
 <td style="text-align:right;">
-2.25
+2.64
 </td>
 <td style="text-align:right;">
-9.07
+10.23
 </td>
 <td style="text-align:right;">
 3600
@@ -1244,16 +1244,16 @@ No Drift
 No Drift
 </td>
 <td style="text-align:right;">
-2.984875
+4.215175
 </td>
 <td style="text-align:right;">
-0.3614223
+1.137326
 </td>
 <td style="text-align:right;">
-2.27
+2.82
 </td>
 <td style="text-align:right;">
-4.36
+9.71
 </td>
 <td style="text-align:right;">
 400
@@ -1268,35 +1268,35 @@ No Drift
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_important$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 7.0827, df = 2408.2, p-value = 9.241e-13
+## t = 7.2254, df = 824.48, p-value = 5.692e-13
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  2.235338      Inf
+##  0.383699      Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  5.896704  2.984875</code></pre>
+##  4.712133  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_medium$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 7.7371, df = 2404.9, p-value = 7.427e-15
+## t = 5.9833, df = 674.77, p-value = 1.774e-09
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  3.142516      Inf
+##  0.2823187       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  6.976258  2.984875</code></pre>
+##  4.604733  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_unimportant$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 6.6271, df = 2405.9, p-value = 2.106e-11
+## t = 3.3027, df = 596.49, p-value = 0.0005074
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  2.371822      Inf
+##  0.1043082       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  6.140142  2.984875</code></pre>
+##  4.423296  4.215175</code></pre>
 </div>
 <div id="smape-table-for-importance" class="section level2">
 <h2>SMAPE table for importance</h2>
@@ -1341,16 +1341,16 @@ Incremental Drift
 Important
 </td>
 <td style="text-align:right;">
-5.341933
+4.673629
 </td>
 <td style="text-align:right;">
-14.9184344
+1.816796
 </td>
 <td style="text-align:right;">
-2.24
+2.70
 </td>
 <td style="text-align:right;">
-170.08
+13.75
 </td>
 <td style="text-align:right;">
 2400
@@ -1367,16 +1367,16 @@ Incremental Drift
 Medium
 </td>
 <td style="text-align:right;">
-6.204212
+4.548750
 </td>
 <td style="text-align:right;">
-19.5570538
+1.499243
 </td>
 <td style="text-align:right;">
-2.25
+2.59
 </td>
 <td style="text-align:right;">
-168.12
+13.56
 </td>
 <td style="text-align:right;">
 2400
@@ -1393,16 +1393,16 @@ Incremental Drift
 Unimportant
 </td>
 <td style="text-align:right;">
-5.484146
+4.386433
 </td>
 <td style="text-align:right;">
-17.8051622
+1.282923
 </td>
 <td style="text-align:right;">
-2.27
+2.63
 </td>
 <td style="text-align:right;">
-166.19
+10.48
 </td>
 <td style="text-align:right;">
 2400
@@ -1419,16 +1419,16 @@ Sudden Drift
 Important
 </td>
 <td style="text-align:right;">
-5.896704
+4.712133
 </td>
 <td style="text-align:right;">
-20.1211943
+1.895361
 </td>
 <td style="text-align:right;">
-2.22
+2.62
 </td>
 <td style="text-align:right;">
-195.97
+16.12
 </td>
 <td style="text-align:right;">
 2400
@@ -1445,16 +1445,16 @@ Sudden Drift
 Medium
 </td>
 <td style="text-align:right;">
-6.976258
+4.604733
 </td>
 <td style="text-align:right;">
-25.2571569
+1.553230
 </td>
 <td style="text-align:right;">
-2.24
+2.53
 </td>
 <td style="text-align:right;">
-196.44
+13.00
 </td>
 <td style="text-align:right;">
 2400
@@ -1471,16 +1471,16 @@ Sudden Drift
 Unimportant
 </td>
 <td style="text-align:right;">
-6.140142
+4.423296
 </td>
 <td style="text-align:right;">
-23.3080650
+1.330128
 </td>
 <td style="text-align:right;">
-2.26
+2.68
 </td>
 <td style="text-align:right;">
-196.15
+10.66
 </td>
 <td style="text-align:right;">
 2400
@@ -1497,16 +1497,16 @@ No Drift
 No Drift
 </td>
 <td style="text-align:right;">
-2.984875
+4.215175
 </td>
 <td style="text-align:right;">
-0.3614223
+1.137326
 </td>
 <td style="text-align:right;">
-2.27
+2.82
 </td>
 <td style="text-align:right;">
-4.36
+9.71
 </td>
 <td style="text-align:right;">
 400
@@ -1521,24 +1521,24 @@ No Drift
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_driftingDropped$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 26.602, df = 2166.6, p-value &lt; 2.2e-16
+## t = 16.635, df = 1090.5, p-value &lt; 2.2e-16
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  1.22683     Inf
+##  1.129019      Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  4.292600  2.984875</code></pre>
+##  5.468194  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  sudden_LinearRegressionOnline_driftingNotDropped$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 11.176, df = 5425.7, p-value &lt; 2.2e-16
+## t = 1.1567, df = 478.11, p-value = 0.124
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  3.440654      Inf
+##  -0.02923772         Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  7.019402  2.984875</code></pre>
+##  4.284007  4.215175</code></pre>
 </div>
 <div id="smape-table-for-dropping-drifting-and-not-drifting" class="section level2">
 <h2>SMAPE table for dropping drifting and not drifting</h2>
@@ -1583,16 +1583,16 @@ Incremental Drift
 FALSE
 </td>
 <td style="text-align:right;">
-6.137041
+4.262487
 </td>
 <td style="text-align:right;">
-20.1927698
+1.241708
 </td>
 <td style="text-align:right;">
-2.24
+2.59
 </td>
 <td style="text-align:right;">
-170.08
+11.52
 </td>
 <td style="text-align:right;">
 5400
@@ -1609,16 +1609,16 @@ Incremental Drift
 TRUE
 </td>
 <td style="text-align:right;">
-4.295933
+5.357622
 </td>
 <td style="text-align:right;">
-1.9788917
+2.030255
 </td>
 <td style="text-align:right;">
-2.28
+2.63
 </td>
 <td style="text-align:right;">
-14.89
+13.75
 </td>
 <td style="text-align:right;">
 1800
@@ -1635,16 +1635,16 @@ Sudden Drift
 FALSE
 </td>
 <td style="text-align:right;">
-7.019402
+4.284007
 </td>
 <td style="text-align:right;">
-26.4937957
+1.288170
 </td>
 <td style="text-align:right;">
-2.22
+2.53
 </td>
 <td style="text-align:right;">
-196.44
+12.08
 </td>
 <td style="text-align:right;">
 5400
@@ -1661,16 +1661,16 @@ Sudden Drift
 TRUE
 </td>
 <td style="text-align:right;">
-4.292600
+5.468194
 </td>
 <td style="text-align:right;">
-1.9396256
+2.095603
 </td>
 <td style="text-align:right;">
-2.27
+2.79
 </td>
 <td style="text-align:right;">
-15.66
+16.12
 </td>
 <td style="text-align:right;">
 1800
@@ -1687,16 +1687,16 @@ No Drift
 FALSE
 </td>
 <td style="text-align:right;">
-2.984875
+4.215175
 </td>
 <td style="text-align:right;">
-0.3614223
+1.137326
 </td>
 <td style="text-align:right;">
-2.27
+2.82
 </td>
 <td style="text-align:right;">
-4.36
+9.71
 </td>
 <td style="text-align:right;">
 400
@@ -1714,35 +1714,35 @@ FALSE
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_train$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 4.7049, df = 1028.5, p-value = 1.443e-06
+## t = 4.2382, df = 634.26, p-value = 1.294e-05
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.0712811       Inf
+##  0.1659296       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  3.094525  2.984875</code></pre>
+##  4.486600  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_traintest$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 17.692, df = 2339.9, p-value &lt; 2.2e-16
+## t = 4.5139, df = 713.78, p-value = 3.722e-06
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.5318111       Inf
+##  0.1895032       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  3.571221  2.984875</code></pre>
+##  4.513546  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_test$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 12.133, df = 2403.2, p-value &lt; 2.2e-16
+## t = 6.0416, df = 675.66, p-value = 1.261e-09
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  6.378866      Inf
+##  0.2862142       Inf
 ## sample estimates:
 ## mean of x mean of y 
-## 10.364546  2.984875</code></pre>
+##  4.608667  4.215175</code></pre>
 </div>
 <div id="t-tests-for-magnitude" class="section level2">
 <h2>T-tests for magnitude</h2>
@@ -1750,24 +1750,24 @@ FALSE
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_small$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 9.0206, df = 599.34, p-value &lt; 2.2e-16
+## t = -0.43529, df = 491.64, p-value = 0.6682
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.1477221       Inf
+##  -0.1248574        Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  3.165603  2.984875</code></pre>
+##  4.189086  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_large$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 12.711, df = 3612.9, p-value &lt; 2.2e-16
+## t = 10.376, df = 650.82, p-value &lt; 2.2e-16
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  4.529581      Inf
+##  0.5621891       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  8.187925  2.984875</code></pre>
+##  4.883456  4.215175</code></pre>
 </div>
 <div id="t-tests-for-importance-1" class="section level2">
 <h2>T-tests for importance</h2>
@@ -1775,35 +1775,35 @@ FALSE
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_important$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 7.7266, df = 2415.7, p-value = 8.035e-15
+## t = 6.7529, df = 786.88, p-value = 1.408e-11
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  1.855092      Inf
+##  0.346653      Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  5.341933  2.984875</code></pre>
+##  4.673629  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_medium$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 8.0561, df = 2408.8, p-value = 6.132e-16
+## t = 5.1655, df = 654.45, p-value = 1.594e-07
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  2.561776      Inf
+##  0.2272029       Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  6.204212  2.984875</code></pre>
+##  4.548750  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_unimportant$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 6.8681, df = 2410.8, p-value = 4.125e-12
+## t = 2.7355, df = 581.82, p-value = 0.00321
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  1.900486      Inf
+##  0.06811571        Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  5.484146  2.984875</code></pre>
+##  4.386433  4.215175</code></pre>
 </div>
 <div id="t-tests-for-dropping-drifting-and-not-drifting-1" class="section level2">
 <h2>T-tests for dropping drifting and not drifting</h2>
@@ -1811,24 +1811,24 @@ FALSE
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_driftingDropped$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 26.21, df = 2160.2, p-value &lt; 2.2e-16
+## t = 15.372, df = 1047.7, p-value &lt; 2.2e-16
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  1.228745      Inf
+##  1.02009     Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  4.295933  2.984875</code></pre>
+##  5.357622  4.215175</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  inc_LinearRegressionOnline_driftingNotDropped$SMAPE and LinearRegressionOnlineNoDrift$SMAPE
-## t = 11.447, df = 5444.4, p-value &lt; 2.2e-16
+## t = 0.79752, df = 472.3, p-value = 0.2128
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  2.699125      Inf
+##  -0.05045854         Inf
 ## sample estimates:
 ## mean of x mean of y 
-##  6.137041  2.984875</code></pre>
+##  4.262487  4.215175</code></pre>
 </div>
 </div>
 
