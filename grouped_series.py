@@ -212,6 +212,7 @@ class Experiment:
                     if smape_1 < smape_2:
                         y_hat[detTime:] = y_hat_1[detTime:]
                     else:
+
                         description["switch"] = True
                         y_hat[detTime:] = y_hat_2[detTime:]
 

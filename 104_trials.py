@@ -74,8 +74,8 @@ if __name__ == "__main__":
     # run the full trail in parallel using a process pool executor and save the results in a list
 
     with ProcessPoolExecutor() as executor:
-        results = executor.map(full_trail, range(50))
+        results = executor.map(full_trail, range(100))
 
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("RQ3_50_1.csv")
+    results_df.to_csv("RQ3_100.csv")
