@@ -174,7 +174,8 @@ class Experiment:
             y_hat_1 = algorithm_1.predict(X_test)
             y_hat = np.empty_like(y_hat_1)
 
-            x = algorithm_2.named_steps['preprocessor'].transform(X_test)
+            x_one_hot = algorithm_2.named_steps['preprocessor'].transform(
+                X_test)
 
             if len(changePoints) == 0:
                 y_hat = y_hat_1
@@ -186,7 +187,9 @@ class Experiment:
                         X_test.iloc[i:i + 4, :]))
 
                     algorithm_2.named_steps["scaler"].partial_fit(
-                        x[i:i+4, :], y_test[i:i+4])
+                        x[i:i+4, :])
+                    x[i:i+4,
+                        :] = algorithm_2.named_steps['scaler'].transform(x_one_hot[i: i+4, :])
                     algorithm_2.named_steps["regressor"].partial_fit(
                         x[i:i+4, :], y_test[i:i+4])
 
