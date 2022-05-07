@@ -65,8 +65,8 @@ def full_trail(_):
         products.append(product)
         customers.append(customer)
     thesis = ExperimentTracker(products, customers, scenarios())
-    thesis.runExperiment(algorithms=[sgd_pipe, sgd_online], algorithm_name=[
-                         "Linear regression", "Linear regression online"], LearningModes=["Offline", "Online"])
+    thesis.runExperiment(algorithms=[xgb_pipe_2, switcher], algorithm_name=[
+                         "Gradient boosted decision tree", "Ensemble"], LearningModes=["Offline", "Hybrid"])
     return thesis
 
 
@@ -78,4 +78,4 @@ if __name__ == "__main__":
 
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("RQ2_50_2.csv")
+    results_df.to_csv("RQ3_50_1.csv")
