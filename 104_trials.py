@@ -50,7 +50,7 @@ def full_trail(_):
     ])
 
     sgd_online = Pipeline([
-        ('preprocessor', sgd_onehot_1),
+        ('preprocessor', sgd_onehot_2),
         ('scaler', StandardScaler()),
         ('regressor', SGDRegressor())
     ])
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     # run the full trail in parallel using a process pool executor and save the results in a list
 
     with ProcessPoolExecutor() as executor:
-        results = executor.map(full_trail, range(100))
+        results = executor.map(full_trail, range(50))
 
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
