@@ -204,7 +204,7 @@ inc_LinearRegressionOnline_test <- inc_LinearRegressionOnline %>%
 
 t.test(inc_LinearRegressionOnline_train$SMAPE, LinearRegressionOnlineNoDrift$SMAPE, var.equal = F, alternative='greater')
 t.test(inc_LinearRegressionOnline_traintest$SMAPE, LinearRegressionOnlineNoDrift$SMAPE, var.equal = F, alternative='greater')
-t.test(inc_LinearRegressionOnline_test$SMAPE, LinearRegressionOnlineNoDrift$SMAPE, var.equal = F, alternative='greater')
+  t.test(inc_LinearRegressionOnline_test$SMAPE, LinearRegressionOnlineNoDrift$SMAPE, var.equal = F, alternative='greater')
 
 ```
 

@@ -81,7 +81,7 @@ class ExperimentTracker:
         for algorithm, LearningMode, algorithm_name in zip(algorithms, LearningModes, algorithm_name):
             # Loop over conditions
 
-            for condition in self.conditions:
+            for condition in self.conditions:   
                 startTime = time.time()
 
                 productCopy = self.productList.copy()
@@ -191,8 +191,8 @@ class Experiment:
 
                     algorithm_2.named_steps["scaler"].partial_fit(
                         x[i:i+4, :])
-                    x[i:i+4,
-                        :] = algorithm_2.named_steps['scaler'].transform(x_one_hot[i: i+4, :])
+                    x[i:i+4, :] = algorithm_2.named_steps['scaler'].transform(
+                        x_one_hot[i: i+4, :])
                     algorithm_2.named_steps["regressor"].partial_fit(
                         x[i:i+4, :], y_test[i:i+4])
 
@@ -212,7 +212,6 @@ class Experiment:
                     if smape_1 < smape_2:
                         y_hat[detTime:] = y_hat_1[detTime:]
                     else:
-
                         description["switch"] = True
                         y_hat[detTime:] = y_hat_2[detTime:]
 

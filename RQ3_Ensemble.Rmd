@@ -1,0 +1,258 @@
+---
+title: "RQ3"
+output: html_document
+---
+
+
+```{r include= FALSE}
+options(digits=7)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE)
+
+```
+
+
+```{r}
+library(tidyverse)
+library(kableExtra)
+
+input = read_csv("RQ3_100_cleaned.csv")
+
+```
+
+```{r}
+RQ1 <- input %>% 
+  mutate(Drift = case_when(
+    `Drift type` == "No Drift" ~ "No Drift",
+    `Drift type` == "Sudden Shock" ~ "Shock",
+    TRUE ~ "Drift"
+  ))
+
+```
+
+# Global stats
+
+## SMAPE table for drit vs no drift
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Gradient boosted decision tree') %>% 
+  group_by(Drift) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n()) %>%    kable() %>%    kable_styling()
+```
+
+## SMAPE table for drift types
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Gradient boosted decision tree') %>% 
+  group_by(Drift, `Drift type`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n()) %>%    kable() %>%    kable_styling()
+```
+
+
+
+## T-test drift vs no drift
+```{r}
+GBTreeNoDrift <- RQ1 %>% 
+  filter(Drift == 'No Drift', Algorithm=='Gradient boosted decision tree')
+
+GBTreeD <-  RQ1 %>% 
+  filter(Drift == 'Drift', Algorithm=='Gradient boosted decision tree')
+
+t.test(GBTreeNoDrift$SMAPE, GBTreeD$SMAPE, var.equal = F, alternative = 'less')
+  
+  
+```
+
+
+  
+```{r}
+no_shock <- RQ1 %>% 
+  filter(Drift!='Shock', Algorithm=='Gradient boosted decision tree')
+
+
+```
+
+```{r}
+inc_GBTree <- no_shock %>% 
+  filter(`Drift type` =='Incremental Drift')
+
+sudden_GBTree <- no_shock %>% 
+  filter(`Drift type`=='Sudden Drift')
+```
+
+## T-test sudden vs no and incremental vs no
+```{r}
+t.test(sudden_GBTree$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+t.test(inc_GBTree$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+```
+# Sudden drift
+
+## T-tests for time
+ 
+```{r}
+sudden_GBTree_train <- sudden_GBTree %>% 
+  filter(`Drift time`=="Training")
+
+sudden_GBTree_traintest <- sudden_GBTree %>% 
+  filter(`Drift time`=="Training/Test")
+
+sudden_GBTree_test <- sudden_GBTree %>% 
+  filter(`Drift time`=="Test")
+
+t.test(sudden_GBTree_train$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_GBTree_traintest$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_GBTree_test$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+## SMAPE table for time
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Gradient boosted decision tree') %>% 
+  group_by(Drift, `Drift type`, `Drift time`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n()) %>%    kable() %>%    kable_styling() 
+```
+
+## T-test for magnitude
+```{r}
+sudden_GBTree_small <- sudden_GBTree %>% 
+  filter(`Drift magnitude`=='Small')
+
+sudden_GBTree_large <- sudden_GBTree %>% 
+  filter(`Drift magnitude`=='Large')
+
+t.test(sudden_GBTree_small$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_GBTree_large$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+```
+
+## SMAPE table for magnitude
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Gradient boosted decision tree') %>% 
+  group_by(Drift, `Drift type`, `Drift magnitude`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n()) %>%    kable() %>%    kable_styling()
+
+```
+
+
+## T-tests for importance
+
+```{r}
+sudden_GBTree_important <- sudden_GBTree %>% 
+  filter(`Variable importance`=="Important")
+
+sudden_GBTree_medium <- sudden_GBTree %>% 
+  filter(`Variable importance`=="Medium")
+
+sudden_GBTree_unimportant <- sudden_GBTree %>% 
+  filter(`Variable importance`=="Unimportant")
+
+t.test(sudden_GBTree_important$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_GBTree_medium$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_GBTree_unimportant$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+## SMAPE table for importance
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Gradient boosted decision tree') %>% 
+  group_by(Drift, `Drift type`, `Variable importance`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n()) %>%    kable() %>%    kable_styling()
+```
+ 
+## T-tests for dropping drifting and not drifting
+ 
+```{r}
+sudden_GBTree_driftingDropped <- sudden_GBTree %>% 
+  filter(`Dropped drifting`=="TRUE")
+
+sudden_GBTree_driftingNotDropped <- sudden_GBTree %>% 
+  filter(`Dropped drifting`=="FALSE")
+
+t.test(sudden_GBTree_driftingDropped$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(sudden_GBTree_driftingNotDropped$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+
+```
+
+## SMAPE table for dropping drifting and not drifting
+
+```{r}
+RQ1 %>% 
+  filter(Drift != 'Shock', Algorithm=='Gradient boosted decision tree') %>% 
+  group_by(Drift, `Drift type`,  `Dropped drifting`) %>% 
+  summarise(mean = mean(SMAPE), std =  sd(SMAPE), min = min(SMAPE), max = max(SMAPE), n = n()) %>%    kable() %>%    kable_styling()
+
+```
+ 
+# Incremental
+
+## T-tests for time
+ 
+```{r}
+inc_GBTree_train <- inc_GBTree %>% 
+  filter(`Drift time`=="Training")
+
+inc_GBTree_traintest <- inc_GBTree %>% 
+  filter(`Drift time`=="Training/Test")
+
+inc_GBTree_test <- inc_GBTree %>% 
+  filter(`Drift time`=="Test")
+
+t.test(inc_GBTree_train$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_GBTree_traintest$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+  t.test(inc_GBTree_test$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+```
+
+## T-tests for magnitude
+
+```{r}
+inc_GBTree_small <- inc_GBTree %>% 
+  filter(`Drift magnitude`=='Small')
+
+inc_GBTree_large <- inc_GBTree %>% 
+  filter(`Drift magnitude`=='Large')
+
+t.test(inc_GBTree_small$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_GBTree_large$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+```
+
+## T-tests for importance
+
+```{r}
+inc_GBTree_important <- inc_GBTree %>% 
+  filter(`Variable importance`=="Important")
+
+inc_GBTree_medium <- inc_GBTree %>% 
+  filter(`Variable importance`=="Medium")
+
+inc_GBTree_unimportant <- inc_GBTree %>% 
+  filter(`Variable importance`=="Unimportant")
+
+t.test(inc_GBTree_important$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_GBTree_medium$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_GBTree_unimportant$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+```
+ 
+## T-tests for dropping drifting and not drifting
+
+```{r}
+inc_GBTree_driftingDropped <- inc_GBTree %>% 
+  filter(`Dropped drifting`=="TRUE")
+
+inc_GBTree_driftingNotDropped <- inc_GBTree %>% 
+  filter(`Dropped drifting`=="FALSE")
+
+t.test(inc_GBTree_driftingDropped$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+t.test(inc_GBTree_driftingNotDropped$SMAPE, GBTreeNoDrift$SMAPE, var.equal = F, alternative='greater')
+
+
+
+```
+
