@@ -13,13 +13,16 @@ import pandas as pd
 
 
 def full_trail(_):
+    sgd_onehot_1 = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
+    ), make_column_selector(dtype_include=object))], remainder='passthrough')
+
+    sgd_onehot_2 = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
+    ), make_column_selector(dtype_include=object))], remainder='passthrough')
+
     onehot1 = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
     ), make_column_selector(dtype_include=object))], remainder=StandardScaler())
 
     onehot2 = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
-    ), make_column_selector(dtype_include=object))], remainder=StandardScaler())
-
-    onehot3 = ColumnTransformer([('one_hot_encoder', OneHotEncoder(
     ), make_column_selector(dtype_include=object))], remainder=StandardScaler())
 
     hybrid_vars = [0, 1, 2, 3, 4, 5, 6, 7, -3, -2, -1]
@@ -40,8 +43,15 @@ def full_trail(_):
         ('regressor', hybrid_model_2)
     ])
 
+    sgd_pipe = Pipeline([
+        ('preprocessor', sgd_onehot_1),
+        ('scaler', StandardScaler()),
+        ('regressor', SGDRegressor())
+    ])
+
     sgd_online = Pipeline([
-        ('preprocessor', onehot3),
+        ('preprocessor', sgd_onehot_1),
+        ('scaler', StandardScaler()),
         ('regressor', SGDRegressor())
     ])
 
@@ -55,8 +65,8 @@ def full_trail(_):
         products.append(product)
         customers.append(customer)
     thesis = ExperimentTracker(products, customers, scenarios())
-    thesis.runExperiment(algorithms=[xgb_pipe_2, switcher], algorithm_name=[
-                         "Gradient boosted decision tree", "Model switching"], LearningModes=["Offline", "Hybrid"])
+    thesis.runExperiment(algorithms=[sgd_pipe, sgd_online], algorithm_name=[
+                         "Linear regression", "Linear regression online"], LearningModes=["Offline", "Online"])
     return thesis
 
 
@@ -64,8 +74,8 @@ if __name__ == "__main__":
     # run the full trail in parallel using a process pool executor and save the results in a list
 
     with ProcessPoolExecutor() as executor:
-        results = executor.map(full_trail, range(50))
+        results = executor.map(full_trail, range(100))
 
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("RQ3_50_1.csv")
+    results_df.to_csv("RQ2_50_1.csv")
