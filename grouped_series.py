@@ -143,11 +143,15 @@ class Experiment:
             algorithm.fit(X_train, y_train)  # Fit the model
 
             y_hat = []
-            x = algorithm.named_steps['preprocessor'].transform(X_test)
+            x_one_hot = algorithm.named_steps['preprocessor'].transform(X_test)
+            x = algorithm.named_steps['scaler'].transform(x_one_hot)
 
             for i in range(0, len(y_test), 4):
                 y_hat.append(algorithm.predict(X_test.iloc[i:i + 4, :]))
-
+                algorithm.named_steps["scaler"].partial_fit(
+                    x[i:i+4, :])
+                x[i:i+4,
+                    :] = algorithm.named_steps['scaler'].transform(x_one_hot[i: i+4, :])
                 algorithm.named_steps["regressor"].partial_fit(
                     x[i:i+4, :], y_test[i:i+4])
 
@@ -181,6 +185,8 @@ class Experiment:
                     y_hat_2.append(algorithm_2.predict(
                         X_test.iloc[i:i + 4, :]))
 
+                    algorithm_2.named_steps["scaler"].partial_fit(
+                        x[i:i+4, :], y_test[i:i+4])
                     algorithm_2.named_steps["regressor"].partial_fit(
                         x[i:i+4, :], y_test[i:i+4])
 
