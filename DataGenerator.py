@@ -206,8 +206,7 @@ def incrementalDrift(series: TimeSeriesGenerator, time, variables: np.array, mag
                                          increase by this magnitude.]
         """
     points = np.arange(start=time[0], stop=time[1], step=1)
-    series.data[points,
-                variables] *= np.linspace(start=1, stop=magnitude, num=points.size)
+    series.data[points,variables] *= np.linspace(start=1, stop=magnitude, num=len(points))
     series.data[time[1]:, variables] *= magnitude
 
 
@@ -300,9 +299,7 @@ def generateTrend(series: TimeSeriesGenerator, indices: int, magnitude: int) -> 
     series.data[:, indices] += series.trendComponent
 
 
-def generateSeasonality(
-    series: TimeSeriesGenerator, periods: int, indices: int
-) -> None:
+def generateSeasonality(series: TimeSeriesGenerator, periods: int, indices: int) -> None:
     """[Adds seasonality to one or more variables' initial values]
 
         Args:
@@ -310,6 +307,5 @@ def generateSeasonality(
             variables (int or np.array): [Variable(s)]
         """
     series.seasonalComponent = series.initialValues[indices] * np.sin(
-        (2 * np.pi) / 365 * periods * np.arange(series.size)
-    )
+        (2 * np.pi) / 365 * periods * np.arange(series.size))
     series.data[:, indices] += series.seasonalComponent

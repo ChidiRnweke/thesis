@@ -81,7 +81,7 @@ class ExperimentTracker:
         for algorithm, LearningMode, algorithm_name in zip(algorithms, LearningModes, algorithm_name):
             # Loop over conditions
 
-            for condition in self.conditions:   
+            for condition in self.conditions:
                 startTime = time.time()
 
                 productCopy = self.productList.copy()
