@@ -78,4 +78,4 @@ if __name__ == "__main__":
 
     results_df = pd.concat([result.resultsToDF() for result in results])
     # save the results
-    results_df.to_csv("RQ3_100.csv")
+    results_df.to_csv("results.csv")

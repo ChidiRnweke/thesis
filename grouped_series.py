@@ -1,10 +1,4 @@
-# To do 6: Make and test BOCP drift detection (SHORT) => code exists online
-# To do 7: Code out the switching procedure (MEDIUM)
-# To do 8: Make the online version of GBDT
-# To do 9: GRADUATEEEEEEEEEEE
-
 from typing import List, Dict
-
 from DataGenerator import TimeSeriesGenerator, generateTrend, generateSeasonality
 import numpy as np
 import time

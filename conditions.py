@@ -1,14 +1,27 @@
 from functools import partial
 from DataGenerator import incrementalDrift, suddenDrift, suddenShock
 import numpy as np
-import pandas as pd
+from typing import List, Dict
 
 
 def noDrift(x):
     return x
 
 
-def scenarios():
+def scenarios() -> List[Dict]:
+    """Genererate a list of scenarios for the experiment.
+    In this case we chose to hardcode the scenarios with partial functions
+    because during development parameters might have to change,
+    using partial functions allows us to change
+    e.g. the magnitude in one place and have it cascade to all
+    other scenarios.
+
+    We do not recommend this method for production code.
+
+    Returns:
+       ScenarioList List[Dict]: A list containing dictionaries, each
+                    dictionary contains the parameters for a scenario.
+    """
     functList = []
 
     suddenDriftSmall = partial(suddenDrift, magnitude=1.5)
