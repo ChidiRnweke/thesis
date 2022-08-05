@@ -107,3 +107,5 @@ dmypy.json
 thesis.Rproj
 gbt_rq1.nb.html
 .vscode/launch.json
+practical_demo/Preprocessing.py
+.DS_Store
